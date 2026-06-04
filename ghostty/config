@@ -1,3 +1,4 @@
+# Requires ~/.hushlogin to suppress "Last login" message
 theme = catppuccin-mocha
 font-family = "JetBrains Mono"
 font-size = 19
