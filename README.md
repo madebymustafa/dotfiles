@@ -40,10 +40,13 @@ dotfiles/
 └── zsh/            → ~/.zshrc, ~/.p10k.zsh
 ```
 
-Home-rooted packages (git, tmux, zsh, wezterm) symlink directly into `$HOME`.  
-The `.hushlogin` file lives at the repo root and is symlinked separately.  
-The `ssh` package symlinks into `~/.ssh/`.  
-Config-rooted packages symlink into `$XDG_CONFIG_HOME/<pkg>/`.
+Each directory in the tree is a [GNU Stow](https://www.gnu.org/software/stow/) package containing only the files that belong in its target location. Running `./setup.sh` creates symlinks from each package into the appropriate place on your system — your config stays in one place (`~/dotfiles`), and your system just sees symlinks.
+
+**How it maps:**
+- **Home packages** (`git`, `tmux`, `zsh`, `wezterm`) → symlinked into `$HOME` directly (e.g. `git/.gitconfig` → `~/.gitconfig`).
+- **Config packages** (most others) → symlinked into `$XDG_CONFIG_HOME/<pkg>/` (e.g. `nvim/` → `~/.config/nvim/`).
+- **ssh** → targets `~/.ssh/` so `ssh/config` becomes `~/.ssh/config`.
+- **`.hushlogin`** lives at the repo root and is symlinked manually by `setup.sh` — no stow package needed for a single file.
 
 ## 🙌 Credits
 
