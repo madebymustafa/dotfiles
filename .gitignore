@@ -12,3 +12,5 @@ opencode/node_modules/
 # History / session files
 *.zhistory
 *.zsh_history
+
+AGENTS.md
