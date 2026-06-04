@@ -11,7 +11,7 @@ set -euo pipefail
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$DIR"
 
-HOME_PKGS=(git tmux zsh wezterm ssh)
+HOME_PKGS=(git hushlogin tmux zsh wezterm ssh)
 CONFIG_PKGS=(aerospace atuin bat btop fd ghostty htop neofetch nix nvim opencode sketchybar starship television thefuck yazi zellij)
 
 echo "→ Stowing home-rooted packages..."
