@@ -1,19 +1,18 @@
-## 🚀 Install
-
-**Prerequisites:** [Homebrew](https://brew.sh), [GNU Stow](https://www.gnu.org/software/stow/)
+## 🚀 Quick start
 
 ```bash
-brew install stow
 git clone git@github.com:madebymustafa/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-./setup.sh
+bash install.sh
 ```
 
 ## 🗂️ Structure
 
 ```
 dotfiles/
-├── setup.sh        # bootstrap — runs stow for all packages
+<<<<<<< HEAD
+├── install.sh                  # one-command new-machine bootstrap
+├── setup.sh                   # runs stow for all packages
 ├── aerospace/      → .config/aerospace/
 ├── atuin/          → .config/atuin/
 ├── bat/            → .config/bat/
