@@ -61,18 +61,6 @@ cd ~/dotfiles
 ./setup.sh
 ```
 
-Then install the tools you need:
-
-<details>
-<summary>Brew bundle</summary>
-
-```bash
-brew install zsh tmux neovim git bat fd ripgrep fzf thefuck htop btop \
-  neofetch starship zellij yazi sketchybar television atuin
-brew install --cask ghostty nikitabobko/tap/aerospace
-```
-</details>
-
 ## 🗂️ Structure
 
 ```
