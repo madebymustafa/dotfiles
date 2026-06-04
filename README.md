@@ -3,15 +3,14 @@
 ```bash
 git clone git@github.com:madebymustafa/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-bash install.sh
+bash setup.sh
 ```
 
 ## 🗂️ Structure
 
 ```
 dotfiles/
-├── install.sh                  # one-command new-machine bootstrap
-├── setup.sh                   # runs stow for all packages
+├── setup.sh                   # one-command bootstrap — installs tools & symlinks dotfiles
 ├── aerospace/      → .config/aerospace/
 ├── atuin/          → .config/atuin/
 ├── bat/            → .config/bat/
