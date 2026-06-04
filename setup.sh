@@ -11,7 +11,7 @@ set -euo pipefail
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$DIR"
 
-HOME_PKGS=(git hushlogin tmux zsh wezterm ssh)
+HOME_PKGS=(git hushlogin tmux zsh wezterm)
 CONFIG_PKGS=(aerospace atuin bat btop fd ghostty htop neofetch nix nvim opencode sketchybar starship television thefuck yazi zellij)
 
 echo "→ Stowing home-rooted packages..."
@@ -24,5 +24,9 @@ for pkg in "${CONFIG_PKGS[@]}"; do
   mkdir -p "$HOME/.config/$pkg"
   stow --target="$HOME/.config/$pkg" "$pkg"
 done
+
+echo "→ Stowing ssh..."
+mkdir -p "$HOME/.ssh"
+stow --target="$HOME/.ssh" ssh
 
 echo "✓ Done"

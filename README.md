@@ -104,7 +104,7 @@ dotfiles/
 ├── nvim/           → .config/nvim/
 ├── opencode/       → .config/opencode/
 ├── sketchybar/     → .config/sketchybar/
-├── ssh/            → ~/.ssh/config
+├── ssh/            → ~/.ssh/
 ├── starship/       → .config/starship/
 ├── television/     → .config/television/
 ├── thefuck/        → .config/thefuck/
@@ -115,7 +115,8 @@ dotfiles/
 └── zsh/            → ~/.zshrc, ~/.p10k.zsh
 ```
 
-Home-rooted packages (git, hushlogin, tmux, zsh, wezterm, ssh) symlink directly into `$HOME`.  
+Home-rooted packages (git, hushlogin, tmux, zsh, wezterm) symlink directly into `$HOME`.  
+The `ssh` package symlinks into `~/.ssh/`.  
 Config-rooted packages symlink into `$XDG_CONFIG_HOME/<pkg>/`.
 
 ## 🔧 Customization
