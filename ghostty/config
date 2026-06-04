@@ -6,5 +6,5 @@ background-blur-radius = 20
 mouse-hide-while-typing = true
 window-decoration = false
 macos-option-as-alt = true
+macos-non-native-fullscreen = true
 gtk-titlebar = true
-command = /bin/zsh
