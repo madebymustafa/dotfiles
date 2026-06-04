@@ -49,18 +49,6 @@ A curated set of configuration files for macOS, bringing together a modern termi
 | **zellij** | Terminal multiplexer with built-in layout system |
 | **zsh** | Shell config with Powerlevel10k, autosuggestions, syntax highlighting, FZF |
 
-## 📦 Packages
-
-| Domain | Tools |
-|--------|-------|
-| **Shell** | zsh, Powerlevel10k, zsh-autosuggestions, zsh-syntax-highlighting, FZF, zoxide, thefuck, atuin, starship |
-| **Editor** | Neovim (LazyVim), bat, fd, ripgrep |
-| **Window Manager** | aerospace |
-| **Terminal** | Wezterm, Ghostty, Kitty |
-| **UI** | sketchybar, neofetch |
-| **System** | git, ssh, htop, btop, nix, GNU Stow |
-| **Other** | opencode CLI |
-
 ## 🚀 Install
 
 **Prerequisites:** [Homebrew](https://brew.sh), [GNU Stow](https://www.gnu.org/software/stow/)
