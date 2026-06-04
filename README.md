@@ -10,7 +10,6 @@ bash install.sh
 
 ```
 dotfiles/
-<<<<<<< HEAD
 ├── install.sh                  # one-command new-machine bootstrap
 ├── setup.sh                   # runs stow for all packages
 ├── aerospace/      → .config/aerospace/
