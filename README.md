@@ -23,19 +23,31 @@ A curated set of configuration files for macOS, bringing together a modern termi
 
 ## ✨ Features
 
-- **Single-command bootstrap** — `./setup.sh` symlinks everything via GNU Stow
-- **LazyVim-based Neovim** — pre-configured with Copilot, DAP, Treesitter, and 15+ language extras
-- **Aerospace tiling WM** — keyboard-driven window management inspired by Yabai
-- **Ghostty terminal** — GPU-accelerated terminal with custom keybindings and theme
-- **Sketchybar** — feature-rich macOS menu bar replacement
-- **Zsh with Powerlevel10k** — instant prompt, syntax highlighting, autosuggestions, and FZF integration
-- **Zoxide + TheFuck** — smart directory jumping and command correction
-- **Television (tv)** — TUI fuzzy-finder for files, git branches, processes, and more
-- **Tmux** — mouse-free session management with resurrect/continuum persistence
-- **atuin** — encrypted, synced shell history with fuzzy search
-- **Starship** — minimal cross-shell prompt (optional, toggle in `.zshrc`)
-- **Yazi** — fast terminal file manager with file previews
-- **Fully idempotent** — safe to run `setup.sh` multiple times
+| Tool | Description |
+|------|-------------|
+| **aerospace** | Tiling window manager for macOS, keyboard-driven |
+| **atuin** | Encrypted, synced shell history with fuzzy search |
+| **bat** | Modern `cat` replacement with syntax highlighting and Git integration |
+| **btop** | Resource monitor with CPU, memory, and process views |
+| **fd** | Fast file search — a modern alternative to `find` |
+| **ghostty** | GPU-accelerated terminal with custom keybindings and theme |
+| **git** | Version control aliases and configuration |
+| **htop** | Interactive process viewer |
+| **hushlogin** | Suppress the "Last login" message on terminal start |
+| **neofetch** | Stylish system information display |
+| **neovim** | LazyVim-based config with Copilot, DAP, Treesitter, 15+ language extras |
+| **nix** | Declarative package management and reproducible environments |
+| **opencode** | AI-powered CLI coding tool |
+| **sketchybar** | Feature-rich macOS menu bar replacement |
+| **ssh** | Secure shell configuration with hosts and options |
+| **starship** | Minimal, customizable cross-shell prompt |
+| **television** | TUI fuzzy-finder for files, git branches, processes, and more |
+| **thefuck** | Auto-correct mistyped shell commands |
+| **tmux** | Terminal multiplexer with resurrect/continuum session persistence |
+| **wezterm** | GPU-accelerated terminal emulator (default terminal) |
+| **yazi** | Terminal file manager with image previews and file operations |
+| **zellij** | Terminal multiplexer with built-in layout system |
+| **zsh** | Shell config with Powerlevel10k, autosuggestions, syntax highlighting, FZF |
 
 ## 📦 Packages
 
@@ -117,7 +129,7 @@ nvim ~/dotfiles/nvim/           # edit Neovim config
 
 ## 🙌 Credits
 
-Inspired by the dotfiles of [omerxx](https://github.com/omerxx/dotfiles), [NvChad](https://github.com/NvChad/NvChad), and the broader Neovim/macOS ricing community.
+Inspired by the dotfiles of the broader Linux/macOS ricing community.
 
 ---
 
