@@ -1,4 +1,4 @@
-## 🚀 Quick start
+## 🚀 Install
 
 ```bash
 git clone git@github.com:madebymustafa/dotfiles.git ~/dotfiles
