@@ -1,37 +1,124 @@
-# dotfiles
+<div align="center">
+  <h1>🍎 dotfiles</h1>
+  <p>
+    <b>macOS dotfiles managed with GNU Stow</b>
+  </p>
+  <p>
+    <img src="https://img.shields.io/github/stars/madebymustafa/dotfiles?style=flat&label=stars&color=eed49f" alt="Stars">
+    <img src="https://img.shields.io/github/license/madebymustafa/dotfiles?style=flat&color=a6da95" alt="License">
+    <img src="https://img.shields.io/badge/macOS-Sequoia-18181b?style=flat&logo=apple&logoColor=white" alt="macOS">
+    <img src="https://img.shields.io/badge/shell-zsh-4e4e4e?style=flat&logo=gnu-bash&logoColor=white" alt="Zsh">
+    <img src="https://img.shields.io/badge/stow-v2.4-7f849c?style=flat" alt="Stow">
+  </p>
+  <p>
+    <a href="#features">Features</a> •
+    <a href="#packages">Packages</a> •
+    <a href="#install">Install</a> •
+    <a href="#structure">Structure</a> •
+    <a href="#credits">Credits</a>
+  </p>
+</div>
 
-Personal configuration files managed with [GNU Stow](https://www.gnu.org/software/stow/).
+A curated set of configuration files for macOS, bringing together a modern terminal experience, a tiling window manager, and a powerful Neovim setup — all bootstrapped with a single command.
 
-## Install
+## ✨ Features
+
+- **Single-command bootstrap** — `./setup.sh` symlinks everything via GNU Stow
+- **LazyVim-based Neovim** — pre-configured with Copilot, DAP, Treesitter, and 15+ language extras
+- **Aerospace tiling WM** — keyboard-driven window management inspired by Yabai
+- **Ghostty terminal** — GPU-accelerated terminal with custom keybindings and theme
+- **Sketchybar** — feature-rich macOS menu bar replacement
+- **Zsh with Powerlevel10k** — instant prompt, syntax highlighting, autosuggestions, and FZF integration
+- **Zoxide + TheFuck** — smart directory jumping and command correction
+- **Television (tv)** — TUI fuzzy-finder for files, git branches, processes, and more
+- **Tmux** — mouse-free session management with resurrect/continuum persistence
+- **atuin** — encrypted, synced shell history with fuzzy search
+- **Starship** — minimal cross-shell prompt (optional, toggle in `.zshrc`)
+- **Yazi** — fast terminal file manager with file previews
+- **Fully idempotent** — safe to run `setup.sh` multiple times
+
+## 📦 Packages
+
+| Domain | Tools |
+|--------|-------|
+| **Shell** | zsh, Powerlevel10k, zsh-autosuggestions, zsh-syntax-highlighting, FZF, zoxide, thefuck, atuin, starship |
+| **Editor** | Neovim (LazyVim), bat, fd, ripgrep |
+| **Window Manager** | aerospace |
+| **Terminal** | Ghostty, wezterm, tmux, television, yazi, zellij |
+| **UI** | sketchybar, neofetch |
+| **System** | git, ssh, htop, btop, nix, GNU Stow |
+| **Other** | opencode CLI |
+
+## 🚀 Install
+
+**Prerequisites:** [Homebrew](https://brew.sh), [GNU Stow](https://www.gnu.org/software/stow/)
 
 ```bash
+brew install stow
+
+git clone git@github.com:madebymustafa/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ./setup.sh
 ```
 
-## Structure
+Then install the tools you need:
+
+<details>
+<summary>Brew bundle</summary>
+
+```bash
+brew install zsh tmux neovim git bat fd ripgrep fzf thefuck htop btop \
+  neofetch starship zellij yazi sketchybar television atuin
+brew install --cask ghostty nikitabobko/tap/aerospace
+```
+</details>
+
+## 🗂️ Structure
 
 ```
 dotfiles/
-├── setup.sh         # bootstrap script
-├── aerospace/       → .config/aerospace/aerospace.toml
-├── bat/             → .config/bat/config
-├── btop/            → .config/btop/btop.conf
-├── fd/              → .config/fd/ignore
-├── ghostty/         → .config/ghostty/
-├── git/             → .gitconfig
-├── htop/            → .config/htop/htoprc
-├── neofetch/        → .config/neofetch/config.conf
-├── nix/             → .config/nix/nix.conf
-├── nvim/            → .config/nvim/
-├── opencode/         → .config/opencode/
-├── sketchybar/       → .config/sketchybar/
-├── starship/         → .config/starship/starship.toml
-├── ssh/             → .ssh/config
-├── thefuck/         → .config/thefuck/
-├── tmux/            → .tmux.conf, .tmux.reset.conf
-├── wezterm/         → .wezterm.lua
-├── yazi/            → .config/yazi/
-├── zellij/          → .config/zellij/
-└── zsh/             → .zshrc, .p10k.zsh
+├── setup.sh                   # bootstrap — runs stow for all packages
+├── aerospace/      → .config/aerospace/
+├── atuin/          → .config/atuin/
+├── bat/            → .config/bat/
+├── btop/           → .config/btop/
+├── fd/             → .config/fd/
+├── ghostty/        → .config/ghostty/
+├── git/            → ~/.gitconfig
+├── htop/           → .config/htop/
+├── hushlogin/      → ~/.hushlogin
+├── neofetch/       → .config/neofetch/
+├── nix/            → .config/nix/
+├── nvim/           → .config/nvim/
+├── opencode/       → .config/opencode/
+├── sketchybar/     → .config/sketchybar/
+├── ssh/            → ~/.ssh/config
+├── starship/       → .config/starship/
+├── television/     → .config/television/
+├── thefuck/        → .config/thefuck/
+├── tmux/           → ~/.tmux.conf
+├── wezterm/        → ~/.wezterm.lua
+├── yazi/           → .config/yazi/
+├── zellij/         → .config/zellij/
+└── zsh/            → ~/.zshrc, ~/.p10k.zsh
 ```
+
+Home-rooted packages (git, hushlogin, tmux, zsh, wezterm, ssh) symlink directly into `$HOME`.  
+Config-rooted packages symlink into `$XDG_CONFIG_HOME/<pkg>/`.
+
+## 🔧 Customization
+
+Each package directory mirrors the target layout. Edit the file in `dotfiles/<pkg>/` and the changes are reflected immediately through the stow symlink.
+
+```bash
+nvim ~/dotfiles/zsh/.zshrc      # edit zsh config
+nvim ~/dotfiles/nvim/           # edit Neovim config
+```
+
+## 🙌 Credits
+
+Inspired by the dotfiles of [omerxx](https://github.com/omerxx/dotfiles), [NvChad](https://github.com/NvChad/NvChad), and the broader Neovim/macOS ricing community.
+
+---
+
+<sub> ⚡ Managed with GNU Stow · built for macOS </sub>
