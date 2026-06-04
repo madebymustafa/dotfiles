@@ -3,7 +3,7 @@
 ```bash
 git clone git@github.com:madebymustafa/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-bash install.sh
+bash install.sh   # installs all tools, then runs setup.sh to symlink everything
 ```
 
 ## 🗂️ Structure

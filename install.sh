@@ -57,9 +57,9 @@ clone_or_pull https://github.com/zdharma-continuum/fast-syntax-highlighting "$ZS
 echo "→ Setting up tmux plugin manager..."
 clone_or_pull https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 
-# ─── Symlink dotfiles ─────────────────────────────────────────────────────────
+# ─── Symlink dotfiles via setup.sh ─────────────────────────────────────────────
 
-echo "→ Symlinking dotfiles..."
+echo "→ Running setup.sh to symlink dotfiles..."
 bash setup.sh
 
 # ─── Done ─────────────────────────────────────────────────────────────────────
