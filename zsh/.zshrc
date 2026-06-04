@@ -158,3 +158,5 @@ eval "$(thefuck --alias tf)"
 
 eval "$(zoxide init zsh)"
 alias cd="z"
+
+eval "$(atuin init zsh)"
