@@ -1,0 +1,100 @@
+# =============================================================================
+#  Yazi — terminal file manager configuration
+#  See: https://yazi-rs.github.io/docs/configuration/yazi
+# =============================================================================
+
+[manager]
+ratio          = [ 1, 4, 3 ]
+sort_by        = "alphabetical"
+sort_sensitive = false
+sort_reverse   = false
+sort_dir_first = true
+sort_translit  = false
+linemode       = "none"
+show_hidden    = false
+show_symlink   = true
+scrolloff      = 5
+mouse_events   = [ "click", "scroll" ]
+title_format   = "Yazi: {cwd}"
+
+[preview]
+wrap            = "no"
+tab_size        = 2
+max_width       = 600
+max_height      = 900
+cache_dir       = ""
+image_delay     = 30
+image_filter    = "triangle"
+image_quality   = 75
+ueberzug_scale  = 1
+ueberzug_offset = [ 0, 0, 0, 0 ]
+
+[opener]
+edit = [
+	{ run = '${EDITOR:-vi} "$@"', desc = "$EDITOR", block = true, for = "unix" },
+]
+open = [
+	{ run = 'open "$@"', desc = "Open", for = "macos" },
+]
+reveal = [
+	{ run = 'open -R "$1"', desc = "Reveal", for = "macos" },
+	{ run = '''clear; exiftool "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show EXIF", for = "unix" },
+]
+extract = [
+	{ run = 'ya pub extract --list "$@"', desc = "Extract here", for = "unix" },
+]
+play = [
+	{ run = 'mpv --force-window "$@"', orphan = true, for = "unix" },
+	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
+]
+
+[open]
+rules = [
+	{ name = "*/", use = [ "edit", "open", "reveal" ] },
+	{ mime = "text/*", use = [ "edit", "reveal" ] },
+	{ mime = "image/*", use = [ "open", "reveal" ] },
+	{ mime = "{audio,video}/*", use = [ "play", "reveal" ] },
+	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "extract", "reveal" ] },
+	{ mime = "application/{json,ndjson}", use = [ "edit", "reveal" ] },
+	{ mime = "inode/empty", use = [ "edit", "reveal" ] },
+	{ name = "*", use = [ "open", "reveal" ] },
+]
+
+[tasks]
+micro_workers    = 10
+macro_workers    = 10
+bizarre_retry    = 3
+image_alloc      = 536870912
+image_bound      = [ 5000, 5000 ]
+suppress_preload = false
+
+[plugin]
+fetchers = [
+	{ id = "mime", name = "*", run = "mime", prio = "high" },
+]
+
+[input]
+cursor_blink = false
+cd_title  = "Change directory:"
+create_title  = [ "Create:", "Create (dir):" ]
+rename_title  = "Rename:"
+filter_title  = "Filter:"
+find_title  = [ "Find next:", "Find previous:" ]
+search_title  = "Search via {n}:"
+shell_title  = [ "Shell:", "Shell (block):" ]
+cd_origin = "top-center"
+cd_offset = [ 0, 2, 50, 3 ]
+
+[confirm]
+trash_title  = "Trash {n} selected file{s}?"
+delete_title = "Permanently delete {n} selected file{s}?"
+overwrite_title = "Overwrite file?"
+
+[pick]
+open_title  = "Open with:"
+
+[which]
+sort_by        = "none"
+sort_sensitive = false
+sort_reverse   = false
+sort_translit  = false

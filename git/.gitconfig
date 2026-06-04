@@ -1,0 +1,13 @@
+# =============================================================================
+#  Git configuration
+# =============================================================================
+
+[user]
+	name  = madebymustafa
+	email = hi.mustafa@icloud.com
+
+[filter "lfs"]
+	smudge  = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean   = git-lfs clean -- %f

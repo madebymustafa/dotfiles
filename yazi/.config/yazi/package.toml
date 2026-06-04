@@ -1,0 +1,26 @@
+# =============================================================================
+#  Yazi — package dependencies
+# =============================================================================
+
+[plugin]
+deps = []
+
+[[flavor.deps]]
+use = "tkapias/nightfly"
+rev = "599b8ad"
+hash = "d1a9e05ecbbd63bc5bb85a54e7f1e33a"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-mocha"
+rev = "9cd2ac4"
+hash = "f54b45bdd33f607ddde47f0afad96142"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:dracula"
+rev = "9cd2ac4"
+hash = "c0bfefbff165007a76c0933ed0432e3f"
+
+[[flavor.deps]]
+use = "Mintass/rose-pine-moon"
+rev = "aa2d937"
+hash = "97cd4819252cb1a9d0f55daa14e481e"

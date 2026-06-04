@@ -1,0 +1,14 @@
+.DS_Store
+
+# Tmux plugins managed by TPM — not part of the repo
+tmux/plugins/
+
+# Caches and auto-generated files
+thefuck/__pycache__/
+
+# Node modules (opencode config has its own)
+opencode/node_modules/
+
+# History / session files
+*.zhistory
+*.zsh_history
