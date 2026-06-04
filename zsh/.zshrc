@@ -100,6 +100,9 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:/Users/mustafa/.lmstudio/bin"
 export PATH="/Users/mustafa/.opencode/bin:$PATH"
 
+# ─── Secrets (sourced from ~/.env, kept out of the dotfiles repo) ───────────
+[ -f "$HOME/.env" ] && source "$HOME/.env"
+
 # =============================================================================
 #  FUNCTIONS
 # =============================================================================
