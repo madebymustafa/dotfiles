@@ -160,3 +160,8 @@ eval "$(zoxide init zsh)"
 alias cd="z"
 
 eval "$(atuin init zsh)"
+
+# ── Television ────────────────────────────────────────────────────────────────
+# Fuzzy-finder (TUI) for files, git branches, processes, and more.
+# Config at ~/.config/television/config.toml
+alias tv="television"
