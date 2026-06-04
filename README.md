@@ -4,7 +4,6 @@
 
 ```bash
 brew install stow
-
 git clone git@github.com:madebymustafa/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ./setup.sh
@@ -14,7 +13,7 @@ cd ~/dotfiles
 
 ```
 dotfiles/
-├── setup.sh                   # bootstrap — runs stow for all packages
+├── setup.sh        # bootstrap — runs stow for all packages
 ├── aerospace/      → .config/aerospace/
 ├── atuin/          → .config/atuin/
 ├── bat/            → .config/bat/
@@ -23,7 +22,7 @@ dotfiles/
 ├── ghostty/        → .config/ghostty/
 ├── git/            → ~/.gitconfig
 ├── htop/           → .config/htop/
-├── .hushlogin                  # suppress "Last login" on terminal start
+├── .hushlogin      # suppress "Last login" on terminal start
 ├── neofetch/       → .config/neofetch/
 ├── nix/            → .config/nix/
 ├── nvim/           → .config/nvim/
