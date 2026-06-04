@@ -24,8 +24,9 @@ dotfiles/
 ├── neofetch/        → .config/neofetch/config.conf
 ├── nix/             → .config/nix/nix.conf
 ├── nvim/            → .config/nvim/
-├── opencode/        → .config/opencode/
-├── starship/        → .config/starship/starship.toml
+├── opencode/         → .config/opencode/
+├── sketchybar/       → .config/sketchybar/
+├── starship/         → .config/starship/starship.toml
 ├── ssh/             → .ssh/config
 ├── thefuck/         → .config/thefuck/
 ├── tmux/            → .tmux.conf, .tmux.reset.conf
