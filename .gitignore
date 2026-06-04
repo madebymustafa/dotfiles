@@ -1,7 +1,7 @@
 .DS_Store
 
-# Tmux plugins managed by TPM — not part of the repo
-tmux/plugins/
+# Tmux plugins managed by TPM — git submodules, not tracked content
+tmux/.tmux/plugins/
 
 # Caches and auto-generated files
 thefuck/__pycache__/

@@ -9,39 +9,28 @@ cd ~/dotfiles
 ./setup.sh
 ```
 
-Or manually:
-
-```bash
-cd ~/dotfiles && stow .
-```
-
 ## Structure
-
-Each tool gets its own package directory. Files inside preserve their path
-relative to `$HOME`, so stow creates symlinks in the right place.
 
 ```
 dotfiles/
-├── .stowrc          # stow defaults (target=$HOME)
 ├── setup.sh         # bootstrap script
-├── aerospace/       → .config/aerospace/
+├── aerospace/       → .config/aerospace/aerospace.toml
 ├── bat/             → .config/bat/config
-├── btop/            → .config/btop/
+├── btop/            → .config/btop/btop.conf
 ├── fd/              → .config/fd/ignore
 ├── ghostty/         → .config/ghostty/
 ├── git/             → .gitconfig
 ├── htop/            → .config/htop/htoprc
-├── neofetch/        → .config/neofetch/
+├── neofetch/        → .config/neofetch/config.conf
 ├── nix/             → .config/nix/nix.conf
-├── nix-darwin/      → .config/nix-darwin/
 ├── nvim/            → .config/nvim/
-├── opencode/        → .config/opencode/tui.json
-├── starship/        → .config/starship/
+├── opencode/        → .config/opencode/
+├── starship/        → .config/starship/starship.toml
 ├── ssh/             → .ssh/config
 ├── thefuck/         → .config/thefuck/
-├── tmux/            → .config/tmux/
+├── tmux/            → .tmux.conf, .tmux.reset.conf
 ├── wezterm/         → .wezterm.lua
 ├── yazi/            → .config/yazi/
 ├── zellij/          → .config/zellij/
-└── zshrc/           → .zshrc, .p10k.zsh
+└── zsh/             → .zshrc, .p10k.zsh
 ```

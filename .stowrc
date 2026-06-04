@@ -1,1 +1,1 @@
---target=$HOME
+# Stow targets are configured in setup.sh — per-package targets

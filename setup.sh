@@ -8,10 +8,21 @@
 
 set -euo pipefail
 
-# Ensure we're in the dotfiles directory
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$DIR"
 
-echo "→ Stowing dotfiles..."
-stow .
+HOME_PKGS=(git tmux zsh wezterm ssh)
+CONFIG_PKGS=(aerospace bat btop fd ghostty htop neofetch nix nvim opencode starship thefuck yazi zellij)
+
+echo "→ Stowing home-rooted packages..."
+for pkg in "${HOME_PKGS[@]}"; do
+  stow --target="$HOME" "$pkg"
+done
+
+echo "→ Stowing config-rooted packages..."
+for pkg in "${CONFIG_PKGS[@]}"; do
+  mkdir -p "$HOME/.config/$pkg"
+  stow --target="$HOME/.config/$pkg" "$pkg"
+done
+
 echo "✓ Done"
