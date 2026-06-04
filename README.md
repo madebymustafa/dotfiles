@@ -56,7 +56,7 @@ A curated set of configuration files for macOS, bringing together a modern termi
 | **Shell** | zsh, Powerlevel10k, zsh-autosuggestions, zsh-syntax-highlighting, FZF, zoxide, thefuck, atuin, starship |
 | **Editor** | Neovim (LazyVim), bat, fd, ripgrep |
 | **Window Manager** | aerospace |
-| **Terminal** | Ghostty, wezterm, tmux, television, yazi, zellij |
+| **Terminal** | Wezterm, Ghostty, Kitty |
 | **UI** | sketchybar, neofetch |
 | **System** | git, ssh, htop, btop, nix, GNU Stow |
 | **Other** | opencode CLI |
@@ -98,7 +98,7 @@ dotfiles/
 ├── ghostty/        → .config/ghostty/
 ├── git/            → ~/.gitconfig
 ├── htop/           → .config/htop/
-├── hushlogin/      → ~/.hushlogin
+├── .hushlogin                  # suppress "Last login" on terminal start
 ├── neofetch/       → .config/neofetch/
 ├── nix/            → .config/nix/
 ├── nvim/           → .config/nvim/
@@ -115,7 +115,8 @@ dotfiles/
 └── zsh/            → ~/.zshrc, ~/.p10k.zsh
 ```
 
-Home-rooted packages (git, hushlogin, tmux, zsh, wezterm) symlink directly into `$HOME`.  
+Home-rooted packages (git, tmux, zsh, wezterm) symlink directly into `$HOME`.  
+The `.hushlogin` file lives at the repo root and is symlinked separately.  
 The `ssh` package symlinks into `~/.ssh/`.  
 Config-rooted packages symlink into `$XDG_CONFIG_HOME/<pkg>/`.
 
