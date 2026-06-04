@@ -10,8 +10,8 @@ bash install.sh
 
 ```
 dotfiles/
-├── install.sh                  # installs all tools (brew, curl, omz, plugins, tpm)
-├── setup.sh                   # symlinks dotfiles via GNU Stow
+├── install.sh      # installs all tools (brew, curl, omz, plugins, tpm)
+├── setup.sh        # symlinks dotfiles via GNU Stow
 ├── aerospace/      → .config/aerospace/
 ├── atuin/          → .config/atuin/
 ├── bat/            → .config/bat/
