@@ -11,43 +11,11 @@
     <img src="https://img.shields.io/badge/stow-v2.4-7f849c?style=flat" alt="Stow">
   </p>
   <p>
-    <a href="#features">Features</a> •
-    <a href="#packages">Packages</a> •
     <a href="#install">Install</a> •
     <a href="#structure">Structure</a> •
     <a href="#credits">Credits</a>
   </p>
 </div>
-
-A curated set of configuration files for macOS, bringing together a modern terminal experience, a tiling window manager, and a powerful Neovim setup — all bootstrapped with a single command.
-
-## ✨ Features
-
-| Tool | Description |
-|------|-------------|
-| **aerospace** | Tiling window manager for macOS, keyboard-driven |
-| **atuin** | Encrypted, synced shell history with fuzzy search |
-| **bat** | Modern `cat` replacement with syntax highlighting and Git integration |
-| **btop** | Resource monitor with CPU, memory, and process views |
-| **fd** | Fast file search — a modern alternative to `find` |
-| **ghostty** | GPU-accelerated terminal with custom keybindings and theme |
-| **git** | Version control aliases and configuration |
-| **htop** | Interactive process viewer |
-| **hushlogin** | Suppress the "Last login" message on terminal start |
-| **neofetch** | Stylish system information display |
-| **neovim** | LazyVim-based config with Copilot, DAP, Treesitter, 15+ language extras |
-| **nix** | Declarative package management and reproducible environments |
-| **opencode** | AI-powered CLI coding tool |
-| **sketchybar** | Feature-rich macOS menu bar replacement |
-| **ssh** | Secure shell configuration with hosts and options |
-| **starship** | Minimal, customizable cross-shell prompt |
-| **television** | TUI fuzzy-finder for files, git branches, processes, and more |
-| **thefuck** | Auto-correct mistyped shell commands |
-| **tmux** | Terminal multiplexer with resurrect/continuum session persistence |
-| **wezterm** | GPU-accelerated terminal emulator (default terminal) |
-| **yazi** | Terminal file manager with image previews and file operations |
-| **zellij** | Terminal multiplexer with built-in layout system |
-| **zsh** | Shell config with Powerlevel10k, autosuggestions, syntax highlighting, FZF |
 
 ## 🚀 Install
 
@@ -96,19 +64,7 @@ The `.hushlogin` file lives at the repo root and is symlinked separately.
 The `ssh` package symlinks into `~/.ssh/`.  
 Config-rooted packages symlink into `$XDG_CONFIG_HOME/<pkg>/`.
 
-## 🔧 Customization
-
-Each package directory mirrors the target layout. Edit the file in `dotfiles/<pkg>/` and the changes are reflected immediately through the stow symlink.
-
-```bash
-nvim ~/dotfiles/zsh/.zshrc      # edit zsh config
-nvim ~/dotfiles/nvim/           # edit Neovim config
-```
-
 ## 🙌 Credits
 
 Inspired by the dotfiles of the broader Linux/macOS ricing community.
 
----
-
-<sub> ⚡ Managed with GNU Stow · built for macOS </sub>
