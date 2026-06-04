@@ -1,1 +1,3 @@
-# Stow targets are configured in setup.sh — per-package targets
+# Stow targets are set per-package in setup.sh.
+# Home-rooted files (git, tmux, zsh, etc.) use $HOME.
+# Config files use $HOME/.config/<package>.
