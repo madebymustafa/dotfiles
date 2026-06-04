@@ -1,5 +1,5 @@
 ---
-model: "anthropic/claude-sonnet-4-6"
+model: "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
 description: >-
   Use this agent when you need a senior AI developer to orchestrate complex
   development workflows, break down ambiguous user requests into actionable
