@@ -123,6 +123,8 @@ function y() {
 #  ALIASES
 # =============================================================================
 
+# Use `trash` (https://github.com/sindresorhus/trash-cli) instead of permanent delete
+alias rm=trash
 alias reload-zsh="source ~/.zshrc"
 alias   edit-zsh="nvim   ~/.zshrc"
 
@@ -168,3 +170,6 @@ eval "$(atuin init zsh)"
 # Fuzzy-finder (TUI) for files, git branches, processes, and more.
 # Config at ~/.config/television/config.toml
 alias tv="television"
+
+# Following line was automatically added by arttime installer
+export MANPATH=/Users/mustafa/.local/share/man:$MANPATH
