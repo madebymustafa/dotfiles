@@ -12,7 +12,7 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$DIR"
 
 HOME_PKGS=(git tmux zsh wezterm)
-CONFIG_PKGS=(aerospace atuin bat btop fd ghostty htop neofetch nix nvim opencode sketchybar starship television thefuck yazi zellij)
+CONFIG_PKGS=(aerospace atuin bat btop fd gh-dash ghostty htop neofetch nix nvim opencode sketchybar starship television thefuck yazi zellij)
 
 echo "→ Stowing home-rooted packages..."
 for pkg in "${HOME_PKGS[@]}"; do

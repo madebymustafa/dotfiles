@@ -57,6 +57,11 @@ clone_or_pull https://github.com/zdharma-continuum/fast-syntax-highlighting "$ZS
 echo "→ Setting up tmux plugin manager..."
 clone_or_pull https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 
+# ─── gh-dash ──────────────────────────────────────────────────────────────────
+
+echo "→ Installing gh-dash..."
+gh extension install dlvhdr/gh-dash 2>/dev/null || gh extension upgrade gh-dash
+
 # ─── Symlink dotfiles via setup.sh ─────────────────────────────────────────────
 
 echo "→ Running setup.sh to symlink dotfiles..."
