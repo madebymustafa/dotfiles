@@ -1,46 +1,69 @@
+# ─── Pull Request Sections ─────────────────────────────────────────────────────
 prSections:
   - title: My Pull Requests
     filters: is:open
+
   - title: Needs My Review
     filters: is:open review-requested:@me
+
   - title: Involved
     filters: is:open involves:@me -author:@me
+
+# ─── Issue Sections ────────────────────────────────────────────────────────────
 issuesSections:
   - title: My Issues
     filters: is:open author:@me
+
   - title: Assigned
     filters: is:open assignee:@me
+
   - title: Involved
     filters: is:open involves:@me -author:@me
+
+# ─── Notification Sections ─────────────────────────────────────────────────────
 notificationsSections:
   - title: All
     filters: ""
+
   - title: Created
     filters: reason:author
+
   - title: Participating
     filters: reason:participating
+
   - title: Mentioned
     filters: reason:mention
+
   - title: Review Requested
     filters: reason:review-requested
+
   - title: Assigned
     filters: reason:assign
+
   - title: Subscribed
     filters: reason:subscribed
+
   - title: Team Mentioned
     filters: reason:team-mention
+
+# ─── Repo Refresh Intervals ────────────────────────────────────────────────────
 repo:
   branchesRefetchIntervalSeconds: 30
   prsRefetchIntervalSeconds: 60
+
+# ─── Defaults ──────────────────────────────────────────────────────────────────
 defaults:
   preview:
     open: false
     width: 70
+
   prsLimit: 20
   prApproveComment: LGTM
   issuesLimit: 20
   notificationsLimit: 20
   view: prs
+
+  # ── Column Layout ──────────────────────────────────────────────────────────
   layout:
     prs:
       updatedAt:
@@ -61,6 +84,7 @@ defaults:
         hidden: true
       lines:
         width: 15
+
     issues:
       updatedAt:
         width: 5
@@ -75,41 +99,54 @@ defaults:
       assignees:
         width: 20
         hidden: true
+
   refetchIntervalMinutes: 30
+
+# ─── Custom Keybindings ────────────────────────────────────────────────────────
 keybindings:
   universal:
     - key: g
       name: lazygit
       command: >
         cd {{.RepoPath}}; lazygit
+
   prs:
     - key: C
       name: code review
       command: >
-        tmux new-window -n "PR-{{.PrNumber}}" 
+        tmux new-window -n "PR-{{.PrNumber}}"
         'wt switch pr:{{.PrNumber}} -x "opencode --prompt `@code-reviewer: review-pr-for-this-branch`"'
+
+# ─── Theme ─────────────────────────────────────────────────────────────────────
 theme:
   colors:
     text:
-      primary: "#F7F1FF"
+      primary:   "#F7F1FF"
       secondary: "#5AD4E6"
-      inverted: "#F7F1FF"
-      faint: "#3E4057"
-      warning: "#FC618D"
-      success: "#7BD88F"
+      inverted:  "#F7F1FF"
+      faint:     "#3E4057"
+      warning:   "#FC618D"
+      success:   "#7BD88F"
+
     background:
       selected: "#535155"
+
     border:
-      primary: "#948AE3"
+      primary:   "#948AE3"
       secondary: "#7BD88F"
-      faint: "#3E4057"
+      faint:     "#3E4057"
+
   ui:
     sectionsShowCount: true
     table:
       showSeparator: true
       compact: true
+
+# ─── Pager ─────────────────────────────────────────────────────────────────────
 pager:
   diff: "diffnav"
+
+# ─── Misc ──────────────────────────────────────────────────────────────────────
 confirmQuit: false
 showAuthorIcons: true
 smartFilteringAtLaunch: true
