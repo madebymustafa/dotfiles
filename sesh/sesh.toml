@@ -1,5 +1,17 @@
 #:schema https://github.com/joshmedeski/sesh/raw/main/sesh.schema.json
 
+blacklist = ["scratch"]
+cache = true
+
+[default_session]
+startup_command = "nvim -c ':Telescope find_files'"
+preview_command = "eza --all --git --icons --color=always {}"
+
+[tui]
+prompt = "> "
+placeholder = "Filter sessions... "
+show_icons = true
+
 [[session]]
 name = "home"
 path = "~"
