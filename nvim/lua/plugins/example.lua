@@ -118,6 +118,7 @@ return {
   -- add more treesitter parsers
   {
     "nvim-treesitter/nvim-treesitter",
+    build = nil,
     opts = {
       ensure_installed = {
         "bash",
