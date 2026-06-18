@@ -9,7 +9,7 @@ local config = wezterm.config_builder()
 
 config.check_for_updates = true
 config.check_for_updates_interval_seconds = 86400
-config.show_update_window = false
+config.show_update_window = true
 
 -- ─── Appearance ─────────────────────────────────────────────────────────────
 
