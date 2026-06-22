@@ -193,3 +193,7 @@ bindkey -M viins '\es' sesh-sessions
 
 # Following line was automatically added by arttime installer
 export MANPATH=/Users/mustafa/.local/share/man:$MANPATH
+
+# Qwen Code PATH block begin
+export PATH='/Users/mustafa/.local/bin':$PATH
+# Qwen Code PATH block end
