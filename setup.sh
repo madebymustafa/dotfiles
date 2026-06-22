@@ -32,4 +32,8 @@ echo "→ Stowing ssh..."
 mkdir -p "$HOME/.ssh"
 stow --target="$HOME/.ssh" ssh
 
+echo "→ Stowing vscode..."
+mkdir -p "$HOME/Library/Application Support/Code/User"
+stow --target="$HOME/Library/Application Support/Code/User" vscode
+
 echo "✓ Done"
