@@ -197,3 +197,5 @@ export MANPATH=/Users/mustafa/.local/share/man:$MANPATH
 # Qwen Code PATH block begin
 export PATH='/Users/mustafa/.local/bin':$PATH
 # Qwen Code PATH block end
+
+alias opencode="opencode2"
