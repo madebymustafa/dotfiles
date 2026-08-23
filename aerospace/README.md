@@ -68,9 +68,6 @@ Enter Service mode with  Alt + Shift + ;
     F ............. toggle floating
     Backspace ..... close all windows except current
 
-Enter Apps mode with     Alt + Shift + Enter
-    W ............. open WezTerm
-
 ## Mouse Behavior
 
 The mouse never moves on its own. Focus changes, workspace switches and
