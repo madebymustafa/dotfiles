@@ -60,7 +60,7 @@ it does and what's worth knowing before editing it.
 
 Window management is handled by [AeroSpace](https://github.com/nikitabobko/AeroSpace)
 with the skhd daemon providing the Hyper+Esc pause toggle. Every keybinding is
-documented in [`aerospace/CHEATSHEET.md`](aerospace/CHEATSHEET.md).
+documented in [`aerospace/README.md`](aerospace/README.md).
 
 ## 🙌 Credits
 

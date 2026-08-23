@@ -1,11 +1,89 @@
 # AeroSpace
 
-i3-style tiling window manager. Main config is `aerospace.toml`.
+i3-style tiling window manager for macOS. Config lives here as `aerospace.toml`
+(symlinked to `~/.config/aerospace/aerospace.toml`).
 
-- Workspaces `1-9` plus mnemonic letters (B browser, C code, D design,
-  E email, F finder, M music, S slack, T terminal, V video)
-- Apps auto-route to their workspace on launch via `on-window-detected`
-- Uniform 10px gaps, starts at login, mouse never moves automatically
-- Hyper + Esc pauses/resumes the whole manager (handled by `../skhd`)
+Hyper = Caps Lock (Raycast Hyper Key) = Cmd+Ctrl+Opt+Shift held together.
+Every "Hyper + ..." combo below can be pressed either way.
 
-Every keybinding is documented in [CHEATSHEET.md](CHEATSHEET.md).
+## Focus & Movement
+
+- Alt + H / J / K / L ............ focus left / down / up / right
+- Alt + Shift + H / J / K / L .... move window left / down / up / right
+- Alt + Shift + Arrow ............ join window with neighbor in that direction
+- Alt + Tab ...................... jump back to previous workspace
+- Alt + Shift + Tab .............. move whole workspace to next monitor
+
+## Layouts & Resizing
+
+- Alt + / ........................ cycle tiling layouts
+- Alt + , ........................ cycle accordion layouts
+- Alt + Shift + - or = ........... shrink / grow window (smart)
+- Alt + Shift + Space ............ toggle floating <-> tiling (detach window)
+- Alt + Shift + F ................ fullscreen (AeroSpace-safe, stays tiled)
+- Hyper + Esc .................... pause/resume AeroSpace entirely
+                                   (works both directions - handled by ../skhd;
+                                   while paused Raycast & mouse rule everything)
+
+## Workspaces
+
+- Alt + number/letter ............ switch to workspace
+- Hyper + number/letter .......... send focused window to workspace
+
+### The Map
+
+  1-9  generic scratch spaces
+  B    Browser      (Arc, Zen)
+  C    Code         (VS Code, Cursor)
+  D    Design       (Figma)
+  E    Email        (Spark, Apple Mail)
+  F    Finder
+  M    Music
+  S    Slack
+  T    Terminal     (WezTerm)
+  V    Video editing (free slot)
+
+Examples:
+  Alt + T ........ go to terminal
+  Hyper + C ...... throw this window to Code
+
+## Modes
+
+Modes are "sub-keyboards": enter once, keys behave differently, leave with Esc.
+
+Enter Resize mode with   Hyper + R
+    H / L ......... narrower / wider
+    J / K ......... taller / shorter
+    B ............. balance sizes
+    - / = ......... smart shrink / grow
+    Esc or Enter .. exit
+
+Enter Service mode with  Alt + Shift + ;
+    Esc ........... reload config (+ exit)
+    R ............. reset layout
+    F ............. toggle floating
+    Backspace ..... close all windows except current
+
+Enter Apps mode with     Alt + Shift + Enter
+    W ............. open WezTerm
+
+## App Launchers (Cmd + Opt + key)
+
+  W ... WezTerm          Z ... Zen            S ... Slack
+  M ... Music            F ... Finder         Q ... QuickTime Player
+
+## Mouse Behavior
+
+The mouse never moves on its own. Focus changes, workspace switches and
+monitor switches leave the cursor exactly where you left it.
+
+## Good to Know
+
+- NEVER use macOS native fullscreen (green button / Ctrl+Cmd+F). It stacks a
+  Space on top of the tiling and causes overlapping windows.
+  Use Alt + Shift + F instead.
+- New windows auto-fly to their letter's workspace via `on-window-detected`.
+  Unrouted apps open wherever you currently are.
+- Workspaces 1-9 B C D E F M S T V always stay alive, even when empty.
+- The pause key is powered by the skhd daemon (`../skhd/`), which listens
+  even while AeroSpace itself is paused - that's what makes it a true toggle.
