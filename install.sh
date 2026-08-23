@@ -23,7 +23,7 @@ fi
 echo "→ Installing brew packages..."
 brew install \
   zsh tmux neovim git bat fd ripgrep fzf thefuck htop btop \
-  neofetch starship zellij yazi television atuin zoxide
+  neofetch starship zellij yazi television atuin zoxide skhd
 
 echo "→ Installing casks and fonts..."
 brew install --cask wezterm ghostty font-jetbrains-mono-nerd-font
@@ -66,6 +66,13 @@ gh extension install dlvhdr/gh-dash 2>/dev/null || gh extension upgrade gh-dash
 
 echo "→ Running setup.sh to symlink dotfiles..."
 bash setup.sh
+
+# ─── skhd hotkey daemon ───────────────────────────────────────────────────────
+
+echo "→ Starting skhd service (AeroSpace Hyper+Esc pause toggle)..."
+/opt/homebrew/bin/skhd --start-service
+echo "  Note: approve skhd under System Settings → Privacy & Security →"
+echo "  Accessibility and Input Monitoring when prompted."
 
 # ─── Done ─────────────────────────────────────────────────────────────────────
 
