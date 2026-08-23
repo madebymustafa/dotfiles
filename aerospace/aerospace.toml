@@ -81,9 +81,11 @@ alt-shift-equal = 'resize smart +50'
 # Toggle floating <-> tiling (detach window from grid) — classic i3 binding
 alt-shift-space = 'layout floating tiling'
 
-# Fullscreen (real keys only - Hyper-chord synthesis from Raycast can split,
-# and an F-chord remnant used to trigger the Finder workspace jump)
-ctrl-alt-f = 'fullscreen'
+# Fullscreen — deliberately bound to Cmd+Ctrl+F (Apple's native-fullscreen
+# shortcut) so old muscle memory triggers the SAFE tiling fullscreen instead
+# of the Space-stacking native one. Never use Hyper+F for this: Raycast's
+# synthesized quad-chord can split mid-delivery and land as Alt+F.
+ctrl-cmd-f = 'fullscreen'
 
 # Resize mode (relocated twice: was Hyper+R, briefly Alt+Shift+R - both lost
 # to workspace letters/sends; Ctrl+Alt keeps it clear of everything)
