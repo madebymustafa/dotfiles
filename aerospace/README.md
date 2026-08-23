@@ -34,7 +34,7 @@ Every "Hyper + ..." combo below can be pressed either way.
 
   1-9  generic scratch spaces
   B    Browser      (Arc, Zen)
-  C    Code         (VS Code, Cursor)
+  C    Code         (VS Code, Cursor, Codex)
   D    Design       (Figma)
   E    Email        (Spark, Apple Mail)
   F    Finder
