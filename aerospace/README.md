@@ -20,8 +20,7 @@ Every "Hyper + ..." combo below can be pressed either way.
 - Alt + , ........................ cycle accordion layouts
 - Alt + Shift + - or = ........... shrink / grow window (smart)
 - Alt + Shift + Space ............ toggle floating <-> tiling (detach window)
-- Alt + Shift + F ................ send window to Finder
-- Hyper + F ...................... fullscreen (AeroSpace-safe, stays tiled)
+- Ctrl + Alt + F ................. fullscreen (AeroSpace-safe, stays tiled)
 - Hyper + Esc .................... pause/resume AeroSpace entirely
                                    (works both directions - handled by ../skhd;
                                    while paused Raycast & mouse rule everything)
