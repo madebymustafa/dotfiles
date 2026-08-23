@@ -20,7 +20,8 @@ Every "Hyper + ..." combo below can be pressed either way.
 - Alt + , ........................ cycle accordion layouts
 - Alt + Shift + - or = ........... shrink / grow window (smart)
 - Alt + Shift + Space ............ toggle floating <-> tiling (detach window)
-- Alt + Shift + F ................ fullscreen (AeroSpace-safe, stays tiled)
+- Alt + Shift + F ................ send window to Finder
+- Hyper + F ...................... fullscreen (AeroSpace-safe, stays tiled)
 - Hyper + Esc .................... pause/resume AeroSpace entirely
                                    (works both directions - handled by ../skhd;
                                    while paused Raycast & mouse rule everything)
@@ -28,7 +29,7 @@ Every "Hyper + ..." combo below can be pressed either way.
 ## Workspaces
 
 - Alt + number/letter ............ switch to workspace
-- Hyper + number/letter .......... send focused window to workspace
+- Alt + Shift + number/letter .... send focused window to workspace
 
 ### The Map
 
@@ -48,13 +49,13 @@ Every "Hyper + ..." combo below can be pressed either way.
 
 Examples:
   Alt + T ........ go to terminal
-  Hyper + C ...... throw this window to Code
+  Alt + Shift + C  throw this window to Code
 
 ## Modes
 
 Modes are "sub-keyboards": enter once, keys behave differently, leave with Esc.
 
-Enter Resize mode with   Alt + Shift + R
+Enter Resize mode with   Ctrl + Alt + R
     H / L ......... narrower / wider
     J / K ......... taller / shorter
     B ............. balance sizes

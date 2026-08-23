@@ -81,11 +81,12 @@ alt-shift-equal = 'resize smart +50'
 # Toggle floating <-> tiling (detach window from grid) — classic i3 binding
 alt-shift-space = 'layout floating tiling'
 
-# Fullscreen
-alt-shift-f = 'fullscreen'
+# Fullscreen (heavy chord for a heavy action; frees Alt+Shift+F for Finder sends)
+cmd-ctrl-alt-shift-f = 'fullscreen'
 
-# Resize mode (moved off Hyper+R so R could become the Lightroom workspace)
-alt-shift-r = 'mode resize'
+# Resize mode (relocated twice: was Hyper+R, briefly Alt+Shift+R - both lost
+# to workspace letters/sends; Ctrl+Alt keeps it clear of everything)
+ctrl-alt-r = 'mode resize'
 
 # Switch workspaces: numbers
 alt-1 = 'workspace 1'
@@ -112,28 +113,28 @@ alt-s = 'workspace S' # Slack
 alt-t = 'workspace T' # Terminal (WezTerm)
 alt-v = 'workspace V' # Video editing
 
-# Move window to workspace
-cmd-ctrl-alt-shift-1 = 'move-node-to-workspace 1'
-cmd-ctrl-alt-shift-2 = 'move-node-to-workspace 2'
-cmd-ctrl-alt-shift-3 = 'move-node-to-workspace 3'
-cmd-ctrl-alt-shift-4 = 'move-node-to-workspace 4'
-cmd-ctrl-alt-shift-5 = 'move-node-to-workspace 5'
-cmd-ctrl-alt-shift-6 = 'move-node-to-workspace 6'
-cmd-ctrl-alt-shift-7 = 'move-node-to-workspace 7'
-cmd-ctrl-alt-shift-8 = 'move-node-to-workspace 8'
-cmd-ctrl-alt-shift-9 = 'move-node-to-workspace 9'
-cmd-ctrl-alt-shift-b = 'move-node-to-workspace B'
-cmd-ctrl-alt-shift-c = 'move-node-to-workspace C'
-cmd-ctrl-alt-shift-d = 'move-node-to-workspace D'
-cmd-ctrl-alt-shift-e = 'move-node-to-workspace E'
-cmd-ctrl-alt-shift-f = 'move-node-to-workspace F'
-cmd-ctrl-alt-shift-m = 'move-node-to-workspace M'
-cmd-ctrl-alt-shift-n = 'move-node-to-workspace N'
-cmd-ctrl-alt-shift-p = 'move-node-to-workspace P'
-cmd-ctrl-alt-shift-r = 'move-node-to-workspace R'
-cmd-ctrl-alt-shift-s = 'move-node-to-workspace S'
-cmd-ctrl-alt-shift-t = 'move-node-to-workspace T'
-cmd-ctrl-alt-shift-v = 'move-node-to-workspace V'
+# Move window to workspace (Alt+Shift = send, matching Alt = switch)
+alt-shift-1 = 'move-node-to-workspace 1'
+alt-shift-2 = 'move-node-to-workspace 2'
+alt-shift-3 = 'move-node-to-workspace 3'
+alt-shift-4 = 'move-node-to-workspace 4'
+alt-shift-5 = 'move-node-to-workspace 5'
+alt-shift-6 = 'move-node-to-workspace 6'
+alt-shift-7 = 'move-node-to-workspace 7'
+alt-shift-8 = 'move-node-to-workspace 8'
+alt-shift-9 = 'move-node-to-workspace 9'
+alt-shift-b = 'move-node-to-workspace B'
+alt-shift-c = 'move-node-to-workspace C'
+alt-shift-d = 'move-node-to-workspace D'
+alt-shift-e = 'move-node-to-workspace E'
+alt-shift-f = 'move-node-to-workspace F'
+alt-shift-m = 'move-node-to-workspace M'
+alt-shift-n = 'move-node-to-workspace N'
+alt-shift-p = 'move-node-to-workspace P'
+alt-shift-r = 'move-node-to-workspace R'
+alt-shift-s = 'move-node-to-workspace S'
+alt-shift-t = 'move-node-to-workspace T'
+alt-shift-v = 'move-node-to-workspace V'
 
 # Jump back to previous workspace
 alt-tab = 'workspace-back-and-forth'
