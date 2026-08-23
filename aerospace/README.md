@@ -39,6 +39,7 @@ Every "Hyper + ..." combo below can be pressed either way.
   E    Email        (Spark, Apple Mail)
   F    Finder
   M    Music
+  N    Notes        (Apple Notes, Notion)
   S    Slack
   T    Terminal     (WezTerm)
   V    Video editing (free slot)
