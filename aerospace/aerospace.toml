@@ -147,14 +147,6 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 alt-shift-semicolon = 'mode service'
 alt-shift-enter = 'mode apps'
 
-# App launcher
-cmd-alt-w = 'exec-and-forget open -a /Applications/WezTerm.app'
-cmd-alt-z = 'exec-and-forget open -a /Applications/Zen.app'
-cmd-alt-s = 'exec-and-forget open -a /Applications/Slack.app'
-cmd-alt-m = 'exec-and-forget open -a /System/Applications/Music.app'
-cmd-alt-q = 'exec-and-forget open -a "/System/Applications/QuickTime Player.app"'
-cmd-alt-f = 'exec-and-forget open -a /System/Library/CoreServices/Finder.app'
-
 # Resize mode: arrow-style resizing with vim keys
 [mode.resize.binding]
 h = 'resize width -50'

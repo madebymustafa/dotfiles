@@ -71,11 +71,6 @@ Enter Service mode with  Alt + Shift + ;
 Enter Apps mode with     Alt + Shift + Enter
     W ............. open WezTerm
 
-## App Launchers (Cmd + Opt + key)
-
-  W ... WezTerm          Z ... Zen            S ... Slack
-  M ... Music            F ... Finder         Q ... QuickTime Player
-
 ## Mouse Behavior
 
 The mouse never moves on its own. Focus changes, workspace switches and
