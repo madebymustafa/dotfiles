@@ -25,7 +25,7 @@ dotfiles/
 ├── git/            → ~/.gitconfig
 ├── htop/           → .config/htop/
 ├── .hushlogin      # suppress "Last login" on terminal start
-├── neofetch/       → .config/neofetch/
+├── fastfetch/      → .config/fastfetch/
 ├── nix/            → .config/nix/
 ├── nvim/           → .config/nvim/
 ├── opencode/       → .config/opencode/

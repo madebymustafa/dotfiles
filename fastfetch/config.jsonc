@@ -1,0 +1,27 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "//": "Migrated from the old neofetch config: same module order, labels and song format.",
+  "modules": [
+    "title",
+    { "type": "custom", "format": "------------------------" },
+    { "type": "user", "key": "User" },
+    { "type": "os", "key": "OS", "format": "{name} {version} {arch}" },
+    { "type": "host", "key": "Host" },
+    { "type": "cpu", "key": "CPU" },
+    { "type": "kernel", "key": "Kernel" },
+    { "type": "uptime", "key": "Uptime" },
+    { "type": "packages", "key": "Packages" },
+    { "type": "shell", "key": "Shell" },
+    { "type": "display", "key": "Resolution" },
+    { "type": "icons", "key": "Icons" },
+    { "type": "terminal", "key": "Terminal" },
+    { "type": "terminalfont", "key": "Terminal Font" },
+    { "type": "memory", "key": "Memory" },
+    { "type": "battery", "key": "Battery" },
+    { "type": "font", "key": "Font" },
+    { "type": "media", "key": "Song", "format": "{artist} - {album} - {title}" },
+    { "type": "player", "key": "Music Player" },
+    "break",
+    { "type": "colors", "blockWidth": 3 }
+  ]
+}
