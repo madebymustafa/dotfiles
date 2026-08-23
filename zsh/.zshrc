@@ -97,7 +97,7 @@ export EDITOR="nvim"
 # ─── PATH ───────────────────────────────────────────────────────────────────
 
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="/opt/homebrew/sbin:$PATH"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 export PATH="$PATH:/Users/mustafa/.lmstudio/bin"
 
 

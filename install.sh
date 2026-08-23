@@ -23,11 +23,11 @@ fi
 echo "→ Installing brew packages..."
 brew install \
   zsh tmux neovim git bat fd ripgrep fzf thefuck htop btop \
-  neofetch starship zellij yazi television atuin zoxide skhd eza gh
+  fastfetch starship zellij yazi television atuin zoxide skhd eza gh
 
 echo "→ Installing casks and fonts..."
 brew tap nikitabobko/tap
-brew tap koekeishiya/formulae
+brew tap asmvik/formulae
 brew install --cask wezterm ghostty font-jetbrains-mono-nerd-font aerospace
 
 # ─── opencode ─────────────────────────────────────────────────────────────────

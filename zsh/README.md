@@ -4,7 +4,7 @@ Shell config. `.zshrc` + Powerlevel10k prompt (`.p10k.zsh`).
 
 - Oh My Zsh with autosuggestions, syntax-highlighting and
   fast-syntax-highlighting plugins
-- PATH blocks for ~/.local/bin, LM Studio, bun and Homebrew sbin
+- PATH blocks for ~/.local/bin, LM Studio, bun and Homebrew bin/sbin
 - thefuck alias, secrets sourced from untracked `~/.env`
 
 ## Aliases worth knowing
