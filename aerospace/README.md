@@ -55,7 +55,7 @@ Examples:
 
 Modes are "sub-keyboards": enter once, keys behave differently, leave with Esc.
 
-Enter Resize mode with   Ctrl + Alt + R
+Enter Resize mode with   Cmd + Ctrl + R
     H / L ......... narrower / wider
     J / K ......... taller / shorter
     B ............. balance sizes

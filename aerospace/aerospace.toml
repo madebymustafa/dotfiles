@@ -87,9 +87,9 @@ alt-shift-space = 'layout floating tiling'
 # synthesized quad-chord can split mid-delivery and land as Alt+F.
 ctrl-cmd-f = 'fullscreen'
 
-# Resize mode (relocated twice: was Hyper+R, briefly Alt+Shift+R - both lost
-# to workspace letters/sends; Ctrl+Alt keeps it clear of everything)
-ctrl-alt-r = 'mode resize'
+# Resize mode — same Cmd+Ctrl family as fullscreen; only the letter changes
+# (R resize / F fullscreen)
+ctrl-cmd-r = 'mode resize'
 
 # Switch workspaces: numbers
 alt-1 = 'workspace 1'
