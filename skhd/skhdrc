@@ -1,0 +1,4 @@
+# Pause/resume AeroSpace window management.
+# skhd owns this chord because AeroSpace cannot hear its own bindings
+# while disabled - an independent daemon makes Hyper+Esc a true toggle.
+cmd + ctrl + alt + shift - escape : /opt/homebrew/bin/aerospace enable toggle

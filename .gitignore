@@ -5,6 +5,7 @@ tmux/.tmux/plugins/
 
 # Caches and auto-generated files
 thefuck/__pycache__/
+sketchybar/helper/helper
 
 # Node modules (opencode config has its own)
 opencode/node_modules/
