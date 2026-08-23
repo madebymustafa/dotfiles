@@ -26,7 +26,9 @@ brew install \
   neofetch starship zellij yazi television atuin zoxide skhd
 
 echo "→ Installing casks and fonts..."
-brew install --cask wezterm ghostty font-jetbrains-mono-nerd-font
+brew tap nikitabobko/tap
+brew tap koekeishiya/formulae
+brew install --cask wezterm ghostty font-jetbrains-mono-nerd-font aerospace
 
 # ─── opencode ─────────────────────────────────────────────────────────────────
 
