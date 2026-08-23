@@ -5,7 +5,7 @@
 config-version = 2
 
 # Workspaces that stay alive even when empty (v1 inferred these from keybindings)
-persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "B", "C", "D", "E", "F", "M", "N", "S", "T", "V"]
+persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "B", "C", "D", "E", "F", "M", "N", "P", "R", "S", "T", "V"]
 
 after-login-command = []
 after-startup-command = []
@@ -84,6 +84,9 @@ alt-shift-space = 'layout floating tiling'
 # Fullscreen
 alt-shift-f = 'fullscreen'
 
+# Resize mode (moved off Hyper+R so R could become the Lightroom workspace)
+alt-shift-r = 'mode resize'
+
 # Switch workspaces: numbers
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
@@ -103,6 +106,8 @@ alt-e = 'workspace E' # Email (Spark, Mail)
 alt-f = 'workspace F' # Finder
 alt-m = 'workspace M' # Music
 alt-n = 'workspace N' # Notes (Apple Notes, Notion)
+alt-p = 'workspace P' # Photoshop
+alt-r = 'workspace R' # Lightroom Classic
 alt-s = 'workspace S' # Slack
 alt-t = 'workspace T' # Terminal (WezTerm)
 alt-v = 'workspace V' # Video editing
@@ -124,6 +129,8 @@ cmd-ctrl-alt-shift-e = 'move-node-to-workspace E'
 cmd-ctrl-alt-shift-f = 'move-node-to-workspace F'
 cmd-ctrl-alt-shift-m = 'move-node-to-workspace M'
 cmd-ctrl-alt-shift-n = 'move-node-to-workspace N'
+cmd-ctrl-alt-shift-p = 'move-node-to-workspace P'
+cmd-ctrl-alt-shift-r = 'move-node-to-workspace R'
 cmd-ctrl-alt-shift-s = 'move-node-to-workspace S'
 cmd-ctrl-alt-shift-t = 'move-node-to-workspace T'
 cmd-ctrl-alt-shift-v = 'move-node-to-workspace V'
@@ -135,7 +142,6 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 # Binding modes
 alt-shift-semicolon = 'mode service'
 alt-shift-enter = 'mode apps'
-cmd-ctrl-alt-shift-r = 'mode resize'
 
 # App launcher
 cmd-alt-w = 'exec-and-forget open -a /Applications/WezTerm.app'
@@ -214,6 +220,15 @@ run = 'move-node-to-workspace N'
 [[on-window-detected]]
 if.app-id = 'notion.id'
 run = 'move-node-to-workspace N'
+
+# Photo editing
+[[on-window-detected]]
+if.app-id = 'com.adobe.Photoshop'
+run = 'move-node-to-workspace P'
+
+[[on-window-detected]]
+if.app-id = 'com.adobe.LightroomClassicCC7'
+run = 'move-node-to-workspace R'
 
 [[on-window-detected]]
 if.app-id = 'com.readdle.SparkDesktop'

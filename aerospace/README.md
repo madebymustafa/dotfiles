@@ -40,6 +40,8 @@ Every "Hyper + ..." combo below can be pressed either way.
   F    Finder
   M    Music
   N    Notes        (Apple Notes, Notion)
+  P    Photoshop    (Adobe Photoshop)
+  R    Lightroom    (Lightroom Classic)
   S    Slack
   T    Terminal     (WezTerm)
   V    Video editing (free slot)
@@ -52,7 +54,7 @@ Examples:
 
 Modes are "sub-keyboards": enter once, keys behave differently, leave with Esc.
 
-Enter Resize mode with   Hyper + R
+Enter Resize mode with   Alt + Shift + R
     H / L ......... narrower / wider
     J / K ......... taller / shorter
     B ............. balance sizes
