@@ -98,7 +98,7 @@ export EDITOR="nvim"
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:/Users/mustafa/.lmstudio/bin"
-export PATH="/Users/mustafa/.opencode/bin:$PATH"
+
 
 # ─── Secrets (sourced from ~/.env, kept out of the dotfiles repo) ───────────
 [ -f "$HOME/.env" ] && source "$HOME/.env"
@@ -198,4 +198,9 @@ export MANPATH=/Users/mustafa/.local/share/man:$MANPATH
 export PATH='/Users/mustafa/.local/bin':$PATH
 # Qwen Code PATH block end
 
-alias opencode="opencode2"
+# bun completions
+[ -s "/Users/mustafa/.bun/_bun" ] && source "/Users/mustafa/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
