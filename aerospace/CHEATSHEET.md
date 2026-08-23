@@ -71,8 +71,8 @@ Enter Apps mode with     Alt + Shift + Enter
 
 ## Mouse Behavior
 
-Mouse follows focus: whenever focus changes, the cursor moves to the center
-of the newly focused window / monitor. No hunting for the pointer.
+The mouse never moves on its own. Focus changes, workspace switches and
+monitor switches leave the cursor exactly where you left it.
 
 ## Inside the Terminal (Neovim + tmux)
 

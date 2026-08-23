@@ -26,9 +26,11 @@ default-root-container-orientation = 'auto'
 
 key-mapping.preset = 'qwerty'
 
-# Mouse follows focus
-on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
-on-focus-changed = 'move-mouse window-lazy-center'
+# Keep the mouse exactly where the user leaves it.
+# Explicit empties are required here: omitting the keys would fall back to
+# the default config, which re-enables monitor-centering on focus changes.
+on-focused-monitor-changed = []
+on-focus-changed = []
 
 automatically-unhide-macos-hidden-apps = false
 

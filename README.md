@@ -47,7 +47,8 @@ dotfiles/
 Each directory is a [GNU Stow](https://www.gnu.org/software/stow/) package
 containing only the files that belong in its target location. `setup.sh`
 symlinks them into place — your config lives in `~/dotfiles`, your system
-just sees symlinks.
+just sees symlinks. Every package folder has its own README explaining what
+it does and what's worth knowing before editing it.
 
 **How it maps:**
 - **Home packages** (`git`, `tmux`, `zsh`, `wezterm`) → symlinked into `$HOME` directly (e.g. `git/.gitconfig` → `~/.gitconfig`).
