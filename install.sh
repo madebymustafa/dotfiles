@@ -23,7 +23,7 @@ fi
 echo "→ Installing brew packages..."
 brew install \
   zsh tmux neovim git bat fd ripgrep fzf thefuck htop btop \
-  neofetch starship zellij yazi television atuin zoxide skhd
+  neofetch starship zellij yazi television atuin zoxide skhd eza gh
 
 echo "→ Installing casks and fonts..."
 brew tap nikitabobko/tap
@@ -69,14 +69,34 @@ gh extension install dlvhdr/gh-dash 2>/dev/null || gh extension upgrade gh-dash
 echo "→ Running setup.sh to symlink dotfiles..."
 bash setup.sh
 
-# ─── skhd hotkey daemon ───────────────────────────────────────────────────────
+# ─── Tmux plugins ─────────────────────────────────────────────────────────────
+
+echo "→ Installing tmux plugins..."
+tmux start-server 2>/dev/null || true
+tmux source-file "$HOME/.tmux.conf" 2>/dev/null || true
+"$HOME/.tmux/plugins/tpm/bin/install_plugins.sh" >/dev/null 2>&1 || true
+tmux kill-server 2>/dev/null || true
+
+# ─── Neovim plugins ───────────────────────────────────────────────────────────
+
+echo "→ Syncing neovim plugins (first run downloads a lot)..."
+nvim --headless "+Lazy! sync" +qa >/dev/null 2>&1 || true
+
+# ─── Services & apps ──────────────────────────────────────────────────────────
 
 echo "→ Starting skhd service (AeroSpace Hyper+Esc pause toggle)..."
 /opt/homebrew/bin/skhd --start-service
-echo "  Note: approve skhd under System Settings → Privacy & Security →"
-echo "  Accessibility and Input Monitoring when prompted."
+
+echo "→ Launching AeroSpace..."
+open -a AeroSpace 2>/dev/null || true
 
 # ─── Done ─────────────────────────────────────────────────────────────────────
 
 echo ""
-echo "✓ New machine ready!"
+echo "✓ Machine configured. Finish by hand:"
+echo "  1. System Settings → Privacy & Security → Accessibility:"
+echo "     enable AeroSpace and skhd"
+echo "  2. Same pane → Input Monitoring: enable skhd"
+echo "  3. Restore secrets to ~/.env (sourced by zsh, never committed)"
+echo "  4. SSH: restore or generate a key (ssh-keygen -t ed25519) and add it"
+echo "     to GitHub"
