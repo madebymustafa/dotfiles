@@ -78,16 +78,16 @@ alt-shift-right = 'join-with right'
 alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
 
-# Toggle floating <-> tiling (detach window from grid) — classic i3 binding
+# Toggle floating <-> tiling (detach window from grid), classic i3 binding
 alt-shift-space = 'layout floating tiling'
 
-# Fullscreen — deliberately bound to Cmd+Ctrl+F (Apple's native-fullscreen
+# Fullscreen, deliberately bound to Cmd+Ctrl+F (Apple's native-fullscreen
 # shortcut) so old muscle memory triggers the SAFE tiling fullscreen instead
 # of the Space-stacking native one. Never use Hyper+F for this: Raycast's
 # synthesized quad-chord can split mid-delivery and land as Alt+F.
 ctrl-cmd-f = 'fullscreen'
 
-# Resize mode — same Cmd+Ctrl family as fullscreen; only the letter changes
+# Resize mode: same Cmd+Ctrl family as fullscreen; only the letter changes
 # (R resize / F fullscreen)
 ctrl-cmd-r = 'mode resize'
 

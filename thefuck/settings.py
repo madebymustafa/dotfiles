@@ -1,5 +1,5 @@
 # =============================================================================
-#  The Fuck — command correction settings
+#  The Fuck: command correction settings
 #  See: https://github.com/nvbn/thefuck#settings
 # =============================================================================
 

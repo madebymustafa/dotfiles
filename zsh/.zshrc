@@ -1,9 +1,9 @@
 # =============================================================================
-#  .zshrc — Zsh configuration
+#  .zshrc: Zsh configuration
 # =============================================================================
 
 # ─── Powerlevel10k ──────────────────────────────────────────────────────────
-# Instant prompt block — must stay near the top. Anything that needs console
+# Instant prompt block: must stay near the top. Anything that needs console
 # input (passwords, confirmations, etc.) must go *above* this.
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -17,10 +17,10 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 # ─── Shell history ──────────────────────────────────────────────────────────
 # Persists command history across sessions with deduplication.
 #
-#   share_history          — share history between running sessions
-#   hist_expire_dups_first — purge duplicates first when HISTFILE overflows
-#   hist_ignore_dups       — skip consecutive duplicates
-#   hist_verify            — let me edit history expansions before running
+#   share_history          - share history between running sessions
+#   hist_expire_dups_first - purge duplicates first when HISTFILE overflows
+#   hist_ignore_dups       - skip consecutive duplicates
+#   hist_verify            - let me edit history expansions before running
 
 HISTFILE=$HOME/.zhistory
 SAVEHIST=1000
@@ -42,7 +42,7 @@ bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 
 # ─── Plugin: zsh-syntax-highlighting ────────────────────────────────────────
-# Colourises command lines as you type — green for valid, red for invalid, etc.
+# Colourises command lines as you type: green for valid, red for invalid, etc.
 
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -51,7 +51,7 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# ─── FZF — fuzzy finder ────────────────────────────────────────────────────
+# ─── FZF: fuzzy finder ────────────────────────────────────────────────────
 #   Ctrl-T  → pick files/directories   Ctrl-R  → search history
 #   Alt-C   → fuzzy cd into subdirectory
 # Replaces default completions (kill <TAB>, ssh <TAB>, etc.) with fuzzy ones.
@@ -109,7 +109,7 @@ export PATH="$PATH:/Users/mustafa/.lmstudio/bin"
 # =============================================================================
 
 # ─── Yazi ───────────────────────────────────────────────────────────────────
-# Terminal file manager wrapper — auto-cd into the last directory on quit.
+# Terminal file manager wrapper: auto-cd into the last directory on quit.
 
 function y() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -154,7 +154,7 @@ alias lta2="eza -lTag --level=2 --icons"
 alias lta3="eza -lTag --level=3 --icons"
 
 # ── TheFuck ──────────────────────────────────────────────────────────────────
-# Correct mistyped commands — `fuck` to fix, `tf` for the short version.
+# Correct mistyped commands: `fuck` to fix, `tf` for the short version.
 
 eval "$(thefuck --alias)"
 eval "$(thefuck --alias tf)"
@@ -173,7 +173,7 @@ eval "$(atuin init zsh)"
 alias tv="television"
 
 # ── Sesh ────────────────────────────────────────────────────────────────────────
-# tmux session manager — prefix+T in tmux, or Alt-s in zsh to open picker
+# tmux session manager: prefix+T in tmux, or Alt-s in zsh to open picker
 
 function sesh-sessions() {
   {

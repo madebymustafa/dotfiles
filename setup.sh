@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Bootstrap dotfiles — creates symlinks via GNU Stow.
+# Bootstrap dotfiles: creates symlinks via GNU Stow.
 # Run from the dotfiles directory.
 #
 # Usage:

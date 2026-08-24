@@ -21,7 +21,7 @@ Invoke this skill when the user says things like:
 
 Follow these steps **in order**, stopping and reporting any errors immediately.
 
-### Step 1 — Sanity checks
+### Step 1: Sanity checks
 
 Run these in parallel:
 ```bash
@@ -33,7 +33,7 @@ git remote -v
 
 Use the output to understand: what branch we're on, what's changed, what the recent commit style looks like, and what the remote is.
 
-### Step 2 — Fetch and rebase
+### Step 2: Fetch and rebase
 
 ```bash
 git fetch origin
@@ -42,7 +42,7 @@ git rebase origin/main
 
 If there are conflicts, resolve them (keeping both sides where appropriate), then continue the rebase. Do NOT skip this step.
 
-### Step 3 — Stage files
+### Step 3: Stage files
 
 Stage all changed/new files that are relevant to the work. Explicitly exclude:
 - `.DS_Store`
@@ -55,7 +55,7 @@ git add <relevant files>
 git status   # verify staging looks right
 ```
 
-### Step 4 — Commit
+### Step 4: Commit
 
 Write a commit message that:
 - Uses the imperative mood (`feat:`, `fix:`, `ci:`, `docs:`, `refactor:`)
@@ -67,7 +67,7 @@ Write a commit message that:
 git commit -m "<message>"
 ```
 
-### Step 5 — Push
+### Step 5: Push
 
 If the branch has no upstream yet:
 ```bash
@@ -79,7 +79,7 @@ Otherwise:
 git push
 ```
 
-### Step 6 — Open PR
+### Step 6: Open PR
 
 Use the `gh` CLI to create a PR targeting `main`:
 
@@ -93,7 +93,7 @@ gh pr create \
 
 ## Notes
 
-<any reviewer context, migration steps, known limitations — omit section if none>
+<any reviewer context, migration steps, known limitations; omit section if none>
 EOF
 )" \
   --base main
@@ -101,7 +101,7 @@ EOF
 
 Capture the PR URL from the output.
 
-### Step 7 — Trigger opencode review
+### Step 7: Trigger opencode review
 
 Post the review comment on the PR so the opencode GitHub Action picks it up:
 
@@ -109,7 +109,7 @@ Post the review comment on the PR so the opencode GitHub Action picks it up:
 gh pr comment <PR number> --body "/oc please review this PR and approve if you find it ready to merge"
 ```
 
-### Step 8 — Report back
+### Step 8: Report back
 
 Tell the user:
 - The commit hash and message
@@ -119,7 +119,7 @@ Tell the user:
 ## Rules
 
 - **Never force-push** to `main` or `master`
-- **Never commit** `.env`, secrets, or credential files — warn the user if they're staged
+- **Never commit** `.env`, secrets, or credential files; warn the user if they're staged
 - **Always rebase** onto `origin/main` before pushing to minimise conflicts
 - If `gh` is not authenticated, tell the user to run `gh auth login` first
 - If the build/tests are known to exist (e.g. `go build ./...`, `npm test`), run them before committing and abort if they fail

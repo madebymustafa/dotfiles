@@ -1,4 +1,4 @@
-## Install
+## 🚀 Install
 
 ```bash
 git clone git@github.com:madebymustafa/dotfiles.git ~/dotfiles
@@ -9,7 +9,7 @@ bash install.sh   # installs all tools, then runs setup.sh to symlink everything
 First run asks for Accessibility and Input Monitoring permissions, which
 power AeroSpace and the skhd pause key. Approve both.
 
-## Structure
+## 🗂️ Structure
 
 ```
 dotfiles/
@@ -57,6 +57,6 @@ before editing it. Window management is [AeroSpace](https://github.com/nikitabob
 with the skhd pause toggle; every keybinding is documented in
 [`aerospace/README.md`](aerospace/README.md).
 
-## Credits
+## 🙌 Credits
 
 Inspired by the macOS and Linux ricing communities.

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # One-command new-machine bootstrap.
-# Installs all tools and symlinks dotfiles — everything you need to get started.
+# Installs all tools and symlinks dotfiles: everything you need to get started.
 #
 # Usage:
 #   cd ~/dotfiles && bash install.sh
