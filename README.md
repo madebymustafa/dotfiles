@@ -1,4 +1,4 @@
-## 🚀 Install
+## Install
 
 ```bash
 git clone git@github.com:madebymustafa/dotfiles.git ~/dotfiles
@@ -6,10 +6,10 @@ cd ~/dotfiles
 bash install.sh   # installs all tools, then runs setup.sh to symlink everything
 ```
 
-First run asks for Accessibility and Input Monitoring permissions — these
+First run asks for Accessibility and Input Monitoring permissions, which
 power AeroSpace and the skhd pause key. Approve both.
 
-## 🗂️ Structure
+## Structure
 
 ```
 dotfiles/
@@ -44,24 +44,19 @@ dotfiles/
 └── zsh/            → ~/.zshrc, ~/.p10k.zsh
 ```
 
-Each directory is a [GNU Stow](https://www.gnu.org/software/stow/) package
-containing only the files that belong in its target location. `setup.sh`
-symlinks them into place — your config lives in `~/dotfiles`, your system
-just sees symlinks. Every package folder has its own README explaining what
-it does and what's worth knowing before editing it.
+Every directory is a [GNU Stow](https://www.gnu.org/software/stow/) package.
+`setup.sh` symlinks each one into its target, so the real files live in
+`~/dotfiles` and the system just sees links. Most packages land in
+`~/.config/<pkg>/`; `git`, `tmux`, `zsh` and `wezterm` link straight into
+`$HOME`; `ssh` targets `~/.ssh/` and `vscode` targets Code's User directory.
+`.hushlogin` is symlinked manually since a single file needs no stow package,
+and `sketchybar/` is tracked for reference only, skipped by `setup.sh`.
 
-**How it maps:**
-- **Home packages** (`git`, `tmux`, `zsh`, `wezterm`) → symlinked into `$HOME` directly (e.g. `git/.gitconfig` → `~/.gitconfig`).
-- **Config packages** (most others) → symlinked into `$XDG_CONFIG_HOME/<pkg>/` (e.g. `nvim/` → `~/.config/nvim/`).
-- **ssh** → targets `~/.ssh/` so `ssh/config` becomes `~/.ssh/config`.
-- **vscode** → targets `~/Library/Application Support/Code/User`.
-- **`.hushlogin`** lives at the repo root and is symlinked manually by `setup.sh` — no stow package needed for a single file.
-- **sketchybar** → kept in the repo for reference but deliberately excluded from `setup.sh`.
+Each package has a README covering what it does and what's worth knowing
+before editing it. Window management is [AeroSpace](https://github.com/nikitabobko/AeroSpace)
+with the skhd pause toggle; every keybinding is documented in
+[`aerospace/README.md`](aerospace/README.md).
 
-Window management is handled by [AeroSpace](https://github.com/nikitabobko/AeroSpace)
-with the skhd daemon providing the Hyper+Esc pause toggle. Every keybinding is
-documented in [`aerospace/README.md`](aerospace/README.md).
+## Credits
 
-## 🙌 Credits
-
-Inspired by the dotfiles of the broader Linux/macOS ricing community.
+Inspired by the macOS and Linux ricing communities.
