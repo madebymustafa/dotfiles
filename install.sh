@@ -28,7 +28,7 @@ brew install \
 echo "→ Installing casks and fonts..."
 brew tap nikitabobko/tap
 brew tap asmvik/formulae
-brew install --cask wezterm ghostty font-jetbrains-mono-nerd-font aerospace
+brew install --cask wezterm font-jetbrains-mono-nerd-font aerospace
 
 # ─── opencode ─────────────────────────────────────────────────────────────────
 
