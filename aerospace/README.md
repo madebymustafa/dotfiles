@@ -83,3 +83,4 @@ monitor switches leave the cursor exactly where you left it.
 - Workspaces 1-9 B C D E F M S T V always stay alive, even when empty.
 - The pause key is powered by the skhd daemon (`../skhd/`), which listens
   even while AeroSpace itself is paused - that's what makes it a true toggle.
+- AeroSpace does not auto-start (start-at-login = false); run open -a AeroSpace manually when you want tiling.

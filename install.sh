@@ -95,8 +95,11 @@ open -a AeroSpace 2>/dev/null || true
 echo ""
 echo "✓ Machine configured. Finish by hand:"
 echo "  1. System Settings → Privacy & Security → Accessibility:"
-echo "     enable AeroSpace and skhd"
+echo "     enable AeroSpace and skhd (AeroSpace appears in the list
+     after you launch it once)"
 echo "  2. Same pane → Input Monitoring: enable skhd"
 echo "  3. Restore secrets to ~/.env (sourced by zsh, never committed)"
 echo "  4. SSH: restore or generate a key (ssh-keygen -t ed25519) and add it"
 echo "     to GitHub"
+echo "  5. AeroSpace is not auto-started. When you want tiling:"
+echo "     open -a AeroSpace"
