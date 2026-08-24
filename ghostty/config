@@ -1,0 +1,11 @@
+# Requires ~/.hushlogin to suppress "Last login" message
+theme = catppuccin-mocha
+font-family = "JetBrains Mono"
+font-size = 19
+background-opacity = 0.7
+background-blur-radius = 20
+mouse-hide-while-typing = true
+window-decoration = false
+macos-option-as-alt = true
+macos-non-native-fullscreen = true
+gtk-titlebar = true

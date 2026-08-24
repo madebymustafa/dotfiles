@@ -21,10 +21,12 @@ dotfiles/
 ├── btop/           → .config/btop/
 ├── fd/             → .config/fd/
 ├── gh-dash/        → .config/gh-dash/
+├── ghostty/        → .config/ghostty/
 ├── git/            → ~/.gitconfig
 ├── htop/           → .config/htop/
 ├── .hushlogin      # suppress "Last login" on terminal start
 ├── fastfetch/      → .config/fastfetch/
+├── nix/            → .config/nix/
 ├── nvim/           → .config/nvim/
 ├── opencode/       → .config/opencode/
 ├── sesh/           → .config/sesh/
