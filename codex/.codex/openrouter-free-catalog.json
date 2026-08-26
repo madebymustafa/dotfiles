@@ -1,0 +1,426 @@
+{
+  "models": [
+    {
+      "context_window": 256000,
+      "default_verbosity": "low",
+      "display_name": "Cohere: North Mini Code (free)",
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "text"
+      ],
+      "priority": 0,
+      "shell_type": "default",
+      "slug": "cohere/north-mini-code:free",
+      "support_verbosity": false,
+      "supported_in_api": true,
+      "supported_reasoning_levels": [],
+      "supports_parallel_tool_calls": true,
+      "supports_reasoning_summaries": true,
+      "truncation_policy": {
+        "limit": 256000,
+        "mode": "tokens"
+      },
+      "visibility": "list",
+      "base_instructions": "You are an expert software engineering agent. Be precise, pragmatic, and verify your work."
+    },
+    {
+      "context_window": 512000,
+      "default_verbosity": "low",
+      "display_name": "Dots Studio: Dots3-Note Preview (free)",
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "priority": 0,
+      "shell_type": "default",
+      "slug": "dots-studio/dots-3-note-preview:free",
+      "support_verbosity": false,
+      "supported_in_api": true,
+      "supported_reasoning_levels": [],
+      "supports_parallel_tool_calls": true,
+      "supports_reasoning_summaries": true,
+      "truncation_policy": {
+        "limit": 512000,
+        "mode": "tokens"
+      },
+      "visibility": "list",
+      "base_instructions": "You are an expert software engineering agent. Be precise, pragmatic, and verify your work."
+    },
+    {
+      "context_window": 262144,
+      "default_verbosity": "low",
+      "display_name": "Google: Gemma 4 26B A4B  (free)",
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "image",
+        "text"
+      ],
+      "priority": 0,
+      "shell_type": "default",
+      "slug": "google/gemma-4-26b-a4b-it:free",
+      "support_verbosity": false,
+      "supported_in_api": true,
+      "supported_reasoning_levels": [],
+      "supports_parallel_tool_calls": true,
+      "supports_reasoning_summaries": true,
+      "truncation_policy": {
+        "limit": 262144,
+        "mode": "tokens"
+      },
+      "visibility": "list",
+      "base_instructions": "You are an expert software engineering agent. Be precise, pragmatic, and verify your work."
+    },
+    {
+      "context_window": 262144,
+      "default_verbosity": "low",
+      "display_name": "Google: Gemma 4 31B (free)",
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "image",
+        "text"
+      ],
+      "priority": 0,
+      "shell_type": "default",
+      "slug": "google/gemma-4-31b-it:free",
+      "support_verbosity": false,
+      "supported_in_api": true,
+      "supported_reasoning_levels": [],
+      "supports_parallel_tool_calls": true,
+      "supports_reasoning_summaries": true,
+      "truncation_policy": {
+        "limit": 262144,
+        "mode": "tokens"
+      },
+      "visibility": "list",
+      "base_instructions": "You are an expert software engineering agent. Be precise, pragmatic, and verify your work."
+    },
+    {
+      "context_window": 65536,
+      "default_verbosity": "low",
+      "display_name": "LiquidAI: LFM2.5-2.6B (free)",
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "text"
+      ],
+      "priority": 0,
+      "shell_type": "default",
+      "slug": "liquid/lfm-2.5-2.6b:free",
+      "support_verbosity": false,
+      "supported_in_api": true,
+      "supported_reasoning_levels": [],
+      "supports_parallel_tool_calls": true,
+      "supports_reasoning_summaries": true,
+      "truncation_policy": {
+        "limit": 65536,
+        "mode": "tokens"
+      },
+      "visibility": "list",
+      "base_instructions": "You are an expert software engineering agent. Be precise, pragmatic, and verify your work."
+    },
+    {
+      "context_window": 196608,
+      "default_verbosity": "low",
+      "display_name": "MiniMax: MiniMax M2.7 (free)",
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "text"
+      ],
+      "priority": 0,
+      "shell_type": "default",
+      "slug": "minimax/minimax-m2.7:free",
+      "support_verbosity": false,
+      "supported_in_api": true,
+      "supported_reasoning_levels": [],
+      "supports_parallel_tool_calls": true,
+      "supports_reasoning_summaries": true,
+      "truncation_policy": {
+        "limit": 196608,
+        "mode": "tokens"
+      },
+      "visibility": "list",
+      "base_instructions": "You are an expert software engineering agent. Be precise, pragmatic, and verify your work."
+    },
+    {
+      "context_window": 1048576,
+      "default_verbosity": "low",
+      "display_name": "MiniMax: MiniMax M3 (free)",
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "priority": 0,
+      "shell_type": "default",
+      "slug": "minimax/minimax-m3:free",
+      "support_verbosity": false,
+      "supported_in_api": true,
+      "supported_reasoning_levels": [],
+      "supports_parallel_tool_calls": true,
+      "supports_reasoning_summaries": true,
+      "truncation_policy": {
+        "limit": 1048576,
+        "mode": "tokens"
+      },
+      "visibility": "list",
+      "base_instructions": "You are an expert software engineering agent. Be precise, pragmatic, and verify your work."
+    },
+    {
+      "context_window": 256000,
+      "default_verbosity": "low",
+      "display_name": "NVIDIA: Nemotron 3 Nano Omni (free)",
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "text",
+        "audio",
+        "image"
+      ],
+      "priority": 0,
+      "shell_type": "default",
+      "slug": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "support_verbosity": false,
+      "supported_in_api": true,
+      "supported_reasoning_levels": [],
+      "supports_parallel_tool_calls": true,
+      "supports_reasoning_summaries": true,
+      "truncation_policy": {
+        "limit": 256000,
+        "mode": "tokens"
+      },
+      "visibility": "list",
+      "base_instructions": "You are an expert software engineering agent. Be precise, pragmatic, and verify your work."
+    },
+    {
+      "context_window": 262144,
+      "default_verbosity": "low",
+      "display_name": "NVIDIA: Nemotron 3 Super (free)",
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "text"
+      ],
+      "priority": 0,
+      "shell_type": "default",
+      "slug": "nvidia/nemotron-3-super-120b-a12b:free",
+      "support_verbosity": false,
+      "supported_in_api": true,
+      "supported_reasoning_levels": [],
+      "supports_parallel_tool_calls": true,
+      "supports_reasoning_summaries": true,
+      "truncation_policy": {
+        "limit": 262144,
+        "mode": "tokens"
+      },
+      "visibility": "list",
+      "base_instructions": "You are an expert software engineering agent. Be precise, pragmatic, and verify your work."
+    },
+    {
+      "context_window": 1000000,
+      "default_verbosity": "low",
+      "display_name": "NVIDIA: Nemotron 3 Ultra (free)",
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "text"
+      ],
+      "priority": 0,
+      "shell_type": "default",
+      "slug": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "support_verbosity": false,
+      "supported_in_api": true,
+      "supported_reasoning_levels": [],
+      "supports_parallel_tool_calls": true,
+      "supports_reasoning_summaries": true,
+      "truncation_policy": {
+        "limit": 1000000,
+        "mode": "tokens"
+      },
+      "visibility": "list",
+      "base_instructions": "You are an expert software engineering agent. Be precise, pragmatic, and verify your work."
+    },
+    {
+      "context_window": 128000,
+      "default_verbosity": "low",
+      "display_name": "NVIDIA: Nemotron 3.5 Content Safety (free)",
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "priority": 0,
+      "shell_type": "default",
+      "slug": "nvidia/nemotron-3.5-content-safety:free",
+      "support_verbosity": false,
+      "supported_in_api": true,
+      "supported_reasoning_levels": [],
+      "supports_parallel_tool_calls": true,
+      "supports_reasoning_summaries": true,
+      "truncation_policy": {
+        "limit": 128000,
+        "mode": "tokens"
+      },
+      "visibility": "list",
+      "base_instructions": "You are an expert software engineering agent. Be precise, pragmatic, and verify your work."
+    },
+    {
+      "context_window": 1000000,
+      "default_verbosity": "low",
+      "display_name": "NVIDIA: Nemotron 3.5 Lightning (free)",
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "text"
+      ],
+      "priority": 0,
+      "shell_type": "default",
+      "slug": "nvidia/nemotron-3.5-lightning:free",
+      "support_verbosity": false,
+      "supported_in_api": true,
+      "supported_reasoning_levels": [],
+      "supports_parallel_tool_calls": true,
+      "supports_reasoning_summaries": true,
+      "truncation_policy": {
+        "limit": 1000000,
+        "mode": "tokens"
+      },
+      "visibility": "list",
+      "base_instructions": "You are an expert software engineering agent. Be precise, pragmatic, and verify your work."
+    },
+    {
+      "context_window": 262144,
+      "default_verbosity": "low",
+      "display_name": "Poolside: Laguna S 2.1 (free)",
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "text"
+      ],
+      "priority": 0,
+      "shell_type": "default",
+      "slug": "poolside/laguna-s-2.1:free",
+      "support_verbosity": false,
+      "supported_in_api": true,
+      "supported_reasoning_levels": [],
+      "supports_parallel_tool_calls": true,
+      "supports_reasoning_summaries": true,
+      "truncation_policy": {
+        "limit": 262144,
+        "mode": "tokens"
+      },
+      "visibility": "list",
+      "base_instructions": "You are an expert software engineering agent. Be precise, pragmatic, and verify your work."
+    },
+    {
+      "context_window": 262144,
+      "default_verbosity": "low",
+      "display_name": "Poolside: Laguna XS 2.1 (free)",
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "text"
+      ],
+      "priority": 0,
+      "shell_type": "default",
+      "slug": "poolside/laguna-xs-2.1:free",
+      "support_verbosity": false,
+      "supported_in_api": true,
+      "supported_reasoning_levels": [],
+      "supports_parallel_tool_calls": true,
+      "supports_reasoning_summaries": true,
+      "truncation_policy": {
+        "limit": 262144,
+        "mode": "tokens"
+      },
+      "visibility": "list",
+      "base_instructions": "You are an expert software engineering agent. Be precise, pragmatic, and verify your work."
+    },
+    {
+      "context_window": 1048576,
+      "default_verbosity": "low",
+      "display_name": "Thinking Machines: Inkling Small (free)",
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "text",
+        "image",
+        "audio"
+      ],
+      "priority": 0,
+      "shell_type": "default",
+      "slug": "thinkingmachines/inkling-small:free",
+      "support_verbosity": false,
+      "supported_in_api": true,
+      "supported_reasoning_levels": [],
+      "supports_parallel_tool_calls": true,
+      "supports_reasoning_summaries": true,
+      "truncation_policy": {
+        "limit": 1048576,
+        "mode": "tokens"
+      },
+      "visibility": "list",
+      "base_instructions": "You are an expert software engineering agent. Be precise, pragmatic, and verify your work."
+    },
+    {
+      "context_window": 1048576,
+      "default_verbosity": "low",
+      "display_name": "Thinking Machines: Inkling (free)",
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "text",
+        "image",
+        "audio"
+      ],
+      "priority": 0,
+      "shell_type": "default",
+      "slug": "thinkingmachines/inkling:free",
+      "support_verbosity": false,
+      "supported_in_api": true,
+      "supported_reasoning_levels": [],
+      "supports_parallel_tool_calls": true,
+      "supports_reasoning_summaries": true,
+      "truncation_policy": {
+        "limit": 1048576,
+        "mode": "tokens"
+      },
+      "visibility": "list",
+      "base_instructions": "You are an expert software engineering agent. Be precise, pragmatic, and verify your work."
+    },
+    {
+      "context_window": 256000,
+      "default_verbosity": "low",
+      "display_name": "Z.ai: GLM 5.2 (free)",
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "text"
+      ],
+      "priority": 0,
+      "shell_type": "default",
+      "slug": "z-ai/glm-5.2:free",
+      "support_verbosity": false,
+      "supported_in_api": true,
+      "supported_reasoning_levels": [],
+      "supports_parallel_tool_calls": true,
+      "supports_reasoning_summaries": true,
+      "truncation_policy": {
+        "limit": 256000,
+        "mode": "tokens"
+      },
+      "visibility": "list",
+      "base_instructions": "You are an expert software engineering agent. Be precise, pragmatic, and verify your work."
+    },
+    {
+      "slug": "stealth/ox-alpha",
+      "display_name": "Ox Alpha",
+      "context_window": 131072,
+      "base_instructions": "You are an expert software engineering agent.",
+      "supported_reasoning_levels": [],
+      "shell_type": "default",
+      "input_modalities": [
+        "text"
+      ],
+      "priority": 0,
+      "supported_in_api": true,
+      "visibility": "list",
+      "support_verbosity": false,
+      "truncation_policy": {
+        "limit": 10000,
+        "mode": "bytes"
+      },
+      "experimental_supported_tools": []
+    }
+  ]
+}

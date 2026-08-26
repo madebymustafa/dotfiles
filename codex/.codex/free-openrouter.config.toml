@@ -1,0 +1,9 @@
+# OpenRouter free tier via Responses API.
+# FREE-TIER REALITY: hot models (MiniMax, GLM) 429 randomly as their shared
+# pools saturate — it rotates by the hour. When you hit 429, just /model to
+# another entry; nothing is broken.
+# Run: codex-free   (tab-complete after typing "codex-")
+model_provider = "openrouter"
+model = "nvidia/nemotron-3-ultra-550b-a55b:free"
+model_catalog_json = "/Users/mustafa/.codex/openrouter-free-catalog.json"
+model_reasoning_effort = "none"

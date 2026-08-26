@@ -1,0 +1,24 @@
+# OpenRouter — Ox Alpha only (stealth preview, $0 as of Aug 2026)
+# Run: codex --profile openrouter-ox-alpha   (alias: ox)
+#
+# NOTE: deliberately NO model_catalog_json here — a scoped catalog breaks
+# requests to this specific model (upstream 400). Side effect: /model lists
+# ALL OpenRouter models including paid ones. Stay on the default model;
+# if you want to browse FREE models safely, use: cfree
+# (there you can /model over to stealth/ox-alpha too — same provider,
+# and that switch is allowed mid-session).
+#
+# NOTE: must launch with the profile; /model inside a plain ChatGPT session
+# cannot switch providers.
+model_provider = "openrouter"
+model = "stealth/ox-alpha"
+
+# This model's upstream rejects the `reasoning` object Codex sends by default
+# (400 "Server tool request failed"). Setting summary to none empties that
+# object, which the upstream accepts. Verified Aug 2026.
+model_reasoning_summary = "none"
+
+# This upstream requires stateless requests (store:false). Without this,
+# Codex may send store:true and the model 400s with
+# "Server tool request failed".
+disable_response_storage = true

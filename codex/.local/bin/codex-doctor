@@ -1,0 +1,61 @@
+#!/bin/bash
+# codex-doctor — live health check for every model in your free catalog.
+# Shows which are usable RIGHT NOW (with response times) vs saturated.
+# Usage: codex-doctor
+
+set -a; source "$HOME/.codex/free-keys.env" 2>/dev/null; set +a
+CATALOG="$HOME/.codex/openrouter-free-catalog.json"
+RAW=/tmp/codex_doctor_results
+
+[ -r "$CATALOG" ] || { echo "✗ catalog missing: $CATALOG"; exit 1; }
+[ -n "$OPENROUTER_API_KEY" ] || { echo "✗ OPENROUTER_API_KEY not set"; exit 1; }
+
+python3 - "$CATALOG" << 'EOF' > /tmp/codex_doctor_slugs
+import json, sys
+for m in json.load(open(sys.argv[1]))['models']:
+    print(m['slug'])
+EOF
+
+probe() {
+  slug="$1"
+  out=$(curl -s -o /dev/null -w "%{http_code} %{time_total}" --max-time 25 \
+    https://openrouter.ai/api/v1/responses \
+    -H "Authorization: Bearer $OPENROUTER_API_KEY" \
+    -H "User-Agent: Mozilla/5.0 codex-doctor" \
+    -H "Content-Type: application/json" \
+    -d "{\"model\":\"$slug\",\"input\":\"hi\",\"max_output_tokens\":16}" 2>/dev/null)
+  code=${out%% *}; secs=${out##* }
+  if [ "$code" = "200" ]; then
+    echo "OK|$secs|$slug" >> $RAW
+  elif [ "$code" = "429" ]; then
+    echo "BUSY||$slug" >> $RAW
+  elif [ -z "$code" ]; then
+    echo "SLOW||$slug" >> $RAW
+  else
+    echo "ERR$code||$slug" >> $RAW
+  fi
+}
+
+rm -f $RAW
+while read -r s; do probe "$s" & done < /tmp/codex_doctor_slugs
+wait
+
+echo "════ codex-doctor · $(date '+%H:%M:%S') ════"
+ok=$(grep -c '^OK|' $RAW 2>/dev/null || echo 0)
+busy=$(grep -c '^BUSY' $RAW 2>/dev/null || echo 0)
+bad=$(grep -cE '^(ERR|SLOW)' $RAW 2>/dev/null || echo 0)
+
+if [ "$ok" != "0" ]; then
+  echo "🟢 USABLE NOW ($ok):"
+  grep '^OK|' $RAW | sort -t'|' -k2 -g | awk -F'|' '{printf "   ✓ %-49s %5.1fs\n", $3, $2}'
+fi
+if [ "$busy" != "0" ]; then
+  echo "🔥 SATURATED ($busy) — try again later:"
+  grep '^BUSY' $RAW | awk -F'|' '{printf "   · %s\n", $3}'
+fi
+if [ "$bad" != "0" ]; then
+  echo "⚠️  OTHER ($bad):"
+  grep -E '^(ERR|SLOW)' $RAW | awk -F'|' '{printf "   · %s (%s)\n", $3, $1}'
+fi
+echo "──────────────────────────────────────────"
+echo "Pick a 🟢 one, then: codex-free → /model"

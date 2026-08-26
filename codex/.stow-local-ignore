@@ -1,0 +1,3 @@
+# Do not manage the live config.toml — the Codex app rewrites it at runtime.
+# The copy here is a tracked snapshot; refresh it manually after big changes.
+\.codex/config\.toml

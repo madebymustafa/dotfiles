@@ -205,3 +205,13 @@ export PATH='/Users/mustafa/.local/bin':$PATH
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# >>> codex free-model providers >>>
+[ -f "$HOME/.codex/free-keys.env" ] && set -a && source "$HOME/.codex/free-keys.env" && set +a
+# <<< codex free-model providers <<<
+
+# >>> codex free aliases >>>
+# Type "codex-" then press TAB to see both. Plain `codex` stays your ChatGPT plan.
+alias codex-free='codex --profile free-openrouter'    # free-models menu (Nemotron Super default)
+alias codex-ox='codex --profile openrouter-ox-alpha'  # Ox Alpha directly
+# <<< codex free aliases <<<
