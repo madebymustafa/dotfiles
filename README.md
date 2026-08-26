@@ -6,14 +6,14 @@ cd ~/dotfiles
 bash install.sh   # installs all tools, then runs setup.sh to symlink everything
 ```
 
-First run asks for Accessibility and Input Monitoring permissions, which
-power AeroSpace and the skhd pause key. Approve both.
+First run asks for the Accessibility permission, which powers AeroSpace.
+Approve it.
 
 ## 🗂️ Structure
 
 ```
 dotfiles/
-├── install.sh      # one-command bootstrap: tools, taps, casks, plugins, services
+├── install.sh      # one-command bootstrap: tools, taps, casks, plugins
 ├── setup.sh        # symlinks everything via GNU Stow
 ├── aerospace/      → .config/aerospace/
 ├── atuin/          → .config/atuin/
@@ -29,8 +29,8 @@ dotfiles/
 ├── nix/            → .config/nix/
 ├── nvim/           → .config/nvim/
 ├── opencode/       → .config/opencode/
+├── raycast/        # script commands loaded by Raycast directly (not stowed)
 ├── sesh/           → .config/sesh/
-├── skhd/           → .config/skhd/
 ├── sketchybar/     → .config/sketchybar/   # tracked for reference, not installed
 ├── ssh/            → ~/.ssh/
 ├── starship/       → .config/starship/
@@ -53,9 +53,9 @@ Every directory is a [GNU Stow](https://www.gnu.org/software/stow/) package.
 and `sketchybar/` is tracked for reference only, skipped by `setup.sh`.
 
 Each package has a README covering what it does and what's worth knowing
-before editing it. Window management is [AeroSpace](https://github.com/nikitabobko/AeroSpace)
-with the skhd pause toggle; every keybinding is documented in
-[`aerospace/README.md`](aerospace/README.md).
+before editing it. Window management is [AeroSpace](https://github.com/nikitabobko/AeroSpace);
+Hyper + Esc toggles tiling via a Raycast script command, and every keybinding
+is documented in [`aerospace/README.md`](aerospace/README.md).
 
 ## 🙌 Credits
 

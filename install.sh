@@ -23,7 +23,7 @@ fi
 echo "→ Installing brew packages..."
 brew install \
   zsh tmux neovim git bat fd ripgrep fzf thefuck htop btop \
-  fastfetch starship zellij yazi television atuin zoxide skhd eza gh
+  fastfetch starship zellij yazi television atuin zoxide eza gh
 
 echo "→ Installing casks and fonts..."
 brew tap nikitabobko/tap
@@ -82,10 +82,7 @@ tmux kill-server 2>/dev/null || true
 echo "→ Syncing neovim plugins (first run downloads a lot)..."
 nvim --headless "+Lazy! sync" +qa >/dev/null 2>&1 || true
 
-# ─── Services & apps ──────────────────────────────────────────────────────────
-
-echo "→ Starting skhd service (AeroSpace Hyper+Esc pause toggle)..."
-/opt/homebrew/bin/skhd --start-service
+# ─── Apps ─────────────────────────────────────────────────────────────────────
 
 echo "→ Launching AeroSpace..."
 open -a AeroSpace 2>/dev/null || true
@@ -95,11 +92,9 @@ open -a AeroSpace 2>/dev/null || true
 echo ""
 echo "✓ Machine configured. Finish by hand:"
 echo "  1. System Settings → Privacy & Security → Accessibility:"
-echo "     enable AeroSpace and skhd (AeroSpace appears in the list
-     after you launch it once)"
-echo "  2. Same pane → Input Monitoring: enable skhd"
-echo "  3. Restore secrets to ~/.env (sourced by zsh, never committed)"
-echo "  4. SSH: restore or generate a key (ssh-keygen -t ed25519) and add it"
+echo "     enable AeroSpace (appears in the list after you launch it once)"
+echo "  2. Restore secrets to ~/.env (sourced by zsh, never committed)"
+echo "  3. SSH: restore or generate a key (ssh-keygen -t ed25519) and add it"
 echo "     to GitHub"
-echo "  5. AeroSpace is not auto-started. When you want tiling:"
+echo "  4. AeroSpace is not auto-started. When you want tiling:"
 echo "     open -a AeroSpace"

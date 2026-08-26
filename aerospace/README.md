@@ -23,7 +23,7 @@ Every "Hyper + ..." combo below can be pressed either way.
 - Cmd + Ctrl + F ................. fullscreen (hijacks Apple's native-fullscreen
                                    shortcut safely - no more Space-stacking)
 - Hyper + Esc .................... pause/resume AeroSpace entirely
-                                   (works both directions - handled by ../skhd;
+                                   (Raycast script command - see ../raycast/;
                                    while paused Raycast & mouse rule everything)
 
 ## Workspaces
@@ -77,10 +77,14 @@ monitor switches leave the cursor exactly where you left it.
 
 - NEVER use macOS native fullscreen (green button / Ctrl+Cmd+F). It stacks a
   Space on top of the tiling and causes overlapping windows.
-  Use Alt + Shift + F instead.
+  Use Cmd + Ctrl + F instead.
 - New windows auto-fly to their letter's workspace via `on-window-detected`.
   Unrouted apps open wherever you currently are.
-- Workspaces 1-9 B C D E F M S T V always stay alive, even when empty.
-- The pause key is powered by the skhd daemon (`../skhd/`), which listens
-  even while AeroSpace itself is paused - that's what makes it a true toggle.
+- Workspaces 1-9 B C D E F M N P R S T V always stay alive, even when empty.
+- The pause chord (Hyper + Esc) is a Raycast script command (`../raycast/`),
+  not an AeroSpace binding and not a hotkey daemon. Raycast listens even while
+  AeroSpace is disabled, which makes it a true two-way toggle - the one thing
+  AeroSpace can't do itself ("key events are not intercepted when disabled").
+  Don't also bind it inside `aerospace.toml`: two listeners on one chord fire
+  twice and cancel out.
 - AeroSpace does not auto-start (start-at-login = false); run open -a AeroSpace manually when you want tiling.
