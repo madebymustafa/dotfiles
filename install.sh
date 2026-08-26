@@ -27,8 +27,7 @@ brew install \
 
 echo "→ Installing casks and fonts..."
 brew tap nikitabobko/tap
-brew tap asmvik/formulae
-brew install --cask wezterm font-jetbrains-mono-nerd-font aerospace
+brew install --cask wezterm font-jetbrains-mono-nerd-font aerospace raycast
 
 # ─── opencode ─────────────────────────────────────────────────────────────────
 
@@ -93,8 +92,11 @@ echo ""
 echo "✓ Machine configured. Finish by hand:"
 echo "  1. System Settings → Privacy & Security → Accessibility:"
 echo "     enable AeroSpace (appears in the list after you launch it once)"
-echo "  2. Restore secrets to ~/.env (sourced by zsh, never committed)"
-echo "  3. SSH: restore or generate a key (ssh-keygen -t ed25519) and add it"
+echo "  2. Raycast → Settings → Extensions → Script Commands → + →"
+echo "     Add Script Directory: ~/dotfiles/raycast/scripts"
+echo "     Then open 'Toggle AeroSpace' and record Hyper+Esc as its hotkey"
+echo "  3. Restore secrets to ~/.env (sourced by zsh, never committed)"
+echo "  4. SSH: restore or generate a key (ssh-keygen -t ed25519) and add it"
 echo "     to GitHub"
-echo "  4. AeroSpace is not auto-started. When you want tiling:"
+echo "  5. AeroSpace is not auto-started. When you want tiling:"
 echo "     open -a AeroSpace"

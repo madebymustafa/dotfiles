@@ -73,7 +73,7 @@ diffRemoved = "#f38ba8"
 skill = "#cba6f7"
 
 [desktop.appearanceDarkChromeTheme.fonts]
-code = "JetBrains Mono"
+code = "JetBrainsMono NF"
 
 [desktop.open-in-target-preferences]
 global = "cursor"

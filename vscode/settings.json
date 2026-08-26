@@ -27,4 +27,6 @@
   "window.closeWhenEmpty": false,
   "catppuccin-noctis-icons.hidesExplorerArrows": false
 
+  "terminal.integrated.fontFamily": "'JetBrains Mono NF', Menlo, monospace",
+  "terminal.integrated.fontSize": 14,
 }
