@@ -15,6 +15,9 @@ macos-titlebar-style = hidden
 macos-window-shadow = false
 background-opacity = 0.8
 background-blur-radius = 20
+# Top/bottom padding so the first line doesn't touch the window edge
+# (matches WezTerm's top = 20 padding).
+window-padding-y = 20
 mouse-hide-while-typing = true
 macos-option-as-alt = true
 macos-non-native-fullscreen = true
