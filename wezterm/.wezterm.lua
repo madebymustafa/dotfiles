@@ -78,6 +78,31 @@ config.animation_fps = 1
 config.cursor_blink_ease_in = "Constant"
 config.cursor_blink_ease_out = "Constant"
 
+-- ─── Key bindings ───────────────────────────────────────────────────────────
+-- Pane management, built on Cmd+Shift (comfortable thumb chord, and free of
+-- AeroSpace, which uses bare Alt / Alt+Shift / Ctrl+Cmd).
+--   Cmd+Shift+\      split right   (vertical divider)
+--   Cmd+Shift+/      split down    (horizontal divider)
+--   Cmd+Shift+arrows  move between panes
+--   Cmd+Option+arrows resize panes
+--   Cmd+Shift+Z      zoom current pane
+
+local act = wezterm.action
+
+config.keys = {
+	{ key = "\\", mods = "SUPER|SHIFT", action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
+	{ key = "/", mods = "SUPER|SHIFT", action = act.SplitVertical { domain = "CurrentPaneDomain" } },
+	{ key = "LeftArrow", mods = "SUPER|SHIFT", action = act.ActivatePaneDirection "Left" },
+	{ key = "RightArrow", mods = "SUPER|SHIFT", action = act.ActivatePaneDirection "Right" },
+	{ key = "UpArrow", mods = "SUPER|SHIFT", action = act.ActivatePaneDirection "Up" },
+	{ key = "DownArrow", mods = "SUPER|SHIFT", action = act.ActivatePaneDirection "Down" },
+	{ key = "LeftArrow", mods = "SUPER|OPT", action = act.AdjustPaneSize { "Left", 4 } },
+	{ key = "RightArrow", mods = "SUPER|OPT", action = act.AdjustPaneSize { "Right", 4 } },
+	{ key = "UpArrow", mods = "SUPER|OPT", action = act.AdjustPaneSize { "Up", 4 } },
+	{ key = "DownArrow", mods = "SUPER|OPT", action = act.AdjustPaneSize { "Down", 4 } },
+	{ key = "Z", mods = "SUPER|SHIFT", action = act.TogglePaneZoomState },
+}
+
 -- ─── Startup position ───────────────────────────────────────────────────────
 -- Launch at 60% of screen size, centred on the active display.
 

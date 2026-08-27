@@ -20,6 +20,7 @@ Every "Hyper + ..." combo below can be pressed either way.
 - Alt + , ........................ cycle accordion layouts
 - Alt + Shift + - or = ........... shrink / grow window (smart)
 - Alt + Shift + Space ............ toggle floating <-> tiling (detach window)
+- Hyper + T ...................... same float toggle (detach/re-attach window)
 - Cmd + Ctrl + F ................. fullscreen (hijacks Apple's native-fullscreen
                                    shortcut safely - no more Space-stacking)
 - Hyper + Esc .................... pause/resume AeroSpace entirely

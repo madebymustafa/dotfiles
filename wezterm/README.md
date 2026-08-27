@@ -7,6 +7,18 @@ Primary terminal emulator. Config: `.wezterm.lua` (symlinked from
 - 80% opacity with blur, no tab bar, resize-only decorations
 - Custom asymmetric window padding
 
+## Key bindings (pane splits)
+
+Built on Cmd+Shift (comfortable, and free of AeroSpace's Alt family / Ctrl+Cmd).
+
+| Action                | Binding              |
+|-----------------------|----------------------|
+| Split right           | `Cmd+Shift+\`        |
+| Split down            | `Cmd+Shift+/`        |
+| Move between panes    | `Cmd+Shift+arrows`   |
+| Resize pane (4 cells) | `Cmd+Option+arrows`  |
+| Zoom current pane     | `Cmd+Shift+Z`        |
+
 ## Updates
 
 Two layers, both daemon-free:

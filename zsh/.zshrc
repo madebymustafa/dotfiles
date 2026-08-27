@@ -215,3 +215,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 alias codex-free='codex --profile free-openrouter'    # free-models menu (Nemotron Super default)
 alias codex-ox='codex --profile openrouter-ox-alpha'  # Ox Alpha directly
 # <<< codex free aliases <<<
+
+. "$HOME/.atuin/bin/env"

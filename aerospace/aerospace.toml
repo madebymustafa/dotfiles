@@ -81,6 +81,10 @@ alt-shift-equal = 'resize smart +50'
 # Toggle floating <-> tiling (detach window from grid), classic i3 binding
 alt-shift-space = 'layout floating tiling'
 
+# Same toggle on Hyper+T (Caps Lock quad-chord). Alt+Shift+Space stays as the
+# low-fingers fallback in case the chord splits mid-delivery (see fullscreen note)
+cmd-ctrl-alt-shift-t = 'layout floating tiling'
+
 # Fullscreen, deliberately bound to Cmd+Ctrl+F (Apple's native-fullscreen
 # shortcut) so old muscle memory triggers the SAFE tiling fullscreen instead
 # of the Space-stacking native one. Never use Hyper+F for this: Raycast's
