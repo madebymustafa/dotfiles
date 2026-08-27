@@ -2,10 +2,20 @@
 theme = catppuccin-mocha
 font-family = "JetBrains Mono"
 font-size = 19
-background-opacity = 0.7
+# Borderless + native rounded corners (port of WezTerm's "RESIZE" decorations):
+# - do NOT use `window-decoration = false` here - on macOS that strips the
+#   native frame AND squared the corners.
+# - `macos-titlebar-style = hidden` hides the titlebar but keeps the native
+#   rounded-corner frame, matching WezTerm.
+macos-titlebar-style = hidden
+# macOS 26 (Tahoe) draws a tiny grey 1px border around any non-borderless
+# window that has its shadow enabled (a documented AppKit/Liquid Glass change).
+# Disabling the shadow removes that border - this is the upstream-documented
+# workaround (ghostty-org/ghostty#9582).
+macos-window-shadow = false
+background-opacity = 0.8
 background-blur-radius = 20
 mouse-hide-while-typing = true
-window-decoration = false
 macos-option-as-alt = true
 macos-non-native-fullscreen = true
 gtk-titlebar = true
