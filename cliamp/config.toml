@@ -1,12 +1,11 @@
 # cliamp configuration
-# Theme matches demo.mp4 exactly (verified: bg #1a1925, blue/green/orange accents = Tokyo Night)
-theme = "tokyo-night"
+# Theme and visualizer are NOT pinned here — cliamp writes the previous
+# session's choices back into this file itself (theme via `T` picker or
+# `cliamp theme <name>`, visualizer via `v` / Ctrl+V), so the next launch
+# restores exactly what you had on the last session.
 
 # Default provider — Radio. Press S for Spotify, R for Radio, L for Local.
 provider = "radio"
-
-# Visualizer — Scatter (your preferred mode; matches demo look)
-visualizer = "Scatter"
 
 # Simplified mode: artist/title + time strip, no visualizer or playlist.
 # Uncomment to run the ultra-minimal layout:
