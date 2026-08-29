@@ -1,12 +1,12 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "//": "Bracketed layout matching the video: centered title, rounded bracket rails framing content with small margins, single circle palette row outside (below) the bottom rail.",
-    "//2": "GEOMETRY CONTRACT: rail is 72 wide; key.width 15 = 4 (left margin) + 8 (widest key 'Packages') + 2 (': ') + 1. Value column lands at 15 past the logo padding. Title centering and the 28-space circle pad derive from 72. Change them together.",
+    "//2": "GEOMETRY CONTRACT: rail 55 wide, balanced margins - label at V+4 (left) and longest value ends at V+49, so ╮ sits 4 cols after it (right). Values start at V+14. Title pad (55-${#p})/2 and 20-space circle pad center both over the rail. Logo padding right 6 sets V (30-wide logo + 6). Change these together.",
   "logo": {
     "type": "builtin",
     "source": "macos",
     "padding": {
-      "right": 2
+      "right": 6
     }
   },
   "display": {
@@ -23,13 +23,13 @@
     {
       "type": "command",
       "key": " ",
-      "text": "p=\"$(printf '%s@%s' \"$USER\" \"$(ipconfig getifaddr en0)\")\"; printf '%*s%s' \"$(( (72 - ${#p}) / 2 ))\" \"\" \"$p\"",
+      "text": "p=\"$(printf '%s@%s' \"$USER\" \"$(ipconfig getifaddr en0)\")\"; printf '%*s%s' \"$(( (55 - ${#p}) / 2 ))\" \"\" \"$p\"",
       "outputColor": "#cba6f7"
     },
     {
       "type": "custom",
       "key": " ",
-      "format": "╭──────────────────────────────────────────────────────────────────────╮",
+      "format": "╭─────────────────────────────────────────────────────╮",
       "outputColor": "#cba6f7"
     },
     {
@@ -88,13 +88,13 @@
     {
       "type": "custom",
       "key": " ",
-      "format": "╰──────────────────────────────────────────────────────────────────────╯",
+      "format": "╰─────────────────────────────────────────────────────╯",
       "outputColor": "#cba6f7"
     },
     {
       "type": "command",
       "key": " ",
-      "text": "printf '%*s' 28 ''; printf '\\033[30m● \\033[31m● \\033[32m● \\033[33m● \\033[34m● \\033[35m● \\033[36m● \\033[37m●'"
+      "text": "printf '%*s' 20 ''; printf '\\033[30m● \\033[31m● \\033[32m● \\033[33m● \\033[34m● \\033[35m● \\033[36m● \\033[37m●'"
     }
   ]
 }
