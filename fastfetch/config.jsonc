@@ -38,8 +38,9 @@
       "format": "{name} {version} {arch}"
     },
     {
-      "type": "host",
-      "key": "    Host"
+      "type": "command",
+      "key": "    Host",
+      "text": "fastfetch -c \"$HOME/.config/fastfetch/host.jsonc\" 2>/dev/null | sed -E 's/[[:space:]]*,[[:space:]]*[^,()]*Thunderbolt[^()]*//' | tr -d '\\n'"
     },
     {
       "type": "kernel",
@@ -77,7 +78,8 @@
     },
     {
       "type": "disk",
-      "key": "    Disk"
+      "key": "    Disk",
+      "format": "{size-used} / {size-total} ({size-percentage}) - {filesystem}"
     },
     {
       "type": "battery",

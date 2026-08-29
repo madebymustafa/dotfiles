@@ -1,0 +1,6 @@
+{
+  "logo": { "type": "none" },
+  "modules": [
+    { "type": "host", "key": " ", "format": "{name}" }
+  ]
+}
