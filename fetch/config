@@ -1,0 +1,35 @@
+# fields listed in true default order (stock fetch behavior), minus the
+# color-swatch strip ("colors") which was the only thing removed
+os
+host
+kernel
+uptime
+packages
+shell
+display
+wm
+theme
+icons
+font
+cursor
+terminal
+cpu
+gpu
+memory
+swap
+disk
+ip
+battery
+# locale            <- removed
+# rounded-circle palette — keep after the fields (bottom of the panel)
+colors
+
+# appearance
+# rounded "panel" frame around the info — same layout idea as the video
+box=1
+# mauve #cba6f7 (catppuccin pastel, truecolor)
+label_color=38;2;203;166;247
+
+# 3d
+speed=1.1
+depth=1.3

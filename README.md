@@ -21,6 +21,7 @@ dotfiles/
 ├── btop/           → .config/btop/
 ├── cliamp/         → .config/cliamp/
 ├── fd/             → .config/fd/
+├── fetch/          → .config/fetch/
 ├── gh-dash/        → .config/gh-dash/
 ├── ghostty/        → .config/ghostty/
 ├── git/            → ~/.gitconfig

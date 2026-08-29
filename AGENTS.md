@@ -9,15 +9,16 @@ macOS dotfiles managed with GNU Stow. User is `madebymustafa` (GitHub).
 
 ## Install Flow
 1. Oh My Zsh (via curl, skipped if exists)
-2. Brew formulae: `zsh tmux neovim git bat fd ripgrep fzf thefuck htop btop fastfetch starship zellij yazi television atuin zoxide eza gh`
+2. Brew formulae: `zsh tmux neovim git bat fd ripgrep fzf thefuck htop btop fastfetch starship zellij yazi television atuin zoxide eza gh bjarneo/cliamp/cliamp ffmpeg yt-dlp`
 3. Brew casks: `wezterm font-jetbrains-mono-nerd-font aerospace raycast` (taps `nikitabobko/tap` first)
-4. opencode via `curl -fsSL https://opencode.ai/install.sh | sh`
-5. Zsh plugins cloned/pulled into `$ZSH_CUSTOM`: Powerlevel10k, zsh-autosuggestions, zsh-syntax-highlighting, fast-syntax-highlighting
-6. Tmux plugin manager (tpm) cloned/pulled into `~/.tmux/plugins/tpm`
-7. Calls `bash setup.sh` to symlink all dotfiles
-8. Installs tmux plugins headless via tpm (`bin/install_plugins.sh` against a throwaway server)
-9. Syncs neovim plugins headless (`nvim --headless "+Lazy! sync"`)
-10. Launches AeroSpace; user must approve the Accessibility permission when macOS prompts
+4. `fetch` — cloned from the `madebymustafa/fetch` fork (areofyl/fetch + bracketed-panel layout patches) into `~/src/fetch`, built, installed to `~/.local/bin/fetch`. Re-runs `reset --hard` `~/src/fetch` to the fork's main: edit `fetch.c` there and push to the fork to keep installs reproducible
+5. opencode via `curl -fsSL https://opencode.ai/install.sh | sh`
+6. Zsh plugins cloned/pulled into `$ZSH_CUSTOM`: Powerlevel10k, zsh-autosuggestions, zsh-syntax-highlighting, fast-syntax-highlighting
+7. Tmux plugin manager (tpm) cloned/pulled into `~/.tmux/plugins/tpm`
+8. Calls `bash setup.sh` to symlink all dotfiles
+9. Installs tmux plugins headless via tpm (`bin/install_plugins.sh` against a throwaway server)
+10. Syncs neovim plugins headless (`nvim --headless "+Lazy! sync"`)
+11. Launches AeroSpace; user must approve the Accessibility permission when macOS prompts
 
 ## Packages NOT installed by install.sh
 - **sketchybar**: config folder tracked but deliberately excluded from `setup.sh` (user preference); binary never installed
@@ -29,7 +30,7 @@ macOS dotfiles managed with GNU Stow. User is `madebymustafa` (GitHub).
 ## Stow Strategy
 - **setup.sh** uses per-package targets.
 - Home-rooted packages (git, tmux, zsh, wezterm) → `$HOME` directly.
-- Config packages (aerospace, atuin, bat, btop, fastfetch, fd, gh-dash, ghostty, htop, nix, nvim, opencode, sesh, starship, television, thefuck, yazi, zellij) → `$HOME/.config/<pkg>`.
+- Config packages (aerospace, atuin, bat, btop, fastfetch, fd, fetch, gh-dash, ghostty, htop, nix, nvim, opencode, sesh, starship, television, thefuck, yazi, zellij) → `$HOME/.config/<pkg>`.
 - **ssh** → special case: targets `$HOME/.ssh/` (not `$HOME`).
 - **vscode** → special case: targets `$HOME/Library/Application Support/Code/User`.
 - **`.hushlogin`** → at repo root, symlinked manually by `setup.sh` via `ln -sf`.

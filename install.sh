@@ -64,6 +64,20 @@ clone_or_pull https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 echo "→ Installing gh-dash..."
 gh extension install dlvhdr/gh-dash 2>/dev/null || gh extension upgrade gh-dash
 
+# ─── fetch ─────────────────────────────────────────────────────────────────────
+
+echo "→ Installing fetch (3D rotating-logo fetch)..."
+if [ ! -d "$HOME/src/fetch" ]; then
+  git clone --depth=1 https://github.com/madebymustafa/fetch.git "$HOME/src/fetch"
+else
+  git -C "$HOME/src/fetch" remote set-url origin https://github.com/madebymustafa/fetch.git
+  git -C "$HOME/src/fetch" fetch --depth=1 origin main
+  git -C "$HOME/src/fetch" reset --hard --quiet origin/main
+fi
+make -C "$HOME/src/fetch" >/dev/null
+mkdir -p "$HOME/.local/bin"
+install -m 755 "$HOME/src/fetch/fetch" "$HOME/.local/bin/fetch"
+
 # ─── Symlink dotfiles via setup.sh ─────────────────────────────────────────────
 
 echo "→ Running setup.sh to symlink dotfiles..."
