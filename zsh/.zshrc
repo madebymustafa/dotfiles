@@ -120,21 +120,6 @@ function y() {
   rm -f -- "$tmp"
 }
 
-# ─── Fastfetch ──────────────────────────────────────────────────────────────
-# Responsive wrapper on split-screen (narrow) terminals: the box layout is
-# fixed-width, so below 105 cols we drop the logo and let the same 72-col box
-# fit; below 74 cols the box itself can't fit, so linewrap is disabled to cut
-# cleanly at the edge instead of wrapping into garbage.
-
-function fastfetch() {
-  local cols="${COLUMNS:-$(tput cols 2>/dev/null)}"
-  cols="${cols:-80}"
-  local -a args=()
-  (( cols >= 105 )) || args+=(--logo none)
-  (( cols >= 74 ))  || args+=(--disable-linewrap)
-  command fastfetch "${args[@]}" "$@"
-}
-
 # =============================================================================
 #  ALIASES
 # =============================================================================
