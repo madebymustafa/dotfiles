@@ -1,17 +1,16 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-  "//": "Bracketed layout matching the video: centered title, rounded bracket rails framing content with small margins, single circle palette row outside (below) the bottom rail. Responsive: the logo is command-raw and switches to a small Apple art below 104 columns, so the same 72-wide box fits split-screen terminals without a wrapper.",
-    "//2": "GEOMETRY CONTRACT: rail is 72 wide; key.width 15 = 4 (left margin) + 8 (widest key 'Packages') + 2 (': ') + 1. Value column lands at 15 past the logo padding. Title centering and the 28-space circle pad derive from 72. Change them together. Logo art lives in logos/apple.ans (30w) and logos/apple-small.ans (14w); both + padding.right 2 reproduce the builtin columns 32/16.",
+  "//": "Bracketed layout matching the video: centered title, rounded bracket rails framing content with small margins, single circle palette row outside (below) the bottom rail.",
+    "//2": "GEOMETRY CONTRACT: rail is 72 wide; key.width 15 = 4 (left margin) + 8 (widest key 'Packages') + 2 (': ') + 1. Value column lands at 15 past the logo padding. Title centering and the 28-space circle pad derive from 72. Change them together.",
   "logo": {
-    "type": "command-raw",
-    "source": "s=\"$(stty size <&0 2>/dev/null)\"; c=\"${s##* }\"; c=\"${c:-80}\"; if [ \"$c\" -ge 104 ]; then cat \"$HOME/.config/fastfetch/logos/apple.ans\"; else cat \"$HOME/.config/fastfetch/logos/apple-small.ans\"; fi",
+    "type": "builtin",
+    "source": "macos",
     "padding": {
       "right": 2
     }
   },
   "display": {
     "separator": ": ",
-    "disableLinewrap": true,
     "key": {
       "width": 15
     },
