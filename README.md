@@ -19,6 +19,7 @@ dotfiles/
 ├── atuin/          → .config/atuin/
 ├── bat/            → .config/bat/
 ├── btop/           → .config/btop/
+├── cliamp/         → .config/cliamp/
 ├── fd/             → .config/fd/
 ├── gh-dash/        → .config/gh-dash/
 ├── ghostty/        → .config/ghostty/

@@ -1,0 +1,19 @@
+# cliamp configuration
+# Theme matches demo.mp4 exactly (verified: bg #1a1925, blue/green/orange accents = Tokyo Night)
+theme = "tokyo-night"
+
+# Default provider — Radio. Press S for Spotify, R for Radio, L for Local.
+provider = "radio"
+
+# Visualizer — Scatter (your preferred mode; matches demo look)
+visualizer = "Scatter"
+
+# Simplified mode: artist/title + time strip, no visualizer or playlist.
+# Uncomment to run the ultra-minimal layout:
+# simplified = true
+
+# Spotify — https://developer.spotify.com/dashboard
+# client_id read from $CLIAMP_SPOTIFY_ID in ~/.env (kept out of the repo).
+[spotify]
+client_id = "${CLIAMP_SPOTIFY_ID}"
+bitrate   = 320

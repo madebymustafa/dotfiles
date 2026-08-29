@@ -23,7 +23,8 @@ fi
 echo "→ Installing brew packages..."
 brew install \
   zsh tmux neovim git bat fd ripgrep fzf thefuck htop btop \
-  fastfetch starship zellij yazi television atuin zoxide eza gh
+  fastfetch starship zellij yazi television atuin zoxide eza gh \
+  bjarneo/cliamp/cliamp ffmpeg yt-dlp
 
 echo "→ Installing casks and fonts..."
 brew tap nikitabobko/tap
@@ -96,6 +97,8 @@ echo "  2. Raycast → Settings → Extensions → Script Commands → + →"
 echo "     Add Script Directory: ~/dotfiles/raycast/scripts"
 echo "     Then open 'Toggle AeroSpace' and record Hyper+Esc as its hotkey"
 echo "  3. Restore secrets to ~/.env (sourced by zsh, never committed)"
+echo "     e.g. export CLIAMP_SPOTIFY_ID=<your cliamp Spotify client id>"
+echo "     and any API keys. See cliamp/README.md."
 echo "  4. SSH: restore or generate a key (ssh-keygen -t ed25519) and add it"
 echo "     to GitHub"
 echo "  5. AeroSpace is not auto-started. When you want tiling:"
