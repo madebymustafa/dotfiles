@@ -17,5 +17,7 @@ Shell config. `.zshrc` + Powerlevel10k prompt (`.p10k.zsh`).
 - `edit-zsh` .......... open .zshrc in nvim
 - `cursor` ............ VS Code fork in classic mode
 - `y` ................. yazi wrapper that cd's your shell to wherever you quit it
+- `fastfetch` ......... wrapper that drops the logo on narrow terminals so the
+                        boxed layout never wraps/garbles on a split screen
 
 Plugin managers and completions are installed by `install.sh`.
