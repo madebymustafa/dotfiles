@@ -24,7 +24,7 @@ echo "→ Installing brew packages..."
 brew install \
   zsh tmux neovim git bat fd ripgrep fzf thefuck htop btop \
   fastfetch starship zellij yazi television atuin zoxide eza gh \
-  bjarneo/cliamp/cliamp ffmpeg yt-dlp
+  bjarneo/cliamp/cliamp ffmpeg yt-dlp stow
 
 echo "→ Installing casks and fonts..."
 brew tap nikitabobko/tap
