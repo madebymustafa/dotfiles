@@ -4,13 +4,103 @@
 macOS dotfiles managed with GNU Stow. User is `madebymustafa` (GitHub).
 
 ## Entry Points
-- **`install.sh`**: one-command new-machine bootstrap. Installs all tools (brew, casks, fonts, opencode, oh-my-zsh, zsh plugins, tpm), then calls `setup.sh`.
+- **`install.sh`**: one-command new-machine bootstrap. Installs all tools (brew, casks, fonts, opencode, oh-my-zsh, zsh plugins, tpm), then calls `setup.sh`. Full categorized inventory of what a fresh machine ends up with: see **Machine Blueprint** below.
 - **`setup.sh`**: symlinks dotfiles via GNU Stow. Called by `install.sh`. Can also run standalone if tools are already installed.
+
+## Machine Blueprint (categorized inventory of a fresh install)
+Everything `install.sh` puts on a brand-new Mac, categorized. Source of truth is the `Brewfile` (regenerate with `bash brewfile-update.sh`), which mirrors this machine exactly as of **Aug 31, 2026**: **168 formulae** (71 hand-picked + 97 auto-installed dependencies), **12 casks**, **7 taps**. The README's Structure section only shows the stow/package layout; the full package inventory lives here. Keep this section in sync whenever the Brewfile changes.
+
+### 🔌 Homebrew taps (7)
+| tap | contributes |
+|---|---|
+| `asmvik/formulae` | tapped; no currently-installed formula comes from it (kept in the mirror) |
+| `bjarneo/cliamp` | `cliamp` |
+| `can1357/tap` | `omp` |
+| `jordond/tap` | `jolt` |
+| `kilo-org/tap` | `kilo` |
+| `nikitabobko/tap` | `aerospace` (cask) |
+| `teamookla/speedtest` | `speedtest` |
+
+### 🧰 Formulae — hand-picked (71)
+Grouped by purpose:
+
+**Shell core & navigation** (13): atuin (history timeline), bat (cat + syntax), eza (`ls` + git), fd (`find`), fzf (fuzzy finder), television (fuzzy TUI), zoxide (smart `cd`), gum (glamorous scripting), glow (markdown), tlrc (`tldr`), thefuck (command correction), fastfetch (system info), stow (dotfiles symlinks — required by `setup.sh`)
+
+**Multiplexing & sessions** (3): tmux · zellij · sesh (smart session manager)
+
+**File & disk management** (6): yazi (file manager), elio (preview file manager), midnight-commander (MC), dua-cli, duf, ncdu
+
+**Editors** (2): neovim (daily driver) · nano (fail-safe fallback)
+
+**Git & GitHub workflow** (7): git · gh · lazygit · gitlogue (commit replay) · gitmoji · onefetch · hyperfine (benchmarking)
+
+**Security & secrets** (3): gnupg (OpenPGP) · gitleaks (secret scanning) · doppler (env/secrets CLI)
+
+**AI coding agents** (2): omp (can1357/tap) · kilo (kilo-org/tap) — plus casks codex & antigravity-cli and curl-installed opencode (see below)
+
+**Terminal fun & screensavers** (13): asciiquarium · astroterm · cbonsai · cmatrix · cowsay · espeak-ng · figlet · fortune · hyfetch · lolcat · macchina · pipes-sh · toipe
+
+**System & resource monitoring** (7): bottom · btop · cpufetch · htop · mactop (Apple Silicon) · bandwhich (bandwidth) · jolt (battery/energy, jordond/tap)
+
+**Networking & transfer** (6): croc (secure transfer) · curlie (curl + httpie) · portal (file transfer) · s-search (web search) · serpl (search & replace) · speedtest (teamookla/tap)
+
+**macOS utilities** (5): clipboard (clipboard from CLI) · duti (default apps) · fileicon (icons) · jrnl (journal) · switchaudio-osx (audio device)
+
+**Apple dev & media** (4): cliamp (Winamp-style terminal player, bjarneo/tap) · portaudio (audio I/O lib) · vhs (terminal GIF/video recorder) · xcodegen (Xcode project generator)
+
+### 📚 Formulae — auto-installed dependencies (97)
+Not hand-chosen; listed only so `brew bundle` reproduces this machine exactly.
+
+**Language runtimes** (6): bash · deno · go · node · python@3.13 · python@3.14
+
+**Crypto & TLS stack** (16): ca-certificates · gmp · gnutls · libassuan · libgcrypt · libgpg-error · libidn2 · libksba · libssh2 · libtasn1 · nettle · npth · openssl@3 · openssl@4 · p11-kit · pinentry
+
+**Compression** (4): brotli · lz4 · xz · zstd
+
+**Media & codec libraries** (19): dav1d · ffmpeg · flac · giflib · jpeg-turbo · lame · libogg · libpng · libtiff · libvmaf · libvorbis · libvpx · little-cms2 · mpg123 · opus · svt-av1 · webp · x264 · x265
+
+**Networking libraries** (9): ada-url · c-ares · libevent · libnghttp2 · libnghttp3 · libngtcp2 · libuv · libwebsockets · llhttp
+
+**Text & parsing libraries** (20): argtable3 · fmt · gettext · glib · icu4c@78 · jemalloc · json-c · libgit2 · libunistring · libyaml · ncurses · oniguruma · pcre2 · readline · s-lang · simdjson · simdutf · sqlite · utf8proc · yyjson
+
+**Neovim runtime** (6): lpeg · luajit · luv · tree-sitter · unibilium · uvwasi
+
+**Python ecosystem deps** (6): certifi · cffi · cryptography · libffi · mpdecimal · pycparser
+
+**Audio & graphics runtime** (3): pcaudiolib · sdl2-compat · sdl3
+
+**Transitive tools** (8): diffutils · hdrhistogram_c · libusb · merve (C++ lexer) · nbytes · ripgrep (behind television) · ttyd · yt-dlp
+
+### 🖥️ Casks — GUI apps & fonts (12)
+- **Terminals** (2): ghostty · wezterm (daily driver)
+- **Window management** (1): aerospace (tiling WM)
+- **AI agents** (2): antigravity-cli · codex
+- **Fonts** (2): font-jetbrains-mono-nerd-font · font-meslo-lg-nerd-font
+- **Productivity** (1): espanso (text expander)
+- **Utilities** (4): caskhub (GUI for casks) · cleanmymac-cli · freeze (Amazon Glacier client) · localsend (AirDrop alternative)
+
+### 🐚 Shell stack (not brew)
+- `zsh` (ships with macOS) + **Oh My Zsh** (curl-installed by install.sh)
+- Theme **powerlevel10k**; plugins **zsh-autosuggestions** + **fast-syntax-highlighting** — all cloned into `$ZSH_CUSTOM` by install.sh. F-Sy-H must stay the last omz plugin and is the only highlighter; never reinstall any of these via brew (see Shell Setup).
+
+### 🖥️ tmux + tpm
+**12 plugins** wired in `.tmux.conf`, installed headless by install.sh: catppuccin/tmux · omerxx/catppuccin-tmux · tmux-sensible · tmux-yank · tmux-resurrect · tmux-continuum · tmux-thumbs · tmux-fzf · tmux-fzf-url · tmux-sessionx · tmux-floax · vim-tmux-navigator
+
+### 🌱 Neovim (LazyVim)
+install.sh syncs plugins headless (`nvim --headless "+Lazy! sync"`). **54 plugins** recorded in `~/.config/nvim/lazy-lock.json`: LazyVim distro + Mason (LSP / DAP / formatters, incl. helm-ls + nvim-lint), blink.cmp completions, Copilot + blink-copilot, mini.\* utility modules (ai · files · icons · pairs · surround), snacks.nvim, which-key, noice, trouble, neo-tree, nvim-dap + virtual-text/go UI, treesitter + textobjects + ts-autotag, render-markdown, grug-far (search & replace), kulala (REST client), windsurf.vim, lualine, persistence, etc.
+
+### 🛠️ Other components install.sh provisions
+- **fetch** — clone of the `madebymustafa/fetch` fork (areofyl/fetch + bracketed-panel patches) → `~/src/fetch`, built → `~/.local/bin/fetch`
+- **opencode** — curl-installed (`https://opencode.ai/install.sh`) AI coding agent
+- **raycast** — Script Commands in `raycast/scripts/` (e.g. `toggle-aerospace.sh`); wiring the directory + recording the Hyper+Esc hotkey are manual finish steps
+- **nix** — Determinate Nix Installer (config stowed, binary not part of brew)
+- **sketchybar** — config tracked at `sketchybar/` but **binary not installed** (reference only)
+- **vscode** — `settings.json` + `keybindings.json` stowed into Code's User dir; extensions deliberately excluded from the Brewfile
 
 ## Install Flow
 **Preamble**: bootstraps Homebrew via the official installer when `brew` isn't on PATH (the only sudo prompt), then exports `/opt/homebrew/bin` on PATH for the rest of the run.
 1. Oh My Zsh (via curl, skipped if exists)
-2. Brew bundle via `Brewfile` (`brew bundle --file=Brewfile`): full mirror of this machine — 168 formulae + 12 casks across 7 taps (incl. fonts, aerospace, raycast, wezterm, ghostty, espanso). The file lists dependencies too, not just leaves, so a fresh machine reproduces the exact `fastfetch` package count. Regenerate it with `bash brewfile-update.sh` (this appends deps that a plain `brew bundle dump -force` would drop), then commit. VSCode extensions are excluded from the Brewfile on purpose (no `code` binary exists on a fresh machine).
+2. Brew bundle via `Brewfile` (`brew bundle --file=Brewfile`): full mirror of this machine — 168 formulae + 12 casks across 7 taps (incl. fonts, aerospace, raycast, wezterm, ghostty, espanso). Full categorized inventory: **Machine Blueprint** above. The file lists dependencies too, not just leaves, so a fresh machine reproduces the exact `fastfetch` package count. Regenerate it with `bash brewfile-update.sh` (this appends deps that a plain `brew bundle dump -force` would drop), then commit. VSCode extensions are excluded from the Brewfile on purpose (no `code` binary exists on a fresh machine).
 3. `fetch` — cloned from the `madebymustafa/fetch` fork (areofyl/fetch + bracketed-panel layout patches) into `~/src/fetch`, built, installed to `~/.local/bin/fetch`. Re-runs `reset --hard` `~/src/fetch` to the fork's main: edit `fetch.c` there and push to the fork to keep installs reproducible
 4. opencode via `curl -fsSL https://opencode.ai/install.sh | sh`
 5. Zsh plugins cloned/pulled into `$ZSH_CUSTOM`: Powerlevel10k (theme), zsh-autosuggestions, fast-syntax-highlighting
