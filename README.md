@@ -1,13 +1,34 @@
 ## 🚀 Install
 
+**New machine — everything, one command.** `install.sh` installs all tools
+(brew bundle, Oh My Zsh, plugins, tpm, …) and then runs `setup.sh` as its final
+step, so you never need to call it yourself to get a working setup.
+
 ```bash
 git clone git@github.com:madebymustafa/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-bash install.sh   # installs all tools, then runs setup.sh to symlink everything
+bash install.sh   # tools → symlinks, in one go
 ```
+
+> Prerequisite: Homebrew must already be installed, because every tool ships
+> through `brew bundle`. On a brand-new Mac, bootstrap it first:
+> `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
 First run asks for the Accessibility permission, which powers AeroSpace.
 Approve it.
+
+**Tools already installed — symlinks only.** Skip `install.sh` and just wire
+up the config files:
+
+```bash
+cd ~/dotfiles
+bash setup.sh   # symlinks via GNU Stow (brew bundle installs stow for you)
+```
+
+`setup.sh` creates symlinks only — see Structure below for where each package
+lands. It is safe to re-run after any `git pull` to refresh symlinks. Caveat:
+stow refuses to clobber a real file, so if a target like `~/.zshrc` already
+exists as a regular file (not a link), move it out of the way first.
 
 ## 🗂️ Structure
 
