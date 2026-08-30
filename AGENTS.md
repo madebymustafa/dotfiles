@@ -8,293 +8,236 @@ macOS dotfiles managed with GNU Stow. User is `madebymustafa` (GitHub).
 - **`setup.sh`**: symlinks dotfiles via GNU Stow. Called by `install.sh`. Can also run standalone if tools are already installed.
 
 ## Machine Blueprint (what a fresh install gets)
-Every tap, formula, cask and non-brew component `install.sh` provisions, in
-`<name>   # purpose` form (same style as the README structure tree). Source of
-truth: `Brewfile` — snapshot **Aug 31, 2026**: 168 formulae (71 hand-picked +
-97 dependencies), 12 casks, 7 taps. Regenerate with `bash brewfile-update.sh`
-and keep this synced.
+The full inventory `install.sh` provisions — `<name>   # purpose` per line,
+same style as the README Structure tree. Source of truth: `Brewfile`
+(snapshot **Aug 31, 2026**: 168 formulae + 12 casks + 7 taps). Regenerate
+with `bash brewfile-update.sh` and keep this in sync.
 
-### Taps (7)
-asmvik/formulae                 # tapped; no installed formula from it
-bjarneo/cliamp                  # cliamp
-can1357/tap                     # omp
-jordond/tap                     # jolt
-kilo-org/tap                    # kilo
-nikitabobko/tap                 # aerospace (cask)
-teamookla/speedtest             # speedtest
-
-### Formulae — hand-picked (71)
-
-Shell core & navigation (13):
-atuin                           # improved shell history
-bat                             # cat with syntax highlighting + git
-eza                             # ls replacement
-fastfetch                       # system info on shell start
-fd                              # find replacement
-fzf                             # fuzzy finder
-glow                            # markdown rendered in terminal
-gum                             # polish for shell scripts
-stow                            # symlink manager (required by setup.sh)
-television                      # fuzzy finder TUI
-thefuck                         # autocorrect mistyped commands
-tlrc                            # tldr pages
-zoxide                          # smart cd
-
-Multiplexing & sessions (3):
-tmux                            # terminal multiplexer
-zellij                          # terminal workspace / multiplexer
-sesh                            # session manager
-
-File & disk (6):
-yazi                            # file manager
-elio                            # file manager with previews
-midnight-commander              # ncurses file manager
-dua-cli                         # disk usage + cleanup
-duf                             # df alternative
-ncdu                            # ncurses disk usage
-
-Editors (2):
-neovim                          # daily editor (LazyVim)
-nano                            # fail-safe editor
-
-Git & GitHub (7):
-git                             # version control
-gh                              # GitHub CLI
-lazygit                         # git TUI
-gitlogue                        # cinematic commit replay
-gitmoji                         # emoji in commit messages
-onefetch                        # git repo info
-hyperfine                       # command benchmarking
-
-Security & secrets (3):
-gnupg                           # OpenPGP
-gitleaks                        # git secret scanner
-doppler                         # secrets/env CLI
-
-AI coding agents (2):
-omp                             # coding agent wired to IDE (can1357/tap)
-kilo                            # AI coding agent (kilo-org/tap)
-
-Terminal fun (13):
-asciiquarium                    # aquarium animation
-astroterm                       # planetarium
-cbonsai                         # bonsai tree generator
-cmatrix                         # matrix rain
-cowsay                          # talking cow
-espeak-ng                       # speech synthesis
-figlet                          # ASCII art banners
-fortune                         # random quotes
-hyfetch                         # system info + pride flags
-lolcat                          # rainbow colorizer
-macchina                        # minimal system info
-pipes-sh                        # pipes screensaver
-toipe                           # typing test
-
-System monitoring (7):
-bottom                          # process/system monitor
-btop                            # resource monitor
-cpufetch                        # CPU details
-htop                            # process viewer
-jolt                            # battery/energy monitor (jordond/tap)
-mactop                          # Apple Silicon monitor
-bandwhich                       # bandwidth monitor
-
-Networking & transfer (6):
-croc                            # secure file transfer
-curlie                          # curl with httpie UX
-portal                          # file transfer
-s-search                        # web search from terminal
-serpl                           # search & replace TUI
-speedtest                       # network speed test (teamookla/tap)
-
-macOS utilities (5):
-clipboard                       # clipboard from terminal
-duti                            # default apps for file types
-fileicon                        # file/folder icons
-jrnl                            # journaling
-switchaudio-osx                 # switch audio output
-
-Apple dev & media (4):
-xcodegen                        # Xcode project generator
-vhs                             # record terminal to GIF/video
-cliamp                          # Winamp-style terminal player (bjarneo/cliamp)
-portaudio                       # audio I/O library
-
-### Formulae — dependencies (97)
-Auto-installed with the 71 above; listed so `brew bundle` reproduces this machine exactly.
-
-Language runtimes (6):
-bash                            # modern bash (5.x)
-deno                            # JS/TypeScript runtime
-go                              # Go toolchain
-node                            # JS runtime
-python@3.13                     # Python
-python@3.14                     # Python
-
-Crypto & TLS (16):
-ca-certificates                 # CA bundle
-gmp                             # arbitrary-precision math
-gnutls                          # TLS library
-libassuan                       # GPG IPC
-libgcrypt                       # GPG crypto primitives
-libgpg-error                    # GPG error codes
-libidn2                         # internationalized domain names
-libksba                         # X.509 / ASN.1
-libssh2                         # SSH library
-libtasn1                        # ASN.1 library
-nettle                          # crypto library
-npth                            # GPG threading
-openssl@3                       # TLS/crypto
-openssl@4                       # TLS/crypto
-p11-kit                         # PKCS#11 access
-pinentry                        # GPG passphrase prompt
-
-Compression (4):
-brotli                          # compression
-lz4                             # compression
-xz                              # compression
-zstd                            # compression
-
-Media & codecs (19):
-dav1d                           # AV1 decoder
-ffmpeg                          # audio/video processing
-flac                            # lossless audio codec
-giflib                          # GIF
-jpeg-turbo                      # JPEG
-lame                            # MP3 encoder
-libogg                          # Ogg container
-libpng                          # PNG
-libtiff                         # TIFF
-libvmaf                         # video quality metric
-libvorbis                       # audio codec
-libvpx                          # VP8/VP9 codecs
-little-cms2                     # color management
-mpg123                          # MPEG audio
-opus                            # audio codec
-svt-av1                         # AV1 encoder
-webp                            # WebP image
-x264                            # H.264 encoder
-x265                            # HEVC encoder
-
-Networking libraries (9):
-ada-url                         # URL parser
-c-ares                          # async DNS
-libevent                        # event loop
-libnghttp2                      # HTTP/2
-libnghttp3                      # HTTP/3
-libngtcp2                       # QUIC/HTTP/3 core
-libuv                           # async I/O
-libwebsockets                   # websockets
-llhttp                          # HTTP parser
-
-Text & parsing (20):
-argtable3                       # CLI argument parsing
-fmt                             # C++ formatting
-gettext                         # internationalization
-glib                            # core utilities
-icu4c@78                        # Unicode support
-jemalloc                        # memory allocator
-json-c                          # JSON
-libgit2                         # git library
-libunistring                    # Unicode strings
-libyaml                         # YAML
-ncurses                         # terminal UI
-oniguruma                       # regex
-pcre2                           # regex
-readline                        # line editing
-s-lang                          # terminal UI (mc)
-simdjson                        # fast JSON
-simdutf                         # UTF validation
-sqlite                          # embedded database
-utf8proc                        # Unicode processing
-yyjson                          # fast JSON
-
-Neovim runtime (6):
-lpeg                            # Lua parsing
-luajit                          # LuaJIT runtime
-luv                             # libuv bindings for Lua
-tree-sitter                     # incremental parsing
-unibilium                       # terminfo
-uvwasi                          # WASI primitives
-
-Python ecosystem (6):
-certifi                         # CA bundle for Python
-cffi                            # C FFI for Python
-cryptography                    # crypto for Python
-libffi                          # foreign function interface
-mpdecimal                       # decimal for Python
-pycparser                       # C parser for Python
-
-Audio & graphics runtime (3):
-pcaudiolib                      # audio I/O
-sdl2-compat                     # SDL2 compatibility
-sdl3                            # SDL3
-
-Transitive tools (8):
-diffutils                       # diff utilities
-hdrhistogram_c                  # latency histograms
-libusb                          # USB access
-merve                           # C++ lexer (CommonJS exports)
-nbytes                          # byte handling (from Node.js core)
-ripgrep                         # fast search (television dep)
-ttyd                            # share terminal over the web
-yt-dlp                          # video download
-
-### Casks (12)
-
-Terminals (2):
-ghostty                         # GPU terminal emulator
-wezterm                         # daily terminal (GPU-accelerated)
-
-Window management (1):
-aerospace                       # tiling window manager (i3-like)
-
-AI agents (2):
-antigravity-cli                 # terminal for Antigravity agents
-codex                           # OpenAI coding agent
-
-Fonts (2):
-font-jetbrains-mono-nerd-font   # JetBrains Mono + Nerd glyphs
-font-meslo-lg-nerd-font         # Meslo LG + Nerd glyphs
-
-Productivity (1):
-espanso                         # text expander
-
-Utilities (4):
-caskhub                         # GUI for Homebrew casks
-cleanmymac-cli                  # CleanMyMac CLI
-freeze                          # Amazon Glacier transfer
-localsend                       # AirDrop alternative
-
-### Shell (zsh + omz — not brew)
-zsh                             # macOS system shell
-oh-my-zsh                       # zsh framework (curl-installed)
-powerlevel10k                   # prompt theme ($ZSH_CUSTOM/themes)
-zsh-autosuggestions             # inline history suggestions
-fast-syntax-highlighting        # syntax highlighting (must stay last plugin)
-
-### tmux plugins (12, via tpm)
-catppuccin/tmux                 # status bar theme
-omerxx/catppuccin-tmux          # status bar components
-tmux-sensible                   # saner defaults
-tmux-yank                       # system clipboard copy
-tmux-resurrect                  # session restore
-tmux-continuum                  # auto-save/restore
-tmux-thumbs                     # quick copy with regex thumbs
-tmux-fzf                        # fzf integration
-tmux-fzf-url                    # open URLs via fzf
-tmux-sessionx                   # session switcher
-tmux-floax                      # floating pane
-vim-tmux-navigator              # vim-style pane navigation
-
-### Other components
-nvim plugins (54)               # LazyVim; lockfile ~/.config/nvim/lazy-lock.json
-fetch fork                      # built → ~/.local/bin/fetch
-opencode                        # AI coding agent (curl install)
-raycast/scripts                 # script commands, e.g. toggle-aerospace.sh
-nix (Determinate)               # package manager; config stowed
-sketchybar                      # config tracked; binary NOT installed
-vscode                          # settings + keybindings stowed to Code User dir
+```text
+brew-bundle/
+├── Brewfile              # full brew mirror: 168 formulae + 12 casks (incl. deps)
+├── install.sh            # one-command bootstrap: brew bundle, tools, plugins
+├── brewfile-update.sh    # regenerate Brewfile (dump + append dependencies)
+├── setup.sh              # symlinks everything via GNU Stow
+├── formulae/             # 71 hand-picked brew packages
+│   ├── asciiquarium                    # aquarium animation
+│   ├── astroterm                       # planetarium
+│   ├── atuin                           # improved shell history
+│   ├── bandwhich                       # bandwidth monitor
+│   ├── bat                             # cat with syntax highlighting + git
+│   ├── bottom                          # process/system monitor
+│   ├── btop                            # resource monitor
+│   ├── cbonsai                         # bonsai tree generator
+│   ├── cliamp                          # Winamp-style terminal player
+│   ├── clipboard                       # clipboard from terminal
+│   ├── cmatrix                         # matrix rain
+│   ├── cowsay                          # talking cow
+│   ├── cpufetch                        # CPU details
+│   ├── croc                            # secure file transfer
+│   ├── curlie                          # curl with httpie UX
+│   ├── doppler                         # secrets/env CLI
+│   ├── dua-cli                         # disk usage + cleanup
+│   ├── duf                             # df alternative
+│   ├── duti                            # default apps for file types
+│   ├── elio                            # file manager with previews
+│   ├── espeak-ng                       # speech synthesis
+│   ├── eza                             # ls replacement
+│   ├── fastfetch                       # system info on shell start
+│   ├── fd                              # find replacement
+│   ├── figlet                          # ASCII art banners
+│   ├── fileicon                        # file/folder icons
+│   ├── fortune                         # random quotes
+│   ├── fzf                             # fuzzy finder
+│   ├── gh                              # GitHub CLI
+│   ├── git                             # version control
+│   ├── gitleaks                        # git secret scanner
+│   ├── gitlogue                        # cinematic commit replay
+│   ├── gitmoji                         # emoji in commit messages
+│   ├── glow                            # markdown rendered in terminal
+│   ├── gnupg                           # OpenPGP
+│   ├── gum                             # polish for shell scripts
+│   ├── htop                            # process viewer
+│   ├── hyfetch                         # system info + pride flags
+│   ├── hyperfine                       # command benchmarking
+│   ├── jolt                            # battery/energy monitor
+│   ├── jrnl                            # journaling
+│   ├── kilo                            # AI coding agent
+│   ├── lazygit                         # git TUI
+│   ├── lolcat                          # rainbow colorizer
+│   ├── macchina                        # minimal system info
+│   ├── mactop                          # Apple Silicon monitor
+│   ├── midnight-commander              # ncurses file manager
+│   ├── nano                            # fail-safe editor
+│   ├── ncdu                            # ncurses disk usage
+│   ├── neovim                          # daily editor (LazyVim)
+│   ├── omp                             # coding agent wired to IDE
+│   ├── onefetch                        # git repo info
+│   ├── pipes-sh                        # pipes screensaver
+│   ├── portal                          # file transfer
+│   ├── portaudio                       # audio I/O library
+│   ├── s-search                        # web search from terminal
+│   ├── serpl                           # search & replace TUI
+│   ├── sesh                            # session manager
+│   ├── speedtest                       # network speed test
+│   ├── stow                            # symlink manager (setup.sh dependency)
+│   ├── switchaudio-osx                 # switch audio output
+│   ├── television                      # fuzzy finder TUI
+│   ├── thefuck                         # autocorrect mistyped commands
+│   ├── tlrc                            # tldr pages
+│   ├── tmux                            # terminal multiplexer
+│   ├── toipe                           # typing test
+│   ├── vhs                             # record terminal to GIF/video
+│   ├── xcodegen                        # Xcode project generator
+│   ├── yazi                            # file manager
+│   ├── zellij                          # terminal workspace / multiplexer
+│   └── zoxide                          # smart cd
+├── dependencies/         # 97 auto-installed libraries (keep brew bundle exact)
+│   ├── ada-url                         # URL parser
+│   ├── argtable3                       # CLI argument parsing
+│   ├── bash                            # modern bash (5.x)
+│   ├── brotli                          # compression
+│   ├── c-ares                          # async DNS
+│   ├── ca-certificates                 # CA bundle
+│   ├── certifi                         # CA bundle for Python
+│   ├── cffi                            # C FFI for Python
+│   ├── cryptography                    # crypto for Python
+│   ├── dav1d                           # AV1 decoder
+│   ├── deno                            # JS/TypeScript runtime
+│   ├── diffutils                       # diff utilities
+│   ├── ffmpeg                          # audio/video processing
+│   ├── flac                            # lossless audio codec
+│   ├── fmt                             # C++ formatting
+│   ├── gettext                         # internationalization
+│   ├── giflib                          # GIF
+│   ├── glib                            # core utilities
+│   ├── gmp                             # arbitrary-precision math
+│   ├── gnutls                          # TLS library
+│   ├── go                              # Go toolchain
+│   ├── hdrhistogram_c                  # latency histograms
+│   ├── icu4c@78                        # Unicode support
+│   ├── jemalloc                        # memory allocator
+│   ├── jpeg-turbo                      # JPEG
+│   ├── json-c                          # JSON
+│   ├── lame                            # MP3 encoder
+│   ├── libassuan                       # GPG IPC
+│   ├── libevent                        # event loop
+│   ├── libffi                          # foreign function interface
+│   ├── libgcrypt                       # GPG crypto primitives
+│   ├── libgit2                         # git library
+│   ├── libgpg-error                    # GPG error codes
+│   ├── libidn2                         # internationalized domain names
+│   ├── libksba                         # X.509 / ASN.1
+│   ├── libnghttp2                      # HTTP/2
+│   ├── libnghttp3                      # HTTP/3
+│   ├── libngtcp2                       # QUIC/HTTP/3 core
+│   ├── libogg                          # Ogg container
+│   ├── libpng                          # PNG
+│   ├── libssh2                         # SSH library
+│   ├── libtasn1                        # ASN.1 library
+│   ├── libtiff                         # TIFF
+│   ├── libunistring                    # Unicode strings
+│   ├── libusb                          # USB access
+│   ├── libuv                           # async I/O
+│   ├── libvmaf                         # video quality metric
+│   ├── libvorbis                       # audio codec
+│   ├── libvpx                          # VP8/VP9 codecs
+│   ├── libwebsockets                   # websockets
+│   ├── libyaml                         # YAML
+│   ├── little-cms2                     # color management
+│   ├── llhttp                          # HTTP parser
+│   ├── lpeg                            # Lua parsing
+│   ├── luajit                          # LuaJIT runtime
+│   ├── luv                             # libuv bindings for Lua
+│   ├── lz4                             # compression
+│   ├── merve                           # C++ lexer (CommonJS exports)
+│   ├── mpdecimal                       # decimal for Python
+│   ├── mpg123                          # MPEG audio
+│   ├── nbytes                          # byte handling (from Node.js core)
+│   ├── ncurses                         # terminal UI
+│   ├── nettle                          # crypto library
+│   ├── node                            # JS runtime
+│   ├── npth                            # GPG threading
+│   ├── oniguruma                       # regex
+│   ├── openssl@3                       # TLS/crypto
+│   ├── openssl@4                       # TLS/crypto
+│   ├── opus                            # audio codec
+│   ├── p11-kit                         # PKCS#11 access
+│   ├── pcaudiolib                      # audio I/O
+│   ├── pcre2                           # regex
+│   ├── pinentry                        # GPG passphrase prompt
+│   ├── pycparser                       # C parser for Python
+│   ├── python@3.13                     # Python
+│   ├── python@3.14                     # Python
+│   ├── readline                        # line editing
+│   ├── ripgrep                         # fast search (television dep)
+│   ├── s-lang                          # terminal UI (mc)
+│   ├── sdl2-compat                     # SDL2 compatibility
+│   ├── sdl3                            # SDL3
+│   ├── simdjson                        # fast JSON
+│   ├── simdutf                         # UTF validation
+│   ├── sqlite                          # embedded database
+│   ├── svt-av1                         # AV1 encoder
+│   ├── tree-sitter                     # incremental parsing
+│   ├── ttyd                            # share terminal over the web
+│   ├── unibilium                       # terminfo
+│   ├── utf8proc                        # Unicode processing
+│   ├── uvwasi                          # WASI primitives
+│   ├── webp                            # WebP image
+│   ├── x264                            # H.264 encoder
+│   ├── x265                            # HEVC encoder
+│   ├── xz                              # compression
+│   ├── yt-dlp                          # video download
+│   ├── yyjson                          # fast JSON
+│   └── zstd                            # compression
+├── casks/                # 12 GUI apps + fonts
+│   ├── aerospace                       # tiling window manager (i3-like)
+│   ├── antigravity-cli                 # terminal for Antigravity agents
+│   ├── caskhub                         # GUI for Homebrew casks
+│   ├── cleanmymac-cli                  # CleanMyMac CLI
+│   ├── codex                           # OpenAI coding agent
+│   ├── espanso                         # text expander
+│   ├── font-jetbrains-mono-nerd-font   # JetBrains Mono + Nerd glyphs
+│   ├── font-meslo-lg-nerd-font         # Meslo LG + Nerd glyphs
+│   ├── freeze                          # Amazon Glacier transfer
+│   ├── ghostty                         # GPU terminal emulator
+│   ├── localsend                       # AirDrop alternative
+│   └── wezterm                         # daily terminal (GPU-accelerated)
+├── taps/                 # 7 third-party Homebrew taps
+│   ├── asmvik/formulae                 # tapped; no installed formula from it
+│   ├── bjarneo/cliamp                  # cliamp
+│   ├── can1357/tap                     # omp
+│   ├── jordond/tap                     # jolt
+│   ├── kilo-org/tap                    # kilo
+│   ├── nikitabobko/tap                 # aerospace (cask)
+│   └── teamookla/speedtest             # speedtest
+├── shell/                # zsh + Oh My Zsh stack (not brew)
+│   ├── zsh                             # macOS system shell
+│   ├── oh-my-zsh                       # zsh framework (curl-installed)
+│   ├── powerlevel10k                   # prompt theme
+│   ├── zsh-autosuggestions             # inline history suggestions
+│   └── fast-syntax-highlighting        # syntax highlighting (must stay last omz plugin)
+├── tmux/                 # 12 plugins via tpm
+│   ├── catppuccin/tmux                 # status bar theme
+│   ├── omerxx/catppuccin-tmux          # status bar components
+│   ├── tmux-continuum                  # auto-save/restore
+│   ├── tmux-floax                      # floating pane
+│   ├── tmux-fzf                        # fzf integration
+│   ├── tmux-fzf-url                    # open URLs via fzf
+│   ├── tmux-resurrect                  # session restore
+│   ├── tmux-sensible                   # saner defaults
+│   ├── tmux-sessionx                   # session switcher
+│   ├── tmux-thumbs                     # quick copy with regex thumbs
+│   ├── tmux-yank                       # system clipboard copy
+│   └── vim-tmux-navigator              # vim-style pane navigation
+└── other/                # non-brew components
+    ├── nvim                            # LazyVim editor + 54 plugins (lockfile: lazy-lock.json)
+    ├── fetch                           # system info fetcher built from fork (~/.local/bin/fetch)
+    ├── opencode                        # AI coding agent (curl-installed)
+    ├── raycast                         # script commands loaded straight from repo (toggle-aerospace.sh)
+    ├── nix                             # Determinate Nix Installer; config stowed
+    ├── sketchybar                      # config tracked; binary NOT installed
+    └── vscode                          # settings + keybindings stowed to Code User dir
+```
 
 ## Install Flow
 **Preamble**: bootstraps Homebrew via the official installer when `brew` isn't on PATH (the only sudo prompt), then exports `/opt/homebrew/bin` on PATH for the rest of the run.
