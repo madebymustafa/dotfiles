@@ -22,8 +22,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   git
   zsh-autosuggestions
-  zsh-syntax-highlighting  # must stay last: wraps live widgets/completions
-)
+  fast-syntax-highlighting        # must stay last: async replacement for
+)                                 # zsh-syntax-highlighting (they conflict)
 
 [[ -r "$ZSH/oh-my-zsh.sh" ]] && source "$ZSH/oh-my-zsh.sh"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -56,8 +56,10 @@ export XDG_CONFIG_HOME="$HOME/.config"
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 
-# ─── Zsh plugins (autosuggestions, syntax-highlighting) ─────────────────────
+# ─── Zsh plugins (autosuggestions, fast-syntax-highlighting) ────────────────
 # Loaded by Oh My Zsh above from $ZSH_CUSTOM/plugins (managed by install.sh).
+# fast-syntax-highlighting is an async replacement for zsh-syntax-highlighting:
+# it highlights in the background and must stay the LAST plugin in the list.
 
 # ─── FZF: fuzzy finder ────────────────────────────────────────────────────
 #   Ctrl-T  → pick files/directories   Ctrl-R  → search history

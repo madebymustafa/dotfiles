@@ -3,9 +3,9 @@
 Shell config. `.zshrc` + Powerlevel10k prompt (`.p10k.zsh`) + `.zprofile`.
 
 - Oh My Zsh is the framework (`ZSH_THEME="powerlevel10k/powerlevel10k"`), with
-  autosuggestions and syntax-highlighting plugins. Everything is cloned into
-  `~/.oh-my-zsh/custom` by `install.sh`, so a fresh machine renders the same
-  prompt with zero extra steps.
+  autosuggestions and fast-syntax-highlighting (async; loaded last). Everything
+  is cloned into `~/.oh-my-zsh/custom` by `install.sh`, so a fresh machine
+  renders the same prompt with zero extra steps.
 - PATH blocks for ~/.local/bin, LM Studio, bun and Homebrew bin/sbin
 - thefuck alias, secrets sourced from untracked `~/.env`
 

@@ -51,10 +51,10 @@ clone_or_pull() {
 
 clone_or_pull https://github.com/romkatv/powerlevel10k.git "$ZSH_CUSTOM/themes/powerlevel10k"
 clone_or_pull https://github.com/zsh-users/zsh-autosuggestions "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
-clone_or_pull https://github.com/zsh-users/zsh-syntax-highlighting "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
-# fast-syntax-highlighting is intentionally NOT installed: it conflicts with
-# zsh-syntax-highlighting (both re-wrap the same widgets and produce
-# duplicate-highlighter errors). Pick one; the .zshrc uses zsh-syntax-highlighting.
+clone_or_pull https://github.com/zdharma-continuum/fast-syntax-highlighting "$ZSH_CUSTOM/plugins/fast-syntax-highlighting"
+# Only ONE highlighter: fast-syntax-highlighting is an async replacement for
+# zsh-syntax-highlighting. Loading both re-wraps the same widgets and breaks
+# highlighting. The .zshrc loads F-Sy-H as its LAST plugin (required).
 
 # ─── Tmux plugin manager ──────────────────────────────────────────────────────
 
