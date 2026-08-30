@@ -13,7 +13,7 @@ macOS dotfiles managed with GNU Stow. User is `madebymustafa` (GitHub).
 3. Brew casks: `wezterm font-jetbrains-mono-nerd-font aerospace raycast` (taps `nikitabobko/tap` first)
 4. `fetch` — cloned from the `madebymustafa/fetch` fork (areofyl/fetch + bracketed-panel layout patches) into `~/src/fetch`, built, installed to `~/.local/bin/fetch`. Re-runs `reset --hard` `~/src/fetch` to the fork's main: edit `fetch.c` there and push to the fork to keep installs reproducible
 5. opencode via `curl -fsSL https://opencode.ai/install.sh | sh`
-6. Zsh plugins cloned/pulled into `$ZSH_CUSTOM`: Powerlevel10k, zsh-autosuggestions, zsh-syntax-highlighting, fast-syntax-highlighting
+6. Zsh plugins cloned/pulled into `$ZSH_CUSTOM`: Powerlevel10k (theme), zsh-autosuggestions, zsh-syntax-highlighting
 7. Tmux plugin manager (tpm) cloned/pulled into `~/.tmux/plugins/tpm`
 8. Calls `bash setup.sh` to symlink all dotfiles
 9. Installs tmux plugins headless via tpm (`bin/install_plugins.sh` against a throwaway server)
@@ -48,7 +48,8 @@ Flat directories only (no nested `.config/app/` prefix inside packages):
 ## Shell Setup
 - Interactive shell: `zsh` with Powerlevel10k theme.
 - `setup.sh` uses `bash` (portable on macOS/Linux).
-- Plugins: zsh-autosuggestions, zsh-syntax-highlighting, fast-syntax-highlighting (git cloned into `$ZSH_CUSTOM`).
+- `.zshrc` loads Oh My Zsh (`$ZSH/oh-my-zsh.sh`) as the framework; `ZSH_THEME="powerlevel10k/powerlevel10k"` resolves to the p10k clone in `$ZSH_CUSTOM/themes`.
+- Plugins: zsh-autosuggestions, zsh-syntax-highlighting (git cloned into `$ZSH_CUSTOM/plugins` by install.sh, loaded via the omz `plugins=()` array). fast-syntax-highlighting is deliberately NOT used - it conflicts with zsh-syntax-highlighting.
 - Default terminal: wezterm (font: JetBrains Mono Nerd Font).
 
 ## Key Decisions

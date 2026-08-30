@@ -43,7 +43,7 @@ dotfiles/
 ├── wezterm/        → ~/.wezterm.lua
 ├── yazi/           → .config/yazi/
 ├── zellij/         → .config/zellij/
-└── zsh/            → ~/.zshrc, ~/.p10k.zsh
+└── zsh/            → ~/.zshrc, ~/.p10k.zsh, ~/.zprofile
 ```
 
 Every directory is a [GNU Stow](https://www.gnu.org/software/stow/) package.

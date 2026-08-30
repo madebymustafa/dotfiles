@@ -10,7 +10,22 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+# ─── Oh My Zsh ──────────────────────────────────────────────────────────────
+# Framework: aliases, completions, theme/plugin loading, `omz` updater.
+# Powerlevel10k and the zsh plugins below are cloned into $ZSH_CUSTOM by
+# install.sh, so this block stays identical on a brand-new machine.
+
+export ZSH="$HOME/.oh-my-zsh"
+export ZSH_CUSTOM="$ZSH/custom"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+plugins=(
+  git
+  zsh-autosuggestions
+  zsh-syntax-highlighting  # must stay last: wraps live widgets/completions
+)
+
+[[ -r "$ZSH/oh-my-zsh.sh" ]] && source "$ZSH/oh-my-zsh.sh"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
@@ -41,15 +56,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 
-# ─── Plugin: zsh-syntax-highlighting ────────────────────────────────────────
-# Colourises command lines as you type: green for valid, red for invalid, etc.
-
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# ─── Plugin: zsh-autosuggestions ────────────────────────────────────────────
-# Dimmed history-based completions as you type. Accept with → or Ctrl-F.
-
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# ─── Zsh plugins (autosuggestions, syntax-highlighting) ─────────────────────
+# Loaded by Oh My Zsh above from $ZSH_CUSTOM/plugins (managed by install.sh).
 
 # ─── FZF: fuzzy finder ────────────────────────────────────────────────────
 #   Ctrl-T  → pick files/directories   Ctrl-R  → search history
@@ -161,9 +169,25 @@ eval "$(thefuck --alias tf)"
 
 # ── Zoxide ───────────────────────────────────────────────────────────────────
 # Smart `cd` that learns your most-used directories.  `z down` → ~/Downloads.
+#
+# `cd` uses real `cd` when given an existing path (so `cd ~/something` and
+# `cd /abs/path` always work), and falls back to zoxide's fuzzy `z` for jumps
+# (`cd down` → ~/Downloads). Previously `alias cd="z"` sent every `cd` through
+# zoxide, which mis-handled `~/` expansion and threw
+# `zsh: permission denied: $HOME`.
 
 eval "$(zoxide init zsh)"
-alias cd="z"
+# `unalias cd` first: zsh refuses to define a function named after an alias
+# ("defining function based on alias 'cd'"), and various plugins (oh-my-zsh,
+# etc.) can leave a `cd` alias in scope when this line is sourced.
+unalias cd 2>/dev/null
+cd() {
+  if [[ $# -ge 1 && -d "$1" ]]; then
+    builtin cd "$1"
+  else
+    z "$@"
+  fi
+}
 
 eval "$(atuin init zsh)"
 
