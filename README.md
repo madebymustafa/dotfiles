@@ -13,8 +13,9 @@ Approve it.
 
 ```
 dotfiles/
-├── Brewfile        # full brew mirror: 77 formulae + 12 casks (brew bundle)
+├── Brewfile        # full brew mirror: 168 formulae + 12 casks (incl. deps)
 ├── install.sh      # one-command bootstrap: brew bundle, tools, plugins
+├── brewfile-update.sh  # regenerate Brewfile (dump + append dependencies)
 ├── setup.sh        # symlinks everything via GNU Stow
 ├── aerospace/      → .config/aerospace/
 ├── atuin/          → .config/atuin/
