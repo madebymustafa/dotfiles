@@ -8,10 +8,9 @@ macOS dotfiles managed with GNU Stow. User is `madebymustafa` (GitHub).
 - **`setup.sh`**: symlinks dotfiles via GNU Stow. Called by `install.sh`. Can also run standalone if tools are already installed.
 
 ## Machine Blueprint (what a fresh install gets)
-The full inventory `install.sh` provisions — `<name>   # purpose` per line,
-same style as the README Structure tree. Source of truth: `Brewfile`
-(snapshot **Aug 31, 2026**: 168 formulae + 12 casks + 7 taps). Regenerate
-with `bash brewfile-update.sh` and keep this in sync.
+`<name>   # purpose` per line, same style as the README Structure tree.
+Source of truth: `Brewfile` (Aug 31, 2026 - 168 formulae / 12 casks / 7 taps;
+regenerate with `bash brewfile-update.sh` and keep this in sync).
 
 ```text
 brew-bundle/
@@ -24,7 +23,7 @@ brew-bundle/
 │   ├── astroterm                       # planetarium
 │   ├── atuin                           # improved shell history
 │   ├── bandwhich                       # bandwidth monitor
-│   ├── bat                             # cat with syntax highlighting + git
+│   ├── bat                             # cat clone with syntax + git
 │   ├── bottom                          # process/system monitor
 │   ├── btop                            # resource monitor
 │   ├── cbonsai                         # bonsai tree generator
@@ -42,7 +41,7 @@ brew-bundle/
 │   ├── elio                            # file manager with previews
 │   ├── espeak-ng                       # speech synthesis
 │   ├── eza                             # ls replacement
-│   ├── fastfetch                       # system info on shell start
+│   ├── fastfetch                       # system info
 │   ├── fd                              # find replacement
 │   ├── figlet                          # ASCII art banners
 │   ├── fileicon                        # file/folder icons
@@ -52,10 +51,10 @@ brew-bundle/
 │   ├── git                             # version control
 │   ├── gitleaks                        # git secret scanner
 │   ├── gitlogue                        # cinematic commit replay
-│   ├── gitmoji                         # emoji in commit messages
-│   ├── glow                            # markdown rendered in terminal
+│   ├── gitmoji                         # emoji commit helper
+│   ├── glow                            # markdown in terminal
 │   ├── gnupg                           # OpenPGP
-│   ├── gum                             # polish for shell scripts
+│   ├── gum                             # shell script polish
 │   ├── htop                            # process viewer
 │   ├── hyfetch                         # system info + pride flags
 │   ├── hyperfine                       # command benchmarking
@@ -79,7 +78,7 @@ brew-bundle/
 │   ├── serpl                           # search & replace TUI
 │   ├── sesh                            # session manager
 │   ├── speedtest                       # network speed test
-│   ├── stow                            # symlink manager (setup.sh dependency)
+│   ├── stow                            # symlink manager (setup.sh dep)
 │   ├── switchaudio-osx                 # switch audio output
 │   ├── television                      # fuzzy finder TUI
 │   ├── thefuck                         # autocorrect mistyped commands
@@ -91,104 +90,17 @@ brew-bundle/
 │   ├── yazi                            # file manager
 │   ├── zellij                          # terminal workspace / multiplexer
 │   └── zoxide                          # smart cd
-├── dependencies/         # 97 auto-installed libraries (keep brew bundle exact)
-│   ├── ada-url                         # URL parser
-│   ├── argtable3                       # CLI argument parsing
-│   ├── bash                            # modern bash (5.x)
-│   ├── brotli                          # compression
-│   ├── c-ares                          # async DNS
-│   ├── ca-certificates                 # CA bundle
-│   ├── certifi                         # CA bundle for Python
-│   ├── cffi                            # C FFI for Python
-│   ├── cryptography                    # crypto for Python
-│   ├── dav1d                           # AV1 decoder
-│   ├── deno                            # JS/TypeScript runtime
-│   ├── diffutils                       # diff utilities
-│   ├── ffmpeg                          # audio/video processing
-│   ├── flac                            # lossless audio codec
-│   ├── fmt                             # C++ formatting
-│   ├── gettext                         # internationalization
-│   ├── giflib                          # GIF
-│   ├── glib                            # core utilities
-│   ├── gmp                             # arbitrary-precision math
-│   ├── gnutls                          # TLS library
-│   ├── go                              # Go toolchain
-│   ├── hdrhistogram_c                  # latency histograms
-│   ├── icu4c@78                        # Unicode support
-│   ├── jemalloc                        # memory allocator
-│   ├── jpeg-turbo                      # JPEG
-│   ├── json-c                          # JSON
-│   ├── lame                            # MP3 encoder
-│   ├── libassuan                       # GPG IPC
-│   ├── libevent                        # event loop
-│   ├── libffi                          # foreign function interface
-│   ├── libgcrypt                       # GPG crypto primitives
-│   ├── libgit2                         # git library
-│   ├── libgpg-error                    # GPG error codes
-│   ├── libidn2                         # internationalized domain names
-│   ├── libksba                         # X.509 / ASN.1
-│   ├── libnghttp2                      # HTTP/2
-│   ├── libnghttp3                      # HTTP/3
-│   ├── libngtcp2                       # QUIC/HTTP/3 core
-│   ├── libogg                          # Ogg container
-│   ├── libpng                          # PNG
-│   ├── libssh2                         # SSH library
-│   ├── libtasn1                        # ASN.1 library
-│   ├── libtiff                         # TIFF
-│   ├── libunistring                    # Unicode strings
-│   ├── libusb                          # USB access
-│   ├── libuv                           # async I/O
-│   ├── libvmaf                         # video quality metric
-│   ├── libvorbis                       # audio codec
-│   ├── libvpx                          # VP8/VP9 codecs
-│   ├── libwebsockets                   # websockets
-│   ├── libyaml                         # YAML
-│   ├── little-cms2                     # color management
-│   ├── llhttp                          # HTTP parser
-│   ├── lpeg                            # Lua parsing
-│   ├── luajit                          # LuaJIT runtime
-│   ├── luv                             # libuv bindings for Lua
-│   ├── lz4                             # compression
-│   ├── merve                           # C++ lexer (CommonJS exports)
-│   ├── mpdecimal                       # decimal for Python
-│   ├── mpg123                          # MPEG audio
-│   ├── nbytes                          # byte handling (from Node.js core)
-│   ├── ncurses                         # terminal UI
-│   ├── nettle                          # crypto library
-│   ├── node                            # JS runtime
-│   ├── npth                            # GPG threading
-│   ├── oniguruma                       # regex
-│   ├── openssl@3                       # TLS/crypto
-│   ├── openssl@4                       # TLS/crypto
-│   ├── opus                            # audio codec
-│   ├── p11-kit                         # PKCS#11 access
-│   ├── pcaudiolib                      # audio I/O
-│   ├── pcre2                           # regex
-│   ├── pinentry                        # GPG passphrase prompt
-│   ├── pycparser                       # C parser for Python
-│   ├── python@3.13                     # Python
-│   ├── python@3.14                     # Python
-│   ├── readline                        # line editing
-│   ├── ripgrep                         # fast search (television dep)
-│   ├── s-lang                          # terminal UI (mc)
-│   ├── sdl2-compat                     # SDL2 compatibility
-│   ├── sdl3                            # SDL3
-│   ├── simdjson                        # fast JSON
-│   ├── simdutf                         # UTF validation
-│   ├── sqlite                          # embedded database
-│   ├── svt-av1                         # AV1 encoder
-│   ├── tree-sitter                     # incremental parsing
-│   ├── ttyd                            # share terminal over the web
-│   ├── unibilium                       # terminfo
-│   ├── utf8proc                        # Unicode processing
-│   ├── uvwasi                          # WASI primitives
-│   ├── webp                            # WebP image
-│   ├── x264                            # H.264 encoder
-│   ├── x265                            # HEVC encoder
-│   ├── xz                              # compression
-│   ├── yt-dlp                          # video download
-│   ├── yyjson                          # fast JSON
-│   └── zstd                            # compression
+├── dependencies/         # 97 auto-installed libs, grouped
+│   ├── runtimes                        # bash, deno, go, node, python@3.13, python@3.14
+│   ├── crypto/tls                      # openssl@3, openssl@4, ca-certificates, gnutls, nettle, gmp, libgcrypt, libgpg-error, libassuan, libksba, npth, pinentry, p11-kit, libtasn1, libidn2, libssh2
+│   ├── compression                     # brotli, lz4, xz, zstd
+│   ├── codecs/media                    # ffmpeg, dav1d, svt-av1, x264, x265, libvpx, libvmaf, opus, flac, lame, mpg123, libvorbis, libogg, webp, libpng, libtiff, jpeg-turbo, giflib, little-cms2
+│   ├── networking                      # libnghttp2, libnghttp3, libngtcp2, libuv, libevent, c-ares, llhttp, libwebsockets, ada-url
+│   ├── text/parsing                    # ncurses, readline, pcre2, oniguruma, sqlite, icu4c@78, gettext, glib, fmt, jemalloc, utf8proc, libunistring, simdjson, simdutf, yyjson, json-c, libyaml, libgit2, s-lang, argtable3
+│   ├── nvim runtime                    # luajit, lpeg, luv, tree-sitter, unibilium, uvwasi
+│   ├── python deps                     # cffi, cryptography, certifi, pycparser, libffi, mpdecimal
+│   ├── audio/graphics                  # sdl3, sdl2-compat, pcaudiolib
+│   └── misc tools                      # yt-dlp, ttyd, ripgrep, diffutils, libusb, merve, nbytes, hdrhistogram_c
 ├── casks/                # 12 GUI apps + fonts
 │   ├── aerospace                       # tiling window manager (i3-like)
 │   ├── antigravity-cli                 # terminal for Antigravity agents
@@ -202,7 +114,7 @@ brew-bundle/
 │   ├── ghostty                         # GPU terminal emulator
 │   ├── localsend                       # AirDrop alternative
 │   └── wezterm                         # daily terminal (GPU-accelerated)
-├── taps/                 # 7 third-party Homebrew taps
+├── taps/                 # 7 third-party taps
 │   ├── asmvik/formulae                 # tapped; no installed formula from it
 │   ├── bjarneo/cliamp                  # cliamp
 │   ├── can1357/tap                     # omp
@@ -210,12 +122,12 @@ brew-bundle/
 │   ├── kilo-org/tap                    # kilo
 │   ├── nikitabobko/tap                 # aerospace (cask)
 │   └── teamookla/speedtest             # speedtest
-├── shell/                # zsh + Oh My Zsh stack (not brew)
+├── shell/                # zsh + Oh My Zsh stack
 │   ├── zsh                             # macOS system shell
 │   ├── oh-my-zsh                       # zsh framework (curl-installed)
 │   ├── powerlevel10k                   # prompt theme
 │   ├── zsh-autosuggestions             # inline history suggestions
-│   └── fast-syntax-highlighting        # syntax highlighting (must stay last omz plugin)
+│   └── fast-syntax-highlighting        # highlighting (last omz plugin)
 ├── tmux/                 # 12 plugins via tpm
 │   ├── catppuccin/tmux                 # status bar theme
 │   ├── omerxx/catppuccin-tmux          # status bar components
@@ -224,19 +136,19 @@ brew-bundle/
 │   ├── tmux-fzf                        # fzf integration
 │   ├── tmux-fzf-url                    # open URLs via fzf
 │   ├── tmux-resurrect                  # session restore
-│   ├── tmux-sensible                   # saner defaults
+│   ├── tmux-sensible                   # sensible defaults
 │   ├── tmux-sessionx                   # session switcher
 │   ├── tmux-thumbs                     # quick copy with regex thumbs
 │   ├── tmux-yank                       # system clipboard copy
 │   └── vim-tmux-navigator              # vim-style pane navigation
 └── other/                # non-brew components
-    ├── nvim                            # LazyVim editor + 54 plugins (lockfile: lazy-lock.json)
-    ├── fetch                           # system info fetcher built from fork (~/.local/bin/fetch)
+    ├── nvim                            # LazyVim + 54 plugins (lazy-lock.json)
+    ├── fetch                           # fetcher from fork (→ ~/.local/bin/fetch)
     ├── opencode                        # AI coding agent (curl-installed)
-    ├── raycast                         # script commands loaded straight from repo (toggle-aerospace.sh)
-    ├── nix                             # Determinate Nix Installer; config stowed
-    ├── sketchybar                      # config tracked; binary NOT installed
-    └── vscode                          # settings + keybindings stowed to Code User dir
+    ├── raycast                         # script commands (toggle-aerospace.sh)
+    ├── nix                             # Determinate Nix Installer
+    ├── sketchybar                      # config only; binary not installed
+    └── vscode                          # settings + keybindings stowed
 ```
 
 ## Install Flow
