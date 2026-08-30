@@ -13,7 +13,8 @@ Approve it.
 
 ```
 dotfiles/
-├── install.sh      # one-command bootstrap: tools, taps, casks, plugins
+├── Brewfile        # full brew mirror: 77 formulae + 12 casks (brew bundle)
+├── install.sh      # one-command bootstrap: brew bundle, tools, plugins
 ├── setup.sh        # symlinks everything via GNU Stow
 ├── aerospace/      → .config/aerospace/
 ├── atuin/          → .config/atuin/

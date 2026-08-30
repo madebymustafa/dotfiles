@@ -20,15 +20,8 @@ fi
 
 # ─── Homebrew packages ────────────────────────────────────────────────────────
 
-echo "→ Installing brew packages..."
-brew install \
-  zsh tmux neovim git bat fd ripgrep fzf thefuck htop btop \
-  fastfetch starship zellij yazi television atuin zoxide eza gh \
-  bjarneo/cliamp/cliamp ffmpeg yt-dlp stow
-
-echo "→ Installing casks and fonts..."
-brew tap nikitabobko/tap
-brew install --cask wezterm font-jetbrains-mono-nerd-font aerospace raycast
+echo "→ Installing brew packages (Brewfile: full mirror of this machine)..."
+brew bundle --file="$DIR/Brewfile"
 
 # ─── opencode ─────────────────────────────────────────────────────────────────
 
