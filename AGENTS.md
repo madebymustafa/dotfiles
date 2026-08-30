@@ -49,6 +49,7 @@ Flat directories only (no nested `.config/app/` prefix inside packages):
 - `setup.sh` uses `bash` (portable on macOS/Linux).
 - `.zshrc` loads Oh My Zsh (`$ZSH/oh-my-zsh.sh`) as the framework; `ZSH_THEME="powerlevel10k/powerlevel10k"` resolves to the p10k clone in `$ZSH_CUSTOM/themes`.
 - Plugins: zsh-autosuggestions, fast-syntax-highlighting (git cloned into `$ZSH_CUSTOM/plugins` by install.sh, loaded via the omz `plugins=()` array). F-Sy-H is the only highlighter and must stay the last plugin. zsh-syntax-highlighting is deliberately NOT used - both would re-wrap the same widgets.
+- The old brew copies (`powerlevel10k`, `zsh-autosuggestions`, `zsh-syntax-highlighting` formulae) were uninstalled - the shell loads these from `$ZSH_CUSTOM` instead. Do not reinstall them via brew; it raises a hardcoding trap exactly like the Homebrew-path sources the repo removed in commit `398663a`.
 - Default terminal: wezterm (font: JetBrains Mono Nerd Font).
 
 ## Key Decisions
