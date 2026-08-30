@@ -1,21 +1,20 @@
 ## 🚀 Install
 
-**New machine — everything, one command.** `install.sh` installs all tools
-(brew bundle, Oh My Zsh, plugins, tpm, …) and then runs `setup.sh` as its final
-step, so you never need to call it yourself to get a working setup.
+**New machine — everything, one command.** `install.sh` is the whole setup
+pipeline on a brand-new Mac: it bootstraps Homebrew if missing (the only step
+that ever needs your sudo password), installs every package via the Brewfile,
+sets up Oh My Zsh + all plugins, and finishes by running `setup.sh` to symlink
+your dotfiles.
 
 ```bash
 git clone git@github.com:madebymustafa/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-bash install.sh   # tools → symlinks, in one go
+bash install.sh   # brew → tools → zsh → symlinks, in one go
 ```
 
-> Prerequisite: Homebrew must already be installed, because every tool ships
-> through `brew bundle`. On a brand-new Mac, bootstrap it first:
-> `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-
-First run asks for the Accessibility permission, which powers AeroSpace.
-Approve it.
+Expected prompts: ① your sudo password once for the Homebrew bootstrap (only
+on a machine without brew), ② the Accessibility permission that powers
+AeroSpace. Approve it.
 
 **Tools already installed — symlinks only.** Skip `install.sh` and just wire
 up the config files:

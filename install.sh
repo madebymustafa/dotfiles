@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 #
 # One-command new-machine bootstrap.
-# Installs all tools and symlinks dotfiles: everything you need to get started.
+# Bootstraps Homebrew if missing, installs all tools and symlinks dotfiles:
+# everything you need to get started on a brand-new Mac.
 #
 # Usage:
 #   cd ~/dotfiles && bash install.sh
@@ -10,6 +11,18 @@ set -euo pipefail
 
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$DIR"
+
+# ─── Homebrew ─────────────────────────────────────────────────────────────────
+# A brand-new macOS ships without Homebrew, and every tool below is installed
+# via `brew bundle`. Bootstrap it when missing (prompts for sudo), then make
+# sure its bin dir is on PATH for the rest of this script.
+
+if ! command -v brew >/dev/null 2>&1; then
+  echo ""
+  echo "→ Installing Homebrew (this asks for your sudo password)..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 
 # ─── Oh My Zsh ────────────────────────────────────────────────────────────────
 

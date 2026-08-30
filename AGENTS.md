@@ -8,6 +8,7 @@ macOS dotfiles managed with GNU Stow. User is `madebymustafa` (GitHub).
 - **`setup.sh`**: symlinks dotfiles via GNU Stow. Called by `install.sh`. Can also run standalone if tools are already installed.
 
 ## Install Flow
+**Preamble**: bootstraps Homebrew via the official installer when `brew` isn't on PATH (the only sudo prompt), then exports `/opt/homebrew/bin` on PATH for the rest of the run.
 1. Oh My Zsh (via curl, skipped if exists)
 2. Brew bundle via `Brewfile` (`brew bundle --file=Brewfile`): full mirror of this machine — 168 formulae + 12 casks across 7 taps (incl. fonts, aerospace, raycast, wezterm, ghostty, espanso). The file lists dependencies too, not just leaves, so a fresh machine reproduces the exact `fastfetch` package count. Regenerate it with `bash brewfile-update.sh` (this appends deps that a plain `brew bundle dump -force` would drop), then commit. VSCode extensions are excluded from the Brewfile on purpose (no `code` binary exists on a fresh machine).
 3. `fetch` — cloned from the `madebymustafa/fetch` fork (areofyl/fetch + bracketed-panel layout patches) into `~/src/fetch`, built, installed to `~/.local/bin/fetch`. Re-runs `reset --hard` `~/src/fetch` to the fork's main: edit `fetch.c` there and push to the fork to keep installs reproducible
