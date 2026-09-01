@@ -18,6 +18,15 @@ background-blur-radius = 20
 # Top/bottom padding so the first line doesn't touch the window edge
 # (matches WezTerm's top = 20 padding).
 window-padding-y = 20
+
+# Open URLs by holding Cmd (macOS) / Ctrl (Linux) and clicking.
+# `link-url` is on by default; set explicitly for clarity.
+# NOTE: Inside apps that enable "mouse reporting" (tmux, vim, lazygit, TUI
+# CLIs), Cmd+click on macOS cannot open links because the Command modifier
+# can't travel through the xterm mouse protocol — the click is swallowed by
+# the app. Use Cmd+Shift+click in those apps (Shift is Ghostty's mouse-capture
+# bypass). This is an upstream Ghostty limitation, not a config issue.
+link-url = true
 mouse-hide-while-typing = true
 macos-option-as-alt = true
 macos-non-native-fullscreen = true

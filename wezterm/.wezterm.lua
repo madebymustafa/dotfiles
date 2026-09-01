@@ -103,6 +103,35 @@ config.keys = {
 	{ key = "Z", mods = "SUPER|SHIFT", action = act.TogglePaneZoomState },
 }
 
+-- ─── Links ───────────────────────────────────────────────────────────────────
+-- Open URLs with Cmd+click (macOS) / Ctrl+click (elsewhere).
+-- Two bindings per form so they fire both from the normal shell prompt AND
+-- from TUI apps that have enabled mouse-reporting mode (vim, lazygit, etc.).
+-- The `Down` events are set to Nop so the click is never swallowed by the
+-- app running in the pane.
+
+config.mouse_bindings = {
+	-- Cmd+click (normal mode)
+	{ event = { Up = { streak = 1, button = "Left" } }, mods = "SUPER", action = act.OpenLinkAtMouseCursor },
+	{ event = { Down = { streak = 1, button = "Left" } }, mods = "SUPER", action = act.Nop },
+	-- Cmd+click while the app has mouse-reporting enabled (tmux/vim/lazygit)
+	{ event = { Up = { streak = 1, button = "Left" } }, mods = "SUPER", mouse_reporting = true, action = act.OpenLinkAtMouseCursor },
+	{ event = { Down = { streak = 1, button = "Left" } }, mods = "SUPER", mouse_reporting = true, action = act.Nop },
+	-- Ctrl+click (non-macOS + mouse-reporting apps), mirrors above
+	{ event = { Up = { streak = 1, button = "Left" } }, mods = "CTRL", action = act.OpenLinkAtMouseCursor },
+	{ event = { Down = { streak = 1, button = "Left" } }, mods = "CTRL", action = act.Nop },
+	{ event = { Up = { streak = 1, button = "Left" } }, mods = "CTRL", mouse_reporting = true, action = act.OpenLinkAtMouseCursor },
+	{ event = { Down = { streak = 1, button = "Left" } }, mods = "CTRL", mouse_reporting = true, action = act.Nop },
+}
+
+-- On some macOS releases WezTerm fails to dispatch the result of clicking a
+-- link (the link is detected correctly — it underlines and shows a hand
+-- cursor — but nothing opens) unless an open-uri handler is registered.
+-- Registering a handler routes the URI to `open`/xdg-open and fixes it.
+wezterm.on("open-uri", function(window, pane, uri)
+	wezterm.log_info("open-uri: " .. uri)
+end)
+
 -- ─── Startup position ───────────────────────────────────────────────────────
 -- Launch at 60% of screen size, centred on the active display.
 
