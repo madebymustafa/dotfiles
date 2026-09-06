@@ -9,9 +9,8 @@ local config = wezterm.config_builder()
 
 config.check_for_updates = true
 config.check_for_updates_interval_seconds = 86400
-config.show_update_window = true
 
--- Installs wezterm updates automatically via Homebrew, at most once a week.
+-- Installs wezterm@nightly updates automatically via Homebrew, at most once a week.
 -- Runs detached from within WezTerm: no login item, no launch agent, no
 -- blocking. New version takes effect the next time WezTerm is relaunched.
 -- Activity log: ~/.cache/wezterm-upgrade.log
@@ -33,8 +32,8 @@ end
 local function run_silent_update()
 	os.execute(string.format(
 		"(mkdir -p %q; "
-			.. "if out=$(%s outdated --cask --quiet --greedy); then "
-			.. "if echo \"$out\" | grep -q '^wezterm'; then %s upgrade --cask wezterm; fi; "
+			.. "if out=$(%s outdated --cask --quiet --greedy-latest); then "
+			.. "if echo \"$out\" | grep -q '^wezterm@nightly'; then %s upgrade --cask wezterm@nightly --greedy-latest; fi; "
 			.. "date +%%s > %q; fi) >> %q 2>&1 &",
 		wezterm.home_dir .. "/.cache",
 		BREW,
@@ -65,6 +64,9 @@ config.color_scheme = "Catppuccin Mocha (Gogh)"
 config.font = wezterm.font("JetBrains Mono")
 config.font_size = 19
 config.enable_tab_bar = false
+-- RESIZE = hidden titlebar. On nightly builds macOS still supplies the native
+-- rounded corners and shadow; on stable (20240203) transparency removed the
+-- native corner rounding entirely, so this needs the nightly cask.
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "NeverPrompt"
 config.window_background_opacity = 0.8

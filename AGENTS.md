@@ -113,7 +113,7 @@ brew-bundle/
 │   ├── freeze                          # Amazon Glacier transfer
 │   ├── ghostty                         # GPU terminal emulator
 │   ├── localsend                       # AirDrop alternative
-│   └── wezterm                         # daily terminal (GPU-accelerated)
+│   └── wezterm@nightly                 # daily terminal (nightly; native corners)
 ├── taps/                 # 7 third-party taps
 │   ├── asmvik/formulae                 # tapped; no installed formula from it
 │   ├── bjarneo/cliamp                  # cliamp

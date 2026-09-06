@@ -174,7 +174,9 @@ cask "ghostty"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
-cask "wezterm"
+# Nightly cask: required for native macOS rounded corners with transparency;
+# the stable cask has been frozen since the Feb 2024 build.
+cask "wezterm@nightly"
 vscode "aaron-bond.better-comments"
 vscode "alefragnani.project-manager"
 vscode "alexdauenhauer.catppuccin-noctis-icons"
