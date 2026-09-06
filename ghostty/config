@@ -14,7 +14,9 @@ macos-titlebar-style = hidden
 # workaround (ghostty-org/ghostty#9582).
 macos-window-shadow = false
 background-opacity = 0.8
-background-blur-radius = 20
+# Blur intensity 10 to match WezTerm's macos_window_background_blur = 10.
+# `background-blur` is the current key; older `background-blur-radius` is an alias.
+background-blur = 10
 # Top/bottom padding so the first line doesn't touch the window edge
 # (matches WezTerm's top = 20 padding).
 window-padding-y = 20
