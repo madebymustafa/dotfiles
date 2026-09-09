@@ -238,8 +238,30 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # >>> codex free aliases >>>
 # Type "codex-" then press TAB to see both. Plain `codex` stays your ChatGPT plan.
-alias codex-free='codex --profile free-openrouter'    # free-models menu (Nemotron Super default)
-alias codex-ox='codex --profile openrouter-ox-alpha'  # Ox Alpha directly
+# `command codex` bypasses the Headroom wrapper — these profiles hit OpenRouter
+# directly (free models), which the proxy would misroute.
+alias codex-free='command codex --profile free-openrouter'    # free-models menu (Nemotron Super default)
+alias codex-ox='command codex --profile openrouter-ox-alpha'  # Ox Alpha directly
 # <<< codex free aliases <<<
+
+# ── Headroom (on-demand) ─────────────────────────────────────────────────────
+# Compresses coding-agent context. No background service: the proxy starts when
+# an agent is launched and stops when the last wrapped session exits. Typing
+# `claude` / `codex` / `opencode` / `omp` routes that session through Headroom;
+# `command <tool>` bypasses the wrapper.
+
+export HEADROOM_OUTPUT_SHAPER=1          # trim what agents write back
+
+alias hr='headroom'
+alias hr-dash='headroom dashboard'                         # live savings dashboard
+alias hr-stats='curl -s http://127.0.0.1:8787/stats | jq'  # live stats
+alias hr-savings='headroom savings'                        # durable token/cost ledger
+alias hr-doctor='headroom doctor'                          # wiring health check
+alias hr-learn='headroom learn --apply'                    # mine failures -> AGENTS.md
+
+function claude()   { command headroom wrap claude   -- "$@" }
+function codex()    { command headroom wrap codex    -- "$@" }
+function opencode() { command headroom wrap opencode -- "$@" }
+function omp()      { command headroom wrap omp      -- "$@" }
 
 . "$HOME/.atuin/bin/env"
