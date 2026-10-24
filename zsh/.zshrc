@@ -261,7 +261,8 @@ alias hr-learn='headroom learn --apply'                    # mine failures -> AG
 
 function claude()   { command headroom wrap claude   -- "$@" }
 function codex()    { command headroom wrap codex    -- "$@" }
-function opencode() { command headroom wrap opencode -- "$@" }
+function opencode() { command headroom wrap opencode --no-serena -- "$@" }
 function omp()      { command headroom wrap omp      -- "$@" }
 
 . "$HOME/.atuin/bin/env"
+export PATH="/Users/mustafa/.rive/bin:$PATH"
