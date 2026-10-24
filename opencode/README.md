@@ -6,4 +6,5 @@ Agent configs for the opencode CLI.
   test-automation-engineer, requirements-clarifier, etc.)
 - `commands/` - custom slash commands
 - `skills/` - project skills the agent can load
+- `opencode.jsonc` - main config: model, providers, MCP, experimental flags
 - `tui.json` - TUI preferences

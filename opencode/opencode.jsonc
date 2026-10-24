@@ -1,0 +1,87 @@
+{
+  "// theme": "matches wezterm/catppuccin mocha",
+  "theme": "catppuccin",
+  "$schema": "https://opencode.ai/config.json",
+  "lsp": true,
+  "formatter": true,
+  "autoupdate": "notify",
+  "experimental": {
+    "background_compaction": true
+  },
+  "enabled_providers": [
+    "opencode",
+    "ollama-m4",
+    "openrouter"
+  ],
+  "model": "opencode/best-free",
+  "provider": {
+    "ollama-m4": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama Local (M4 Max)",
+      "options": {
+        "baseURL": "http://127.0.0.1:11434/v1"
+      },
+      "models": {
+        "qwen3.6:35b-mlx": {
+          "name": "Qwen 3.6 35B (Expert)",
+          "tools": true
+        },
+        "gemma4:e4b-mlx": {
+          "name": "Gemma4 4B (Optimized)",
+          "tools": true
+        },
+        "lfm2.5:8b": {
+          "name": "Liquid 2.5 8B (Agentic)",
+          "tools": true
+        }
+      }
+    },
+    "openrouter": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "OpenRouter",
+      "options": {
+        "baseURL": "https://openrouter.ai/api/v1",
+        "apiKey": "{env:OPENROUTER_API_KEY}"
+      },
+      "models": {
+        "nvidia/nemotron-3-ultra-550b-a55b:free": {
+          "name": "Nemotron 3 Ultra (free)",
+          "tools": true
+        }
+      }
+    },
+    "headroom": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Headroom Proxy",
+      "options": {
+        "baseURL": "http://127.0.0.1:8787/v1"
+      },
+      "models": {
+        "gpt-4o": {
+          "name": "GPT-4o",
+          "limit": {
+            "context": 128000,
+            "output": 16384
+          }
+        },
+        "gpt-4.1": {
+          "name": "GPT-4.1",
+          "limit": {
+            "context": 1048576,
+            "output": 32768
+          }
+        }
+      }
+    }
+  },
+  "mcp": {
+    "XcodeBuildMCP": {
+      "type": "local",
+      "command": [
+        "xcodebuildmcp",
+        "mcp"
+      ],
+      "enabled": false
+    }
+  }
+}
