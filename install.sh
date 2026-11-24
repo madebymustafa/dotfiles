@@ -78,6 +78,24 @@ else
     echo "→ Note: could not clone the avoid-ai-writing skill"
 fi
 
+# Claude Code and Hermes read their own skill dirs. Link the shared copy when
+# it exists, and leave a real directory alone instead of nesting a link inside.
+
+if [ -d "$SKILL_DIR" ]; then
+  echo "→ Linking the avoid-ai-writing skill for Claude Code and Hermes"
+  for skill_dir in "$HOME/.claude/skills" "$HOME/.hermes/skills"; do
+    mkdir -p "$skill_dir"
+    link="$skill_dir/avoid-ai-writing"
+    if [ -L "$link" ]; then
+      ln -sfn "$SKILL_DIR" "$link"
+    elif [ -e "$link" ]; then
+      echo "→ Note: $link exists and is not a symlink; leaving it alone"
+    else
+      ln -s "$SKILL_DIR" "$link"
+    fi
+  done
+fi
+
 # ─── Tmux plugin manager ──────────────────────────────────────────────────────
 
 echo "→ Setting up tmux plugin manager..."

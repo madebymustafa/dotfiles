@@ -145,7 +145,7 @@ brew-bundle/
     ├── nvim                            # LazyVim + 54 plugins (lazy-lock.json)
     ├── fetch                           # fetcher from fork (→ ~/.local/bin/fetch)
     ├── opencode                        # AI coding agent (curl-installed)
-    ├── avoid-ai-writing                # shared agent skill (→ ~/.agents/skills)
+    ├── avoid-ai-writing                # shared skill (→ ~/.agents, ~/.claude/skills, ~/.hermes/skills)
     ├── raycast                         # script commands (toggle-aerospace.sh)
     ├── nix                             # Determinate Nix Installer
     ├── sketchybar                      # config only; binary not installed
@@ -160,7 +160,7 @@ brew-bundle/
 4. opencode via `curl -fsSL https://opencode.ai/install.sh | sh`
 5. Zsh plugins cloned/pulled into `$ZSH_CUSTOM`: Powerlevel10k (theme), zsh-autosuggestions, fast-syntax-highlighting
 6. Tmux plugin manager (tpm) cloned/pulled into `~/.tmux/plugins/tpm`
-7. Clones or updates the `avoid-ai-writing` skill in `~/.agents/skills` (OpenCode and Codex scan it); failures warn instead of aborting
+7. Clones or updates the `avoid-ai-writing` skill in `~/.agents/skills`, then links it into `~/.claude/skills` and `~/.hermes/skills` (OpenCode and Codex scan `~/.agents` directly); failures warn instead of aborting
 8. Calls `bash setup.sh` to symlink all dotfiles
 9. Installs tmux plugins headless via tpm (`bin/install_plugins.sh` against a throwaway server)
 10. Syncs neovim plugins headless (`nvim --headless "+Lazy! sync"`)
