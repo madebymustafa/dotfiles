@@ -62,6 +62,22 @@ clone_or_pull https://github.com/zdharma-continuum/fast-syntax-highlighting "$ZS
 # zsh-syntax-highlighting. Loading both re-wraps the same widgets and breaks
 # highlighting. The .zshrc loads F-Sy-H as its LAST plugin (required).
 
+# ─── Shared agent skills ──────────────────────────────────────────────────────
+# OpenCode and Codex scan ~/.agents/skills. A dirty or failed clone warns
+# instead of aborting the rest of the install.
+
+SKILL_DIR="$HOME/.agents/skills/avoid-ai-writing"
+if [ -d "$SKILL_DIR/.git" ]; then
+  git -C "$SKILL_DIR" pull --ff-only --quiet 2>/dev/null || \
+    echo "→ Note: could not update $SKILL_DIR; keeping the existing copy"
+elif [ -e "$SKILL_DIR" ]; then
+  echo "→ Note: $SKILL_DIR exists but is not a git clone; leaving it alone"
+else
+  mkdir -p "$HOME/.agents/skills"
+  git clone --depth=1 --quiet https://github.com/conorbronsdon/avoid-ai-writing "$SKILL_DIR" || \
+    echo "→ Note: could not clone the avoid-ai-writing skill"
+fi
+
 # ─── Tmux plugin manager ──────────────────────────────────────────────────────
 
 echo "→ Setting up tmux plugin manager..."

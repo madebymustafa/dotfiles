@@ -25,6 +25,10 @@ for pkg in "${CONFIG_PKGS[@]}"; do
   stow --target="$HOME/.config/$pkg" "$pkg"
 done
 
+if [ ! -e "$HOME/.config/opencode/skills/avoid-ai-writing" ]; then
+  echo "→ Note: the avoid-ai-writing link is dangling; clone it into ~/.agents/skills"
+fi
+
 echo "→ Linking .hushlogin..."
 ln -sf "$DIR/.hushlogin" "$HOME/.hushlogin"
 

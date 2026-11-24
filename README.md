@@ -76,6 +76,10 @@ Every directory is a [GNU Stow](https://www.gnu.org/software/stow/) package.
 `.hushlogin` is symlinked manually since a single file needs no stow package,
 and `sketchybar/` is tracked for reference only, skipped by `setup.sh`.
 
+`install.sh` also clones the shared `avoid-ai-writing` skill into
+`~/.agents/skills/`, which OpenCode and Codex scan. `opencode/skills/avoid-ai-writing`
+links to that clone. The link is relative, so keep the repo at `~/dotfiles`.
+
 Each package has a README covering what it does and what's worth knowing
 before editing it. Window management is [AeroSpace](https://github.com/nikitabobko/AeroSpace);
 Hyper + Esc toggles tiling via a Raycast script command, and every keybinding

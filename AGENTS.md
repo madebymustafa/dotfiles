@@ -4,7 +4,7 @@
 macOS dotfiles managed with GNU Stow. User is `madebymustafa` (GitHub).
 
 ## Entry Points
-- **`install.sh`**: one-command new-machine bootstrap. Installs all tools (brew, casks, fonts, opencode, oh-my-zsh, zsh plugins, tpm), then calls `setup.sh`.
+- **`install.sh`**: one-command new-machine bootstrap. Installs all tools (brew, casks, fonts, opencode, agent skills, oh-my-zsh, zsh plugins, tpm), then calls `setup.sh`.
 - **`setup.sh`**: symlinks dotfiles via GNU Stow. Called by `install.sh`. Can also run standalone if tools are already installed.
 
 ## Machine Blueprint (what a fresh install gets)
@@ -145,6 +145,7 @@ brew-bundle/
     ├── nvim                            # LazyVim + 54 plugins (lazy-lock.json)
     ├── fetch                           # fetcher from fork (→ ~/.local/bin/fetch)
     ├── opencode                        # AI coding agent (curl-installed)
+    ├── avoid-ai-writing                # shared agent skill (→ ~/.agents/skills)
     ├── raycast                         # script commands (toggle-aerospace.sh)
     ├── nix                             # Determinate Nix Installer
     ├── sketchybar                      # config only; binary not installed
@@ -159,10 +160,11 @@ brew-bundle/
 4. opencode via `curl -fsSL https://opencode.ai/install.sh | sh`
 5. Zsh plugins cloned/pulled into `$ZSH_CUSTOM`: Powerlevel10k (theme), zsh-autosuggestions, fast-syntax-highlighting
 6. Tmux plugin manager (tpm) cloned/pulled into `~/.tmux/plugins/tpm`
-7. Calls `bash setup.sh` to symlink all dotfiles
-8. Installs tmux plugins headless via tpm (`bin/install_plugins.sh` against a throwaway server)
-9. Syncs neovim plugins headless (`nvim --headless "+Lazy! sync"`)
-10. Launches AeroSpace; user must approve the Accessibility permission when macOS prompts
+7. Clones or updates the `avoid-ai-writing` skill in `~/.agents/skills` (OpenCode and Codex scan it); failures warn instead of aborting
+8. Calls `bash setup.sh` to symlink all dotfiles
+9. Installs tmux plugins headless via tpm (`bin/install_plugins.sh` against a throwaway server)
+10. Syncs neovim plugins headless (`nvim --headless "+Lazy! sync"`)
+11. Launches AeroSpace; user must approve the Accessibility permission when macOS prompts
 
 ## Packages NOT installed by install.sh
 - **sketchybar**: config folder tracked but deliberately excluded from `setup.sh` (user preference); binary never installed
